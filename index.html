@@ -211,7 +211,7 @@
         <div id="page-home" class="page-section bg-texture">
             <!-- Hero Section -->
             <section class="relative h-[80vh] min-h-[40rem] flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-black/50 z-10"></div>
+                <div class="absolute inset-0 bg-black/65 z-10"></div>
                 <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&amp;w=2070&amp;auto=format&amp;fit=crop"
                     alt="Indian Spices" class="absolute inset-0 w-full h-full object-cover object-center">
 
@@ -251,11 +251,13 @@
                         height="2.5rem" stroke-width="1.5"></iconify-icon>
                     <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#7A2021] mb-6">A Century of Trust
                     </h2>
-                    <p class="text-[#3E2723]/80 leading-relaxed text-base lg:text-lg">
-                        Originating from the thriving kirana shops of Berchha, Madhya Pradesh, the Nawab Brothers built
-                        a legacy on purity and deep knowledge of spices. Today, SpiceRoots emerges from Nawab Overseas
-                        to carry this 100-year-old generational wisdom to global tables. We do not merely buy spices; we
-                        select them with discernment shaped by decades of experience.
+                    <p class="text-[#3E2723]/80 leading-relaxed text-base lg:text-lg text-justify">
+                        From the renowned kirana establishments of Berchha, Madhya Pradesh, Nawab Brothers established a
+                        legacy defined by uncompromising purity and profound expertise in spices. Nawab Overseas, its
+                        sister concern, now carries this century-old generational wisdom forward through SpiceRoots —
+                        presenting India's finest spices to discerning kitchens in India and, soon, across the world. We
+                        do not simply trade in spices; we curate them with precision, guided by decades of experience
+                        and an unwavering commitment to quality.
                     </p>
                     <button onclick="navigate('about')"
                         class="mt-8 text-sm font-medium text-[#7A2021] border-b border-[#7A2021]/30 hover:border-[#7A2021] transition-colors pb-1">Read
@@ -298,7 +300,7 @@
                                 <iconify-icon icon="solar:heart-pulse-linear" class="text-[#C5A059]" width="2rem"
                                     height="2rem" stroke-width="1.5"></iconify-icon>
                             </div>
-                            <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Health-Conscious</h3>
+                            <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Wellness-Driven</h3>
                             <p class="text-sm text-[#FAF6F0]/70 leading-relaxed">
                                 Formulated with minimal or no common salt for better sodium control and everyday
                                 wellbeing.
@@ -325,7 +327,7 @@
             <!-- Featured Products -->
             <section class="py-20 lg:py-28 px-4 bg-[#FAF6F0]">
                 <div class="max-w-[80rem] mx-auto">
-                    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                         <div>
                             <span
                                 class="text-[#C5A059] font-medium tracking-widest text-xs uppercase block mb-2">Dawat-E-Khaas</span>
@@ -355,7 +357,7 @@
                         stroke-width="1.5"></iconify-icon>
                     <h2 class="font-serif text-2xl lg:text-3xl tracking-tight text-[#3E2723] mb-6">From Soil to Global
                         Tables</h2>
-                    <p class="text-[#3E2723]/80 leading-relaxed text-base">
+                    <p class="text-[#3E2723]/80 leading-relaxed text-base text-justify">
                         Nawab Overseas was built on a simple belief: "If generations trusted our family for purity and
                         knowledge, the world deserves the same." With a modern outlook, we aim to take India's authentic
                         flavors to international kitchens — without dilution, without shortcuts, and without compromise.
@@ -553,9 +555,9 @@
                         <p class="text-[#7A2021] font-medium mt-6 italic">These are not just spice mixes — they are
                             cultural expressions.</p>
                     </div>
-                    <div class="relative h-[300px] rounded-md overflow-hidden shadow-md border border-[#C5A059]/20">
-                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
-                            alt="Spices" class="w-full h-full object-cover">
+                    <div
+                        class="relative h-[500px] lg:h-[700px] rounded-md overflow-hidden shadow-md border border-[#C5A059]/20">
+                        <img src="legacy.jpg" alt="Spices" class="w-full h-full object-cover">
                     </div>
                 </div>
 
@@ -583,6 +585,101 @@
                     </div>
                 </div>
 
+            </div>
+        </div>
+
+        <!-- ================= CHECKOUT PAGE ================= -->
+        <div id="page-checkout" class="page-section hidden bg-texture">
+            <div class="max-w-[80rem] mx-auto px-4 py-16 lg:py-24">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Left: Delivery Form -->
+                    <div class="flex-grow space-y-8">
+                        <div>
+                            <button onclick="navigate('shop')"
+                                class="text-[#7A2021] text-sm font-medium flex items-center gap-2 mb-6 hover:translate-x-[-4px] transition-transform">
+                                <iconify-icon icon="solar:arrow-left-linear"></iconify-icon> Back to Shop
+                            </button>
+                            <h1 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#3E2723] mb-2">Checkout</h1>
+                            <p class="text-[#3E2723]/60 text-sm">Please provide your delivery details below.</p>
+                        </div>
+
+                        <div id="checkout-form"
+                            class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-md border border-[#C5A059]/20 shadow-sm">
+                            <div class="space-y-1 md:col-span-2">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Full
+                                    Name</label>
+                                <input type="text" id="checkout-name" required placeholder="John Doe"
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Phone
+                                    Number</label>
+                                <input type="tel" id="checkout-phone" required placeholder="+91 00000 00000"
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Email
+                                    (Optional)</label>
+                                <input type="email" id="checkout-email" placeholder="john@example.com"
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
+                            </div>
+                            <div class="space-y-1 md:col-span-2">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Delivery
+                                    Address</label>
+                                <textarea id="checkout-address" required rows="3"
+                                    placeholder="House No, Street, Landmark..."
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors resize-none"></textarea>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">City</label>
+                                <input type="text" id="checkout-city" required placeholder="Ujjain"
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Pincode</label>
+                                <input type="text" id="checkout-pincode" required placeholder="456010"
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Order Summary -->
+                    <div class="w-full lg:w-[24rem]">
+                        <div
+                            class="bg-white border border-[#C5A059]/20 rounded-md shadow-sm overflow-hidden sticky top-24">
+                            <div class="p-6 border-b border-[#C5A059]/10 bg-[#FAF6F0]/30">
+                                <h3 class="font-serif text-xl text-[#3E2723]">Order Summary</h3>
+                            </div>
+                            <div id="checkout-items"
+                                class="p-6 space-y-4 max-h-[16rem] overflow-y-auto border-b border-[#C5A059]/10">
+                                <!-- JS Populated -->
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <div class="flex justify-between text-sm text-[#3E2723]/70">
+                                    <span>Subtotal</span>
+                                    <span id="checkout-subtotal">₹0.00</span>
+                                </div>
+                                <div class="flex justify-between text-sm text-[#3E2723]/70">
+                                    <span>Shipping</span>
+                                    <span class="text-green-600 font-medium">calculated at payment</span>
+                                </div>
+                                <div class="h-px bg-[#C5A059]/10"></div>
+                                <div class="flex justify-between text-lg font-bold text-[#7A2021]">
+                                    <span>Total</span>
+                                    <span id="checkout-total">₹0.00</span>
+                                </div>
+                                <button id="pay-btn" onclick="processOrder()"
+                                    class="w-full bg-[#7A2021] text-white py-4 rounded-sm font-medium hover:bg-[#5A1718] transition-all shadow-lg flex items-center justify-center gap-2">
+                                    Complete Order & Pay <iconify-icon icon="solar:card-send-linear"></iconify-icon>
+                                </button>
+                                <p class="text-[0.65rem] text-[#3E2723]/40 text-center leading-relaxed">
+                                    By clicking "Complete Order", you will be redirected to choose a payment method (UPI
+                                    supported).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -629,7 +726,7 @@
                                 </div>
                                 <div>
                                     <p class="text-xs text-[#3E2723]/50 uppercase tracking-wider mb-1">Phone</p>
-                                    <p class="font-medium text-base">+91 734 406 3904</p>
+                                    <p class="font-medium text-base">+91 734 356 7606</p>
                                     <p class="font-medium text-base">+91 992 669 1191</p>
                                 </div>
                             </div>
@@ -655,10 +752,11 @@
                                 </div>
                                 <div>
                                     <p class="text-xs text-[#3E2723]/50 uppercase tracking-wider mb-1">Address</p>
-                                    <p class="font-medium text-base leading-relaxed">
-                                        31-32, Indralay Highlands (extn.),<br>
-                                        Indore Rd, UJJAIN (M.P.) – 456010, India
-                                    </p>
+                                    <address class="not-italic font-medium text-sm leading-relaxed text-[#3E2723]">
+                                        31–32, Indralay Highlands (Extn.),<br>
+                                        Indore Road, Ujjain (M.P.) – 456010,<br>
+                                        India
+                                    </address>
                                 </div>
                             </div>
                         </div>
@@ -829,7 +927,7 @@
             </div>
             <p class="text-[0.65rem] text-[#3E2723]/50 italic text-center">Shipping and taxes calculated at checkout.
             </p>
-            <button
+            <button onclick="toggleCart(); navigate('checkout');"
                 class="w-full bg-[#7A2021] text-white py-3.5 rounded-sm text-sm font-medium hover:bg-[#5A1718] transition-colors flex justify-center items-center gap-2 shadow-md">
                 Proceed to Checkout <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
             </button>
@@ -842,7 +940,7 @@
         onclick="closeProductModal()"></div>
 
     <div id="product-modal"
-        class="fixed inset-x-0 bottom-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-full sm:max-w-2xl w-full bg-[#FAF6F0] z-[90] rounded-t-2xl sm:rounded-xl shadow-2xl flex flex-col max-h-[92vh] sm:max-h-[85vh] overflow-hidden"
+        class="fixed inset-x-0 bottom-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:w-full sm:max-w-4xl w-full bg-[#FAF6F0] z-[90] rounded-t-2xl sm:rounded-xl shadow-2xl flex flex-col max-h-[92vh] sm:max-h-[85vh] overflow-hidden"
         style="transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.32,0.72,0,1), opacity 0.3s ease; opacity:0;">
 
         <!-- Modal Header -->
@@ -855,85 +953,116 @@
             </button>
         </div>
 
-        <!-- Scrollable Content -->
-        <div class="overflow-y-auto flex-grow">
-            <!-- Image -->
-            <div class="relative bg-[#FAF6F0] overflow-hidden" style="aspect-ratio:4/3;">
-                <img id="modal-img" src="" alt=""
-                    class="w-full h-full object-cover mix-blend-multiply transition-all duration-500">
-                <button id="modal-img-alt-btn"
-                    class="absolute bottom-3 right-3 bg-white/80 backdrop-blur-sm border border-[#C5A059]/30 text-[0.65rem] font-medium text-[#3E2723] px-2 py-1 rounded-full shadow-sm hover:bg-white transition-colors"
-                    onclick="toggleModalImg()">View Alt ↔</button>
+        <div class="flex-grow flex flex-col sm:flex-row overflow-hidden">
+            <!-- Left: Image Column -->
+            <div class="w-full sm:w-1/2 flex flex-col">
+                <div id="modal-img-carousel"
+                    class="relative bg-[#FAF6F0] overflow-hidden select-none h-full aspect-[4/3] sm:aspect-auto">
+                    <img id="modal-img" src="" alt=""
+                        class="w-full h-full object-cover mix-blend-multiply transition-opacity duration-300">
+
+                    <!-- Arrows -->
+                    <button onclick="modalCarouselGo(-1)"
+                        class="absolute left-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/30 text-[#3E2723] rounded-full w-8 h-8 flex items-center justify-center shadow hover:bg-white transition-colors z-10">
+                        <iconify-icon icon="solar:alt-arrow-left-linear" width="1rem"></iconify-icon>
+                    </button>
+                    <button onclick="modalCarouselGo(1)"
+                        class="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 backdrop-blur-sm border border-[#C5A059]/30 text-[#3E2723] rounded-full w-8 h-8 flex items-center justify-center shadow hover:bg-white transition-colors z-10">
+                        <iconify-icon icon="solar:alt-arrow-right-linear" width="1rem"></iconify-icon>
+                    </button>
+
+                    <!-- Dots -->
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                        <button onclick="modalCarouselGo(0, 0)" id="modal-dot-0"
+                            class="w-2 h-2 rounded-full bg-[#7A2021] transition-all duration-200"></button>
+                        <button onclick="modalCarouselGo(0, 1)" id="modal-dot-1"
+                            class="w-2 h-2 rounded-full bg-white/60 transition-all duration-200"></button>
+                    </div>
+
+                    <!-- Swipe label -->
+                    <div
+                        class="absolute top-3 right-3 bg-white/70 backdrop-blur-sm text-[0.6rem] text-[#3E2723]/60 px-2 py-0.5 rounded-full font-medium pointer-events-none">
+                        swipe ↔
+                    </div>
+                </div>
             </div>
 
-            <!-- Details -->
-            <div class="px-6 py-6 space-y-5">
-                <!-- Name + Price -->
-                <div class="flex items-start justify-between gap-4">
-                    <h2 id="modal-name"
-                        class="font-serif text-2xl sm:text-3xl tracking-tight text-[#3E2723] leading-tight"></h2>
-                    <div class="text-right shrink-0">
-                        <p id="modal-price" class="font-sans text-2xl font-bold text-[#7A2021]"></p>
-                        <span id="modal-weight" class="text-xs text-[#3E2723]/50 font-medium"></span>
+            <!-- Right: Details Column -->
+            <div class="w-full sm:w-1/2 flex flex-col bg-white overflow-y-auto">
+                <div class="px-6 py-6 sm:py-8 space-y-6 flex-grow">
+                    <!-- Name + Price -->
+                    <div class="flex flex-col gap-2">
+                        <h2 id="modal-name"
+                            class="font-serif text-2xl sm:text-3xl tracking-tight text-[#3E2723] leading-tight"></h2>
+                        <div class="flex items-center justify-between">
+                            <p id="modal-price" class="font-sans text-2xl font-bold text-[#7A2021]"></p>
+                            <span id="modal-weight"
+                                class="bg-[#FAF6F0] border border-[#C5A059]/30 text-[#3E2723] text-xs px-2 py-1 rounded-sm font-medium"></span>
+                        </div>
                     </div>
-                </div>
 
-                <div class="h-px bg-[#C5A059]/20"></div>
+                    <div class="h-px bg-[#C5A059]/10"></div>
 
-                <!-- Description -->
-                <div>
-                    <p class="text-xs font-medium tracking-widest text-[#C5A059] uppercase mb-2">About this blend</p>
-                    <p id="modal-desc" class="text-sm text-[#3E2723]/80 leading-relaxed"></p>
-                </div>
-
-                <!-- Trust Badges -->
-                <div class="grid grid-cols-3 gap-3">
-                    <div
-                        class="flex flex-col items-center text-center bg-white border border-[#C5A059]/20 rounded-md p-3 gap-1">
-                        <iconify-icon icon="solar:shield-check-linear" class="text-[#C5A059]"
-                            width="1.2rem"></iconify-icon>
-                        <span class="text-[0.6rem] text-[#3E2723]/70 font-medium leading-tight">No Preservatives</span>
+                    <!-- Description -->
+                    <div class="space-y-2">
+                        <p class="text-[0.65rem] font-bold tracking-[0.15em] text-[#C5A059] uppercase">The Heritage
+                            Blend</p>
+                        <p id="modal-desc" class="text-sm text-[#3E2723]/80 leading-relaxed"></p>
                     </div>
-                    <div
-                        class="flex flex-col items-center text-center bg-white border border-[#C5A059]/20 rounded-md p-3 gap-1">
-                        <iconify-icon icon="solar:leaf-linear" class="text-[#C5A059]" width="1.2rem"></iconify-icon>
-                        <span class="text-[0.6rem] text-[#3E2723]/70 font-medium leading-tight">Natural Aroma</span>
-                    </div>
-                    <div
-                        class="flex flex-col items-center text-center bg-white border border-[#C5A059]/20 rounded-md p-3 gap-1">
-                        <iconify-icon icon="solar:heart-pulse-linear" class="text-[#C5A059]"
-                            width="1.2rem"></iconify-icon>
-                        <span class="text-[0.6rem] text-[#3E2723]/70 font-medium leading-tight">Low Salt</span>
-                    </div>
-                </div>
 
-                <!-- Quantity -->
-                <div>
-                    <p class="text-xs font-medium tracking-widest text-[#C5A059] uppercase mb-3">Quantity</p>
-                    <div class="flex items-center gap-5">
-                        <div class="flex items-center border border-[#C5A059]/40 rounded-sm overflow-hidden">
+                    <!-- Badges -->
+                    <div class="grid grid-cols-3 gap-2 py-2">
+                        <div
+                            class="flex flex-col items-center bg-[#FAF6F0]/50 p-2 rounded gap-1 border border-[#C5A059]/10">
+                            <iconify-icon icon="solar:shield-check-linear" class="text-[#7A2021]"
+                                width="1rem"></iconify-icon>
+                            <span
+                                class="text-[0.55rem] text-[#3E2723]/60 uppercase font-bold tracking-tighter">Purity</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center bg-[#FAF6F0]/50 p-2 rounded gap-1 border border-[#C5A059]/10">
+                            <iconify-icon icon="solar:leaf-linear" class="text-[#7A2021]" width="1rem"></iconify-icon>
+                            <span
+                                class="text-[0.55rem] text-[#3E2723]/60 uppercase font-bold tracking-tighter">Natural</span>
+                        </div>
+                        <div
+                            class="flex flex-col items-center bg-[#FAF6F0]/50 p-2 rounded gap-1 border border-[#C5A059]/10">
+                            <iconify-icon icon="solar:heart-pulse-linear" class="text-[#7A2021]"
+                                width="1rem"></iconify-icon>
+                            <span
+                                class="text-[0.55rem] text-[#3E2723]/60 uppercase font-bold tracking-tighter">Healthy</span>
+                        </div>
+                    </div>
+
+                    <!-- Qty -->
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-center justify-between">
+                            <p class="text-xs font-bold tracking-wider text-[#3E2723] uppercase">Select Quantity</p>
+                            <span id="modal-total" class="text-lg font-bold text-[#7A2021]"></span>
+                        </div>
+                        <div class="flex items-center border border-[#C5A059]/30 rounded-sm w-max overflow-hidden">
                             <button onclick="changeModalQty(-1)"
-                                class="w-10 h-10 flex items-center justify-center text-[#3E2723] hover:bg-[#C5A059]/10 transition-colors text-xl font-light">−</button>
+                                class="w-10 h-10 flex items-center justify-center text-[#3E2723] hover:bg-[#FAF6F0] transition-colors">−</button>
                             <span id="modal-qty" class="w-10 text-center text-sm font-semibold text-[#3E2723]">1</span>
                             <button onclick="changeModalQty(1)"
-                                class="w-10 h-10 flex items-center justify-center text-[#3E2723] hover:bg-[#C5A059]/10 transition-colors text-xl font-light">+</button>
+                                class="w-10 h-10 flex items-center justify-center text-[#3E2723] hover:bg-[#FAF6F0] transition-colors">+</button>
                         </div>
-                        <span id="modal-total" class="text-lg font-bold text-[#7A2021]"></span>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Sticky Action Bar -->
-        <div class="shrink-0 px-6 py-4 border-t border-[#C5A059]/20 bg-white flex flex-col sm:flex-row gap-3">
-            <button id="modal-add-cart"
-                class="flex-1 bg-[#7A2021] text-white py-3 rounded-sm text-sm font-medium hover:bg-[#5A1718] transition-colors flex justify-center items-center gap-2 shadow-md">
-                <iconify-icon icon="solar:cart-plus-linear"></iconify-icon> Add to Cart
-            </button>
-            <a id="modal-amazon-link" href="#" target="_blank" rel="noopener noreferrer"
-                class="flex-1 bg-[#FF9900]/10 border border-[#FF9900]/40 text-[#FF9900] py-3 rounded-sm text-sm font-medium hover:bg-[#FF9900] hover:text-white transition-colors flex justify-center items-center gap-2">
-                Buy on Amazon <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
-            </a>
+                <!-- Footer Actions -->
+                <div
+                    class="shrink-0 px-6 py-6 border-t border-[#C5A059]/20 bg-[#FAF6F0]/30 flex flex-col sm:flex-row gap-3">
+                    <button id="modal-add-cart"
+                        class="flex-1 bg-[#7A2021] text-white py-3.5 rounded-sm text-sm font-medium hover:bg-[#5A1718] transition-colors flex justify-center items-center gap-2 shadow-md">
+                        <iconify-icon icon="solar:cart-plus-linear"></iconify-icon> Add to Cart
+                    </button>
+                    <a id="modal-amazon-link" href="#" target="_blank" rel="noopener noreferrer"
+                        class="flex-1 bg-white border border-[#FF9900]/40 text-[#FF9900] py-3.5 rounded-sm text-sm font-medium hover:bg-[#FF9900] hover:text-white transition-colors flex justify-center items-center gap-2">
+                        Buy on Amazon <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -951,13 +1080,13 @@
         // --- Product Data ---
         const products = [
             { id: 1, name: "Kitchen King Masala", desc: "The universal blend for everyday Indian cooking.", weight: "50g", price: 65, amazonLink: "https://amzn.to/4jrWX0O", img: "Masala mockup/Kitchen King Masala.jpg", imgAlt: "Masala mockup/Kitchen King Masala 1.jpg", category: "Essentials" },
-            { id: 2, name: "Mumbai Pav Bhaji Masala", desc: "Street-style authentic flavor with perfect spice balance.", weight: "50g", price: 70, amazonLink: "https://amzn.to/4pz0BaJ", img: "Masala mockup/Mumbai Pav Bhaji.jpg", imgAlt: "Masala mockup/Mumbai Pav Bhaji 1.jpg", category: "Essentials" },
+            { id: 2, name: "Mumbai Pav Bhaji Masala", desc: "Street-style authentic flavor with perfect spice balance.", weight: "50g", price: 70, amazonLink: "https://amzn.to/4pz0BaJ", img: "Masala mockup/Mumbai Pav Bhaji 1.jpg", imgAlt: "Masala mockup/Mumbai Pav Bhaji.jpg", category: "Essentials" },
             { id: 3, name: "Pindi Chhole Masala", desc: "Dark, robust, and tangy blend for traditional chhole.", weight: "50g", price: 75, amazonLink: "https://amzn.to/49vqpyt", img: "Masala mockup/Pindi Chhole Masala.jpg", imgAlt: "Masala mockup/Pindi Chhole Masala 1.jpg", category: "Dawat" },
             { id: 4, name: "Shahi Paneer Masala", desc: "Rich, mild, and aromatic for royal paneer gravies.", weight: "50g", price: 85, amazonLink: "https://amzn.to/4pwbBpn", img: "Masala mockup/Shahi Paneer Masala.jpg", imgAlt: "Masala mockup/Shahi Paneer Masala1.jpg", category: "Dawat" },
-            { id: 5, name: "Chicken Popcorn Masala", desc: "Crispy, spicy coating mix for perfect bite-sized snacks.", weight: "50g", price: 60, amazonLink: "https://amzn.to/3LoMV46", img: "Masala mockup/Chicken Popcorn Masala.jpg", imgAlt: "Masala mockup/Chicken Popcorn Masala 1.jpg", category: "Ready" },
+            { id: 5, name: "Chicken Popcorn Masala", desc: "Crispy, spicy coating mix for perfect bite-sized snacks.", weight: "50g", price: 60, amazonLink: "https://amzn.to/3LoMV46", img: "Masala mockup/Chicken Popcorn Masala 1.jpg", imgAlt: "Masala mockup/Chicken Popcorn Masala.jpg", category: "Ready" },
             { id: 6, name: "Rajshahi Biryani Masala", desc: "Echoes the grandeur of regal feasts. Intense aroma.", weight: "50g", price: 95, amazonLink: "https://amzn.to/4qiZj52", img: "Masala mockup/Rajshahi Biryani.jpg", imgAlt: "Masala mockup/Rajshahi Biryani 1.jpg", category: "Dawat" },
             { id: 7, name: "Green Chicken Masala", desc: "Fresh, vibrant blend with natural green herbs focus.", weight: "50g", price: 80, amazonLink: "https://amzn.to/4qaQABD", img: "Masala mockup/Green Chicken.jpg", imgAlt: "Masala mockup/Green Chicken 1.jpg", category: "Dawat" },
-            { id: 8, name: "Kadhi Gosht Masala", desc: "Carries the warmth of traditional nawabi hospitality.", weight: "50g", price: 90, amazonLink: "https://amzn.to/4qKBwdT", img: "Masala mockup/Kadhi Gosht.jpg", imgAlt: "Masala mockup/Kadhi Gosht 1.jpg", category: "Dawat" }
+            { id: 8, name: "Kadhi Gosht Masala", desc: "Carries the warmth of traditional nawabi hospitality.", weight: "50g", price: 90, amazonLink: "https://amzn.to/4qKBwdT", img: "Masala mockup/Kadhi Gosht 1.jpg", imgAlt: "Masala mockup/Kadhi Gosht.jpg", category: "Dawat" }
         ];
 
         // --- Render Products ---
@@ -972,7 +1101,7 @@
                     <!-- Clickable image + name area -->
                     <div class="cursor-pointer" onclick="openProductModal(${product.id})">
                         <div class="aspect-square bg-[#FAF6F0] overflow-hidden relative">
-                            <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" onmouseover="this.src='${product.imgAlt}'" onmouseout="this.src='${product.img}'">
+                            <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
                         </div>
                         <div class="px-5 pt-4 pb-1">
                             <h3 class="font-serif text-lg tracking-tight text-[#3E2723] font-medium leading-tight">${product.name}</h3>
@@ -1015,6 +1144,12 @@
             // Show target
             const target = document.getElementById('page-' + pageId);
             target.classList.remove('hidden');
+
+            // Special logic for checkout page
+            if (pageId === 'checkout') {
+                updateCheckoutSummary();
+            }
+
             // Trigger reflow for animation
             void target.offsetWidth;
             target.classList.add('fade-in');
@@ -1036,6 +1171,77 @@
                 link.classList.add('text-[#7A2021]', 'after:w-full');
                 link.classList.remove('text-[#3E2723]/80');
             });
+        }
+
+        function updateCheckoutSummary() {
+            const container = document.getElementById('checkout-items');
+            const subtotalEl = document.getElementById('checkout-subtotal');
+            const totalEl = document.getElementById('checkout-total');
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-sm text-[#3E2723]/60 italic text-center py-4">Your cart is empty.</p>';
+                subtotalEl.innerText = "₹0.00";
+                totalEl.innerText = "₹0.00";
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex flex-col">
+                        <span class="font-medium text-[#3E2723]">${item.name} x${item.qty}</span>
+                        <span class="text-[0.65rem] text-[#3E2723]/50">${item.weight}</span>
+                    </div>
+                    <span class="font-medium text-[#7A2021]">₹${item.price * item.qty}</span>
+                </div>
+            `).join('');
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            subtotalEl.innerText = `₹${total}.00`;
+            totalEl.innerText = `₹${total}.00`;
+        }
+
+        function processOrder() {
+            const name = document.getElementById('checkout-name').value;
+            const phone = document.getElementById('checkout-phone').value;
+            const address = document.getElementById('checkout-address').value;
+            const city = document.getElementById('checkout-city').value;
+            const pincode = document.getElementById('checkout-pincode').value;
+
+            if (!name || !phone || !address || !city || !pincode) {
+                alert("Please fill in all delivery details.");
+                return;
+            }
+
+            const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            // Build UPI URI
+            // pa: Payment Address, pn: Payee Name, tr: Transaction Ref (optional), am: Amount, cu: Currency
+            const upiId = "9926691191@upi";
+            const payeeName = "Nawab Overseas (SpiceRoots)";
+            const upiUri = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${totalAmount}&cu=INR&tn=${encodeURIComponent('Order from SpiceRoots')}`;
+
+            // Visual feedback
+            const btn = document.getElementById('pay-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon> Opening Payment App...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                window.location.href = upiUri;
+
+                // Fallback / Instruction for desktop
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    const confirmPayment = confirm("Payment app opened! Once paid, click OK to complete your order. (On desktop, please pay to " + upiId + ")");
+                    if (confirmPayment) {
+                        alert("Thank you for your order! We have received your details. Our team will contact you shortly.");
+                        cart = [];
+                        updateCartUI();
+                        navigate('home');
+                    }
+                }, 1000);
+            }, 800);
         }
 
         // Initialize home nav active state
@@ -1186,6 +1392,7 @@
             document.getElementById('modal-total').textContent = '₹' + _modalProduct.price;
             document.getElementById('modal-img').src = _modalProduct.img;
             document.getElementById('modal-img').alt = _modalProduct.name;
+            _updateCarouselDots(0);
             document.getElementById('modal-amazon-link').href = _modalProduct.amazonLink;
             document.getElementById('modal-add-cart').onclick = () => {
                 for (let i = 0; i < _modalQty; i++) addToCart(_modalProduct.id);
@@ -1194,10 +1401,12 @@
 
             const overlay = document.getElementById('product-modal-overlay');
             const modal = document.getElementById('product-modal');
+            const isDesktop = window.innerWidth >= 640;
+
             overlay.classList.remove('hidden');
             requestAnimationFrame(() => {
                 overlay.style.opacity = '1';
-                modal.style.transform = 'translateY(0)';
+                modal.style.transform = isDesktop ? 'translate(-50%, -50%)' : 'translateY(0)';
                 modal.style.opacity = '1';
             });
             document.body.style.overflow = 'hidden';
@@ -1206,8 +1415,10 @@
         function closeProductModal() {
             const overlay = document.getElementById('product-modal-overlay');
             const modal = document.getElementById('product-modal');
+            const isDesktop = window.innerWidth >= 640;
+
             overlay.style.opacity = '0';
-            modal.style.transform = 'translateY(100%)';
+            modal.style.transform = isDesktop ? 'translate(-50%, -50%) scale(0.95)' : 'translateY(100%)';
             modal.style.opacity = '0';
             setTimeout(() => overlay.classList.add('hidden'), 350);
             document.body.style.overflow = '';
@@ -1219,15 +1430,41 @@
             document.getElementById('modal-total').textContent = '₹' + (_modalProduct.price * _modalQty);
         }
 
-        function toggleModalImg() {
+        function _updateCarouselDots(idx) {
+            document.getElementById('modal-dot-0').className = `w-2 h-2 rounded-full transition-all duration-200 ${idx === 0 ? 'bg-[#7A2021] w-3' : 'bg-white/60'}`;
+            document.getElementById('modal-dot-1').className = `w-2 h-2 rounded-full transition-all duration-200 ${idx === 1 ? 'bg-[#7A2021] w-3' : 'bg-white/60'}`;
+        }
+
+        function modalCarouselGo(direction, targetIdx) {
             const img = document.getElementById('modal-img');
-            _modalShowingAlt = !_modalShowingAlt;
+            const images = [_modalProduct.img, _modalProduct.imgAlt];
+            let next;
+            if (targetIdx !== undefined) {
+                next = targetIdx;
+            } else {
+                next = (_modalShowingAlt ? 1 : 0) + direction;
+                if (next < 0) next = images.length - 1;
+                if (next >= images.length) next = 0;
+            }
+            _modalShowingAlt = next === 1;
             img.style.opacity = '0';
             setTimeout(() => {
-                img.src = _modalShowingAlt ? _modalProduct.imgAlt : _modalProduct.img;
+                img.src = images[next];
                 img.style.opacity = '1';
-            }, 200);
+                _updateCarouselDots(next);
+            }, 180);
         }
+
+        // Touch swipe for carousel
+        (function () {
+            let touchStartX = 0;
+            const carousel = document.getElementById('modal-img-carousel');
+            carousel.addEventListener('touchstart', e => { touchStartX = e.changedTouches[0].clientX; }, { passive: true });
+            carousel.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) modalCarouselGo(diff > 0 ? 1 : -1);
+            }, { passive: true });
+        })();
 
         // Close modal on Escape key
         document.addEventListener('keydown', e => {

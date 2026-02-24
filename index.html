@@ -853,56 +853,182 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <!-- Contact Form -->
-                    <div class="bg-white/60 p-8 lg:p-12 rounded-md border border-[#C5A059]/30 shadow-sm">
-                        <h3 class="font-serif text-2xl tracking-tight text-[#3E2723] mb-6">Send a Message</h3>
-                        <form
-                            onsubmit="event.preventDefault(); alert('Message sent functionality will be integrated here.');"
-                            class="space-y-5">
-                            <div>
-                                <label
-                                    class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Full
-                                    Name</label>
-                                <input type="text" required=""
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723]">
-                            </div>
-
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                <div>
-                                    <label
-                                        class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Email
+                    <div class="bg-white p-8 lg:p-12 rounded-md border border-[#C5A059]/20 shadow-lg">
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-1">
+                                    <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Your
+                                        Name</label>
+                                    <input type="text"
+                                        class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors"
+                                        placeholder="John Doe">
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Email
                                         Address</label>
-                                    <input type="email" required=""
-                                        class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723]">
-                                </div>
-                                <div>
-                                    <label
-                                        class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Phone
-                                        Number</label>
-                                    <input type="tel"
-                                        class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723]">
+                                    <input type="email"
+                                        class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors"
+                                        placeholder="john@example.com">
                                 </div>
                             </div>
-
-                            <div>
-                                <label
-                                    class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Message</label>
-                                <textarea rows="4" required=""
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723] resize-none"></textarea>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Subject</label>
+                                <input type="text"
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors"
+                                    placeholder="Inquiry about bulk orders">
                             </div>
-
-                            <button type="submit"
-                                class="w-full bg-[#7A2021] text-white py-3 rounded-sm text-sm font-medium hover:bg-[#5A1718] transition-colors border border-[#7A2021] shadow-sm mt-2">
-                                Send Message
-                            </button>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Your
+                                    Message</label>
+                                <textarea rows="5"
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors resize-none"
+                                    placeholder="Tell us how we can help..."></textarea>
+                            </div>
+                            <button
+                                class="w-full bg-[#7A2021] text-white py-4 rounded-sm font-medium text-sm hover:bg-[#5A1718] transition-colors shadow-md">Send
+                                Message</button>
                         </form>
                     </div>
 
                 </div>
             </div>
         </div>
+
+        <!-- ================= SHIPPING POLICY ================= -->
+        <div id="page-shipping" class="page-section hidden bg-texture">
+            <div class="max-w-4xl mx-auto px-4 py-16 lg:py-24">
+                <h1
+                    class="font-serif text-4xl lg:text-5xl tracking-tight text-[#7A2021] mb-8 text-center underline decoration-[#C5A059] decoration-1 underline-offset-8">
+                    Shipping Policy</h1>
+                <div
+                    class="bg-white p-8 lg:p-12 rounded-md border border-[#C5A059]/20 shadow-sm space-y-8 text-[#3E2723]/90 leading-relaxed text-justify">
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Processing
+                            Time</h2>
+                        <p>All orders are processed within 2–3 business days. Orders are not shipped or delivered on
+                            weekends or public holidays.</p>
+                        <p class="mt-2 italic">Note: During high volume periods, shipments may be delayed by a few days.
+                            Please allow additional days in transit for delivery.</p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Shipping
+                            Rates & Delivery Estimates</h2>
+                        <p>Shipping charges for your order will be calculated and displayed at checkout. We currently
+                            offer standard shipping across India with an estimated delivery time of 5–7 business days.
+                        </p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Shipment
+                            Confirmation & Tracking</h2>
+                        <p>You will receive a Shipment Confirmation email once your order has shipped containing your
+                            tracking number(s).</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= RETURN & REFUND POLICY ================= -->
+        <div id="page-returns" class="page-section hidden bg-texture">
+            <div class="max-w-4xl mx-auto px-4 py-16 lg:py-24">
+                <h1
+                    class="font-serif text-4xl lg:text-5xl tracking-tight text-[#7A2021] mb-8 text-center underline decoration-[#C5A059] decoration-1 underline-offset-8">
+                    Return & Refund Policy</h1>
+                <div
+                    class="bg-white p-8 lg:p-12 rounded-md border border-[#C5A059]/20 shadow-sm space-y-8 text-[#3E2723]/90 leading-relaxed text-justify">
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Returns
+                        </h2>
+                        <p>We have a 7-day return policy, which means you have 7 days after receiving your item to
+                            request a return. To be eligible for a return, your item must be in the same condition that
+                            you received it, unworn or unused, with tags, and in its original packaging.</p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Damages
+                            and issues</h2>
+                        <p>Please inspect your order upon reception and contact us immediately if the item is defective,
+                            damaged or if you receive the wrong item, so that we can evaluate the issue and make it
+                            right.</p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Refunds
+                        </h2>
+                        <p>We will notify you once we’ve received and inspected your return, and let you know if the
+                            refund was approved or not. If approved, you’ll be automatically refunded on your original
+                            payment method within 10 business days.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= PRIVACY POLICY ================= -->
+        <div id="page-privacy" class="page-section hidden bg-texture">
+            <div class="max-w-4xl mx-auto px-4 py-16 lg:py-24">
+                <h1
+                    class="font-serif text-4xl lg:text-5xl tracking-tight text-[#7A2021] mb-8 text-center underline decoration-[#C5A059] decoration-1 underline-offset-8">
+                    Privacy Policy</h1>
+                <div
+                    class="bg-white p-8 lg:p-12 rounded-md border border-[#C5A059]/20 shadow-sm space-y-8 text-[#3E2723]/90 leading-relaxed text-justify">
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">
+                            Information We Collect</h2>
+                        <p>We collect information you provide directly to us when you make a purchase, including your
+                            name, email address, mailing address, and phone number. We use this information to process
+                            your orders and communicate with you.</p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Payment
+                            Security</h2>
+                        <p>Your payment information is processed through secure gateways (Razorpay). We do not store
+                            your credit card or sensitive payment details on our servers.</p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Data
+                            Protection</h2>
+                        <p>We implement a variety of security measures to maintain the safety of your personal
+                            information. We do not sell, trade, or otherwise transfer your personally identifiable
+                            information to outside parties.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TERMS OF SERVICE ================= -->
+        <div id="page-terms" class="page-section hidden bg-texture">
+            <div class="max-w-4xl mx-auto px-4 py-16 lg:py-24">
+                <h1
+                    class="font-serif text-4xl lg:text-5xl tracking-tight text-[#7A2021] mb-8 text-center underline decoration-[#C5A059] decoration-1 underline-offset-8">
+                    Terms of Service</h1>
+                <div
+                    class="bg-white p-8 lg:p-12 rounded-md border border-[#C5A059]/20 shadow-sm space-y-8 text-[#3E2723]/90 leading-relaxed text-justify">
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">General
+                            Conditions</h2>
+                        <p>By using our website, you agree to these terms. We reserve the right to refuse service to
+                            anyone for any reason at any time.</p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">Accuracy
+                            of Billing and Account Information</h2>
+                        <p>You agree to provide current, complete, and accurate purchase and account information for all
+                            purchases made at our store. You agree to promptly update your account and other
+                            information, including your email address and credit card numbers and expiration dates, so
+                            that we can complete your transactions and contact you as needed.</p>
+                    </section>
+                    <section>
+                        <h2 class="font-serif text-2xl text-[#3E2723] mb-4 border-b border-[#C5A059]/20 pb-2">
+                            Modifications to the Service and Prices</h2>
+                        <p>Prices for our products are subject to change without notice. We reserve the right at any
+                            time to modify or discontinue the Service (or any part or content thereof) without notice at
+                            any time.</p>
+                    </section>
+                </div>
+            </div>
+        </div>
+
 
     </main>
 
@@ -947,10 +1073,14 @@
                 <div>
                     <h3 class="font-serif text-lg tracking-tight text-white mb-4">Information</h3>
                     <ul class="space-y-3 text-sm text-[#FAF6F0]/70">
-                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Shipping Policy</a></li>
-                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Return &amp; Refund</a></li>
-                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Terms of Service</a></li>
+                        <li><button onclick="navigate('shipping')"
+                                class="hover:text-[#C5A059] transition-colors">Shipping Policy</button></li>
+                        <li><button onclick="navigate('returns')" class="hover:text-[#C5A059] transition-colors">Return
+                                & Refund</button></li>
+                        <li><button onclick="navigate('privacy')" class="hover:text-[#C5A059] transition-colors">Privacy
+                                Policy</button></li>
+                        <li><button onclick="navigate('terms')" class="hover:text-[#C5A059] transition-colors">Terms of
+                                Service</button></li>
                     </ul>
                 </div>
 

@@ -1,0 +1,1311 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpiceRoots | From Roots to Plate | Premium Indian Spices</title>
+    <meta name="description"
+        content="Royal culinary heritage reimagined. Premium, authentic, health-conscious spices from Nawab Overseas.">
+
+    <!-- Fonts: Playfair Display for elegant serifs, Inter for clean body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Iconify (Solar Linear Icons) -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 0.5rem;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FAF6F0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #C5A059;
+            border-radius: 0.25rem;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7A2021;
+        }
+
+        /* Utilities */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Subtle texture for sections */
+        .bg-texture {
+            background-color: #FAF6F0;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        }
+
+        /* Input overrides */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Fade animation for page transitions */
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(0.5rem);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll-reveal animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(2rem);
+            transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger delays for children */
+        .reveal-stagger>* {
+            opacity: 0;
+            transform: translateY(1.5rem);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .reveal-stagger.revealed>*:nth-child(1) {
+            transition-delay: 0ms;
+        }
+
+        .reveal-stagger.revealed>*:nth-child(2) {
+            transition-delay: 100ms;
+        }
+
+        .reveal-stagger.revealed>*:nth-child(3) {
+            transition-delay: 200ms;
+        }
+
+        .reveal-stagger.revealed>*:nth-child(4) {
+            transition-delay: 300ms;
+        }
+
+        .reveal-stagger.revealed>*:nth-child(5) {
+            transition-delay: 400ms;
+        }
+
+        .reveal-stagger.revealed>*:nth-child(6) {
+            transition-delay: 500ms;
+        }
+
+        .reveal-stagger.revealed>*:nth-child(7) {
+            transition-delay: 600ms;
+        }
+
+        .reveal-stagger.revealed>*:nth-child(8) {
+            transition-delay: 700ms;
+        }
+
+        .reveal-stagger.revealed>* {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body
+    class="font-sans text-[#3E2723] bg-[#FAF6F0] antialiased selection:bg-[#C5A059]/30 selection:text-[#7A2021] flex flex-col min-h-[100vh]">
+
+    <!-- Navigation -->
+    <header
+        class="fixed top-0 w-full z-50 bg-[#FAF6F0]/90 backdrop-blur-md border-b border-[#C5A059]/20 transition-all duration-300">
+        <div class="max-w-[80rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[4.5rem]">
+
+                <!-- Logo (always left) -->
+                <div class="flex-shrink-0 cursor-pointer flex items-center justify-start -ml-1 lg:hidden"
+                    onclick="navigate('home')">
+                    <img src="spiceroots-logo.png" alt="SpiceRoots"
+                        class="h-16 sm:h-20 lg:h-16 w-auto object-contain object-left">
+                </div>
+
+
+                <!-- Desktop Logo (far left, desktop only) -->
+                <div class="hidden lg:flex items-center cursor-pointer" onclick="navigate('home')">
+                    <img src="spiceroots-logo.png" alt="SpiceRoots" class="h-16 w-auto object-contain">
+                </div>
+
+                <!-- Desktop Nav (right) -->
+                <nav class="hidden lg:flex space-x-8 ml-auto">
+                    <button onclick="navigate('home')"
+                        class="nav-link text-sm font-medium text-[#3E2723]/80 hover:text-[#7A2021] transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-[#7A2021] hover:after:w-full after:transition-all after:duration-300">Home</button>
+                    <button onclick="navigate('shop')"
+                        class="nav-link text-sm font-medium text-[#3E2723]/80 hover:text-[#7A2021] transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-[#7A2021] hover:after:w-full after:transition-all after:duration-300">Shop</button>
+                    <button onclick="navigate('about')"
+                        class="nav-link text-sm font-medium text-[#3E2723]/80 hover:text-[#7A2021] transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-[#7A2021] hover:after:w-full after:transition-all after:duration-300">Our
+                        Legacy</button>
+                    <button onclick="navigate('contact')"
+                        class="nav-link text-sm font-medium text-[#3E2723]/80 hover:text-[#7A2021] transition-colors relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-[#7A2021] hover:after:w-full after:transition-all after:duration-300">Contact</button>
+                </nav>
+
+                <!-- Right actions: search (desktop) + hamburger (mobile, right) -->
+                <div class="flex items-center space-x-2">
+
+                    <!-- Mobile Menu Button (right side) -->
+                    <button id="mobile-menu-btn"
+                        class="lg:hidden p-2 text-[#7A2021] hover:bg-[#C5A059]/10 rounded-md transition-colors"
+                        aria-label="Menu">
+                        <iconify-icon icon="solar:hamburger-menu-linear" width="1.5rem" height="1.5rem"
+                            stroke-width="1.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu (Hidden by default) -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-[#FAF6F0] border-b border-[#C5A059]/20 px-4 pt-2 pb-4 space-y-1 shadow-lg absolute w-full left-0 top-full">
+            <button onclick="navigate('home')"
+                class="block w-full text-left px-3 py-3 text-sm font-medium text-[#3E2723] hover:bg-[#C5A059]/10 hover:text-[#7A2021] rounded-md transition-colors border-b border-[#C5A059]/10">Home</button>
+            <button onclick="navigate('shop')"
+                class="block w-full text-left px-3 py-3 text-sm font-medium text-[#3E2723] hover:bg-[#C5A059]/10 hover:text-[#7A2021] rounded-md transition-colors border-b border-[#C5A059]/10">Shop
+                Products</button>
+            <button onclick="navigate('about')"
+                class="block w-full text-left px-3 py-3 text-sm font-medium text-[#3E2723] hover:bg-[#C5A059]/10 hover:text-[#7A2021] rounded-md transition-colors border-b border-[#C5A059]/10">Our
+                Legacy</button>
+            <button onclick="navigate('contact')"
+                class="block w-full text-left px-3 py-3 text-sm font-medium text-[#3E2723] hover:bg-[#C5A059]/10 hover:text-[#7A2021] rounded-md transition-colors">Contact
+                Us</button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow pt-[4.5rem]">
+
+        <!-- ================= HOME PAGE ================= -->
+        <div id="page-home" class="page-section bg-texture">
+            <!-- Hero Section -->
+            <section class="relative h-[80vh] min-h-[40rem] flex items-center justify-center overflow-hidden">
+                <div class="absolute inset-0 bg-black/50 z-10"></div>
+                <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&amp;w=2070&amp;auto=format&amp;fit=crop"
+                    alt="Indian Spices" class="absolute inset-0 w-full h-full object-cover object-center">
+
+                <div class="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+                    <span
+                        class="text-[#C5A059] font-medium tracking-widest text-xs uppercase mb-4 block drop-shadow-md">Nawab
+                        Overseas Presents</span>
+                    <h2
+                        class="font-serif text-5xl sm:text-6xl md:text-7xl tracking-tighter text-[#FAF6F0] mb-6 drop-shadow-lg leading-tight">
+                        Royal Heritage<br><span class="italic text-[#C5A059]">Reimagined</span>
+                    </h2>
+                    <p
+                        class="text-lg sm:text-xl text-[#FAF6F0]/90 mb-10 font-medium tracking-wide drop-shadow-md max-w-2xl">
+                        From Roots to Plate. Bringing century-old generational wisdom to modern kitchens without
+                        compromise.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                        <button onclick="navigate('shop')"
+                            class="w-full sm:w-auto bg-[#7A2021] text-[#FAF6F0] px-8 py-3.5 rounded-sm font-medium text-sm transition-all duration-300 hover:bg-[#5A1718] hover:shadow-lg border border-[#7A2021]">
+                            Explore Products
+                        </button>
+                        <button onclick="navigate('about')"
+                            class="w-full sm:w-auto bg-transparent text-[#FAF6F0] px-8 py-3.5 rounded-sm font-medium text-sm transition-all duration-300 hover:bg-[#FAF6F0]/10 border border-[#C5A059] backdrop-blur-sm">
+                            Know Our Legacy
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Brand Story Snapshot -->
+            <section class="py-20 lg:py-28 px-4 relative">
+                <div
+                    class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-16 bg-gradient-to-b from-[#C5A059] to-transparent">
+                </div>
+                <div class="max-w-3xl mx-auto text-center">
+                    <iconify-icon icon="solar:crown-star-linear" class="text-[#C5A059] mb-6" width="2.5rem"
+                        height="2.5rem" stroke-width="1.5"></iconify-icon>
+                    <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#7A2021] mb-6">A Century of Trust
+                    </h2>
+                    <p class="text-[#3E2723]/80 leading-relaxed text-base lg:text-lg">
+                        Originating from the thriving kirana shops of Berchha, Madhya Pradesh, the Nawab Brothers built
+                        a legacy on purity and deep knowledge of spices. Today, SpiceRoots emerges from Nawab Overseas
+                        to carry this 100-year-old generational wisdom to global tables. We do not merely buy spices; we
+                        select them with discernment shaped by decades of experience.
+                    </p>
+                    <button onclick="navigate('about')"
+                        class="mt-8 text-sm font-medium text-[#7A2021] border-b border-[#7A2021]/30 hover:border-[#7A2021] transition-colors pb-1">Read
+                        the full story</button>
+                </div>
+            </section>
+
+            <!-- Core Principles -->
+            <section class="py-20 bg-[#3E2723] text-[#FAF6F0] relative overflow-hidden">
+                <div
+                    class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23C5A059\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]">
+                </div>
+                <div class="max-w-[80rem] mx-auto px-4 relative z-10">
+                    <div class="text-center mb-16">
+                        <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#FAF6F0]">Our Principles</h2>
+                        <div class="h-[1px] w-24 bg-[#C5A059] mx-auto mt-6"></div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+                        <!-- Principle 1 -->
+                        <div
+                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-md hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <iconify-icon icon="solar:shield-check-linear" class="text-[#C5A059]" width="2rem"
+                                    height="2rem" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Purity Without Compromise
+                            </h3>
+                            <p class="text-sm text-[#FAF6F0]/70 leading-relaxed">
+                                Free from preservatives, artificial colors, and synthetic essences. Flavor from nature,
+                                not laboratories.
+                            </p>
+                        </div>
+                        <!-- Principle 2 -->
+                        <div
+                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-md hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <iconify-icon icon="solar:heart-pulse-linear" class="text-[#C5A059]" width="2rem"
+                                    height="2rem" stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Health-Conscious</h3>
+                            <p class="text-sm text-[#FAF6F0]/70 leading-relaxed">
+                                Formulated with minimal or no common salt for better sodium control and everyday
+                                wellbeing.
+                            </p>
+                        </div>
+                        <!-- Principle 3 -->
+                        <div
+                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-md hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center">
+                            <div
+                                class="w-16 h-16 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <iconify-icon icon="solar:leaf-linear" class="text-[#C5A059]" width="2rem" height="2rem"
+                                    stroke-width="1.5"></iconify-icon>
+                            </div>
+                            <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Authentic Aroma</h3>
+                            <p class="text-sm text-[#FAF6F0]/70 leading-relaxed">
+                                Prioritizing high volatile oil content and fresh grinding for deeper, natural flavor
+                                release.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Products -->
+            <section class="py-20 lg:py-28 px-4 bg-[#FAF6F0]">
+                <div class="max-w-[80rem] mx-auto">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                        <div>
+                            <span
+                                class="text-[#C5A059] font-medium tracking-widest text-xs uppercase block mb-2">Dawat-E-Khaas</span>
+                            <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#7A2021]">Signature Blends
+                            </h2>
+                        </div>
+                        <button onclick="navigate('shop')"
+                            class="text-sm font-medium text-[#3E2723] flex items-center gap-2 hover:text-[#7A2021] transition-colors group">
+                            View All Collection
+                            <iconify-icon icon="solar:arrow-right-linear"
+                                class="group-hover:translate-x-1 transition-transform"
+                                stroke-width="1.5"></iconify-icon>
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+                        id="featured-products-container">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Global Vision -->
+            <section class="py-20 border-t border-[#C5A059]/20 bg-texture">
+                <div class="max-w-4xl mx-auto text-center px-4">
+                    <iconify-icon icon="solar:earth-linear" class="text-[#C5A059] mb-6" width="2.5rem" height="2.5rem"
+                        stroke-width="1.5"></iconify-icon>
+                    <h2 class="font-serif text-2xl lg:text-3xl tracking-tight text-[#3E2723] mb-6">From Soil to Global
+                        Tables</h2>
+                    <p class="text-[#3E2723]/80 leading-relaxed text-base">
+                        Nawab Overseas was built on a simple belief: "If generations trusted our family for purity and
+                        knowledge, the world deserves the same." With a modern outlook, we aim to take India's authentic
+                        flavors to international kitchens — without dilution, without shortcuts, and without compromise.
+                    </p>
+                </div>
+            </section>
+        </div>
+
+        <!-- ================= SHOP PAGE ================= -->
+        <div id="page-shop" class="page-section hidden bg-[#FAF6F0]">
+
+            <!-- Shop Header -->
+            <div class="bg-[#3E2723] py-16 px-4 text-center relative overflow-hidden">
+                <div
+                    class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')] bg-cover bg-center mix-blend-overlay">
+                </div>
+                <div class="relative z-10 max-w-3xl mx-auto">
+                    <h1 class="font-serif text-4xl lg:text-5xl tracking-tight text-[#FAF6F0] mb-4">Our Collection</h1>
+                    <p class="text-[#C5A059] text-sm lg:text-base">Authentic. Pure. Uncompromised.</p>
+                </div>
+            </div>
+
+            <!-- Filters & Grid -->
+            <div class="max-w-[80rem] mx-auto px-4 py-12">
+
+                <!-- Category Filters (Visual only for layout) -->
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button
+                        class="px-5 py-2 text-sm font-medium rounded-full bg-[#7A2021] text-white border border-[#7A2021] shadow-sm transition-all">All
+                        Products</button>
+                    <button
+                        class="px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all">Kitchen
+                        Essentials</button>
+                    <button
+                        class="px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all">Dawat-E-Khaas</button>
+                    <button
+                        class="px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all">Ready-to-Cook</button>
+                </div>
+
+                <!-- Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" id="shop-products-container">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= ABOUT PAGE ================= -->
+        <div id="page-about" class="page-section hidden bg-texture">
+
+            <div class="max-w-[60rem] mx-auto px-4 py-16 lg:py-24">
+
+                <div class="text-center mb-16 lg:mb-24">
+                    <span class="text-[#C5A059] font-medium tracking-widest text-xs uppercase block mb-4">The Nawab
+                        Legacy</span>
+                    <h1 class="font-serif text-4xl lg:text-5xl tracking-tight text-[#7A2021] leading-tight">From Roots
+                        to Plate</h1>
+                    <div class="h-[1px] w-16 bg-[#C5A059] mx-auto mt-8"></div>
+                </div>
+
+                <!-- Story Section 1 -->
+                <article
+                    class="prose max-w-none text-[#3E2723]/80 leading-relaxed text-base lg:text-lg space-y-6 mb-20">
+                    <p
+                        class="first-letter:text-5xl first-letter:font-serif first-letter:text-[#7A2021] first-letter:mr-1 first-letter:float-left">
+                        In the heart of Madhya Pradesh lies a small town called Berchha — a town that nurtured Nawab
+                        Brothers, from a thriving kirana shop to a century-old and respected name in traditional
+                        groceries. The firm built its reputation on purity, trust, and deep knowledge of spices.
+                    </p>
+                    <p>
+                        From this legacy emerged Nawab Overseas — a sister concern founded in 2025 with a global vision
+                        but rooted in generational wisdom.
+                    </p>
+                    <p>
+                        For over 100 years, the art of identifying superior-quality raw spices — judging them by aroma,
+                        texture, oil content, and origin — has been carefully passed down within the family. Today, that
+                        same inherited expertise guides our procurement process. We do not merely buy spices; we select
+                        them with discernment shaped by decades of experience.
+                    </p>
+                </article>
+
+                <!-- Divider -->
+                <div class="flex items-center justify-center gap-4 my-16 opacity-60">
+                    <div class="h-[1px] w-full bg-gradient-to-r from-transparent to-[#C5A059]"></div>
+                    <iconify-icon icon="solar:leaf-linear" class="text-[#7A2021]" width="1.2rem"></iconify-icon>
+                    <div class="h-[1px] w-full bg-gradient-to-l from-transparent to-[#C5A059]"></div>
+                </div>
+
+                <!-- Section: Reimagined -->
+                <div class="mb-20">
+                    <h2 class="font-serif text-3xl tracking-tight text-[#7A2021] mb-8 text-center">SpiceRoots – Royal
+                        Heritage Reimagined</h2>
+                    <p class="text-center text-[#3E2723]/80 mb-12">Under Nawab Overseas, SpiceRoots was created to carry
+                        this legacy beyond borders.</p>
+
+                    <div class="space-y-12">
+                        <div class="bg-white/50 border border-[#C5A059]/20 p-8 rounded-md shadow-sm">
+                            <h3 class="font-serif text-xl tracking-tight text-[#3E2723] mb-4 flex items-center gap-3">
+                                <span
+                                    class="bg-[#C5A059]/10 text-[#7A2021] w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
+                                Purity Without Compromise
+                            </h3>
+                            <p class="text-[#3E2723]/80 mb-4">All SpiceRoots masalas are:</p>
+                            <ul class="space-y-2 text-[#3E2723]/80 text-sm ml-11">
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Free from
+                                    preservatives</li>
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Free from artificial
+                                    food colors</li>
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Free from harmful
+                                    essences or synthetic chemicals</li>
+                            </ul>
+                            <p class="text-[#7A2021] font-medium text-sm mt-4 ml-11 italic">We believe flavor should
+                                come from nature — not laboratories.</p>
+                        </div>
+
+                        <div class="bg-white/50 border border-[#C5A059]/20 p-8 rounded-md shadow-sm">
+                            <h3 class="font-serif text-xl tracking-tight text-[#3E2723] mb-4 flex items-center gap-3">
+                                <span
+                                    class="bg-[#C5A059]/10 text-[#7A2021] w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
+                                Health-Conscious Formulation
+                            </h3>
+                            <p class="text-[#3E2723]/80 mb-4">Unlike many commercial blends, our masalas contain minimal
+                                or no common salt. This allows:</p>
+                            <ul class="space-y-2 text-[#3E2723]/80 text-sm ml-11">
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Better control over
+                                    sodium intake</li>
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Greater flexibility
+                                    for home cooks and chefs</li>
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Healthier everyday
+                                    consumption</li>
+                            </ul>
+                            <p class="text-[#7A2021] font-medium text-sm mt-4 ml-11 italic">Our products are crafted for
+                                families who value both taste and wellbeing.</p>
+                        </div>
+
+                        <div class="bg-white/50 border border-[#C5A059]/20 p-8 rounded-md shadow-sm">
+                            <h3 class="font-serif text-xl tracking-tight text-[#3E2723] mb-4 flex items-center gap-3">
+                                <span
+                                    class="bg-[#C5A059]/10 text-[#7A2021] w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
+                                Authentic Aroma &amp; Natural Strength
+                            </h3>
+                            <p class="text-[#3E2723]/80 mb-4">Even our "common" masalas are elevated in quality. Because
+                                we prioritize:</p>
+                            <ul class="space-y-2 text-[#3E2723]/80 text-sm ml-11">
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> High volatile oil
+                                    content in spices</li>
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Natural ingredients
+                                    over fillers</li>
+                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
+                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Fresh grinding and
+                                    careful blending</li>
+                            </ul>
+                            <p class="text-[#7A2021] font-medium text-sm mt-4 ml-11 italic">The result is deeper aroma,
+                                richer flavor release, and a more authentic culinary experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="flex items-center justify-center gap-4 my-16 opacity-60">
+                    <div class="h-[1px] w-full bg-gradient-to-r from-transparent to-[#C5A059]"></div>
+                    <iconify-icon icon="solar:star-fall-minimalistic-linear" class="text-[#7A2021]"
+                        width="1.2rem"></iconify-icon>
+                    <div class="h-[1px] w-full bg-gradient-to-l from-transparent to-[#C5A059]"></div>
+                </div>
+
+                <!-- Section: Stories -->
+                <div class="mb-20 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="font-serif text-3xl tracking-tight text-[#7A2021] mb-6">Every Blend Tells a Story
+                        </h2>
+                        <p class="text-[#3E2723]/80 mb-6">Each pack of SpiceRoots carries the memory of royal kitchens
+                            and regional traditions, for instance:</p>
+                        <ul class="space-y-4 text-[#3E2723]/80 text-sm">
+                            <li class="border-l-2 border-[#C5A059] pl-4 py-1">
+                                <strong class="text-[#3E2723] block mb-1 font-medium">Rajshahi Biryani Masala</strong>
+                                echoes the grandeur of regal feasts.
+                            </li>
+                            <li class="border-l-2 border-[#C5A059] pl-4 py-1">
+                                <strong class="text-[#3E2723] block mb-1 font-medium">Malwi Fish Fry Masala</strong>
+                                reflects the earthy vibrance of Central India.
+                            </li>
+                            <li class="border-l-2 border-[#C5A059] pl-4 py-1">
+                                <strong class="text-[#3E2723] block mb-1 font-medium">Kadhi Gosht Masala</strong>
+                                carries the warmth of nawabi hospitality.
+                            </li>
+                        </ul>
+                        <p class="text-[#7A2021] font-medium mt-6 italic">These are not just spice mixes — they are
+                            cultural expressions.</p>
+                    </div>
+                    <div class="relative h-[300px] rounded-md overflow-hidden shadow-md border border-[#C5A059]/20">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+                            alt="Spices" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Final Message -->
+                <div
+                    class="bg-[#3E2723] text-[#FAF6F0] p-10 lg:p-16 rounded-md text-center relative overflow-hidden shadow-lg">
+                    <div
+                        class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23C5A059\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]">
+                    </div>
+                    <div class="relative z-10">
+                        <iconify-icon icon="solar:quote-left-linear" class="text-[#C5A059] mb-4 opacity-50" width="3rem"
+                            height="3rem"></iconify-icon>
+                        <h2 class="font-serif text-2xl lg:text-3xl tracking-tight mb-6">From Soil to Global Tables</h2>
+                        <p class="text-lg italic font-medium text-[#C5A059] mb-8">
+                            "If generations trusted our family for purity and knowledge, the world deserves the same."
+                        </p>
+                        <p class="text-[#FAF6F0]/80 text-sm max-w-2xl mx-auto mb-6">
+                            With inherited expertise from Nawab Brothers and a modern global outlook, we aim to take
+                            India's authentic flavors to international kitchens — without dilution, without shortcuts,
+                            and without compromise.
+                        </p>
+                        <p class="font-serif text-xl text-[#C5A059] mt-8 tracking-wide">
+                            From Roots to Plate — not just a tagline, but a lineage.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= CONTACT PAGE ================= -->
+        <div id="page-contact" class="page-section hidden bg-texture">
+            <div class="max-w-[80rem] mx-auto px-4 py-16 lg:py-24">
+
+                <div class="text-center mb-16">
+                    <h1 class="font-serif text-4xl lg:text-5xl tracking-tight text-[#7A2021] mb-4">Get in Touch</h1>
+                    <p class="text-[#3E2723]/70 text-sm lg:text-base">We'd love to hear from you. Reach out for
+                        inquiries, bulk orders, or feedback.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+
+                    <!-- Contact Info -->
+                    <div
+                        class="bg-white/60 p-8 lg:p-12 rounded-md border border-[#C5A059]/30 shadow-sm relative overflow-hidden">
+                        <!-- Decorative top line -->
+                        <div
+                            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#7A2021] via-[#C5A059] to-[#7A2021]">
+                        </div>
+
+                        <h2 class="font-serif text-2xl tracking-tight text-[#3E2723] mb-2">Nawab Overseas</h2>
+                        <p class="text-sm font-medium text-[#C5A059] uppercase tracking-wider mb-8">Parent Company of
+                            SpiceRoots</p>
+
+                        <div class="space-y-6 text-[#3E2723]/90">
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-[#C5A059]/10 p-2 rounded-full text-[#7A2021]">
+                                    <iconify-icon icon="solar:user-linear" width="1.25rem"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-[#3E2723]/50 uppercase tracking-wider mb-1">Founder</p>
+                                    <p class="font-medium text-base">Shujauddin Nawab</p>
+                                </div>
+                            </div>
+
+                            <div class="h-[1px] w-full bg-[#C5A059]/20"></div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-[#C5A059]/10 p-2 rounded-full text-[#7A2021]">
+                                    <iconify-icon icon="solar:phone-linear" width="1.25rem"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-[#3E2723]/50 uppercase tracking-wider mb-1">Phone</p>
+                                    <p class="font-medium text-base">+91 734 406 3904</p>
+                                    <p class="font-medium text-base">+91 992 669 1191</p>
+                                </div>
+                            </div>
+
+                            <div class="h-[1px] w-full bg-[#C5A059]/20"></div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-[#C5A059]/10 p-2 rounded-full text-[#7A2021]">
+                                    <iconify-icon icon="solar:letter-linear" width="1.25rem"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-[#3E2723]/50 uppercase tracking-wider mb-1">Email</p>
+                                    <a href="mailto:nawaboverseas@gmail.com"
+                                        class="font-medium text-base hover:text-[#7A2021] transition-colors">nawaboverseas@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="h-[1px] w-full bg-[#C5A059]/20"></div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="mt-1 bg-[#C5A059]/10 p-2 rounded-full text-[#7A2021]">
+                                    <iconify-icon icon="solar:map-point-linear" width="1.25rem"></iconify-icon>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-[#3E2723]/50 uppercase tracking-wider mb-1">Address</p>
+                                    <p class="font-medium text-base leading-relaxed">
+                                        31-32, Indralay Highlands (extn.),<br>
+                                        Indore Rd, UJJAIN (M.P.) – 456010, India
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-white/60 p-8 lg:p-12 rounded-md border border-[#C5A059]/30 shadow-sm">
+                        <h3 class="font-serif text-2xl tracking-tight text-[#3E2723] mb-6">Send a Message</h3>
+                        <form
+                            onsubmit="event.preventDefault(); alert('Message sent functionality will be integrated here.');"
+                            class="space-y-5">
+                            <div>
+                                <label
+                                    class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Full
+                                    Name</label>
+                                <input type="text" required=""
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723]">
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Email
+                                        Address</label>
+                                    <input type="email" required=""
+                                        class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723]">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Phone
+                                        Number</label>
+                                    <input type="tel"
+                                        class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723]">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label
+                                    class="block text-xs font-medium text-[#3E2723]/70 mb-1.5 uppercase tracking-wide">Message</label>
+                                <textarea rows="4" required=""
+                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-2.5 text-sm focus:outline-none focus:ring-1 focus:ring-[#7A2021] focus:border-[#7A2021] transition-colors text-[#3E2723] resize-none"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-[#7A2021] text-white py-3 rounded-sm text-sm font-medium hover:bg-[#5A1718] transition-colors border border-[#7A2021] shadow-sm mt-2">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="bg-[#3E2723] text-[#FAF6F0] pt-16 pb-8 border-t-4 border-[#7A2021]">
+        <div class="max-w-[80rem] mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+
+                <!-- Brand -->
+                <div class="lg:col-span-1">
+                    <h2 class="font-serif text-2xl tracking-tighter text-[#C5A059] uppercase mb-4">SpiceRoots</h2>
+                    <p class="text-sm text-[#FAF6F0]/70 leading-relaxed mb-6">
+                        Premium, pure, and authentic Indian spices. Carrying a 100-year generational legacy to global
+                        tables.
+                    </p>
+                    <div class="flex space-x-4 text-[#C5A059]">
+                        <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="bi:instagram"
+                                width="1.2rem"></iconify-icon></a>
+                        <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="bi:facebook"
+                                width="1.2rem"></iconify-icon></a>
+                        <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="bi:whatsapp"
+                                width="1.2rem"></iconify-icon></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-serif text-lg tracking-tight text-white mb-4">Explore</h3>
+                    <ul class="space-y-3 text-sm text-[#FAF6F0]/70">
+                        <li><button onclick="navigate('home')"
+                                class="hover:text-[#C5A059] transition-colors">Home</button></li>
+                        <li><button onclick="navigate('shop')" class="hover:text-[#C5A059] transition-colors">Shop
+                                Collection</button></li>
+                        <li><button onclick="navigate('about')" class="hover:text-[#C5A059] transition-colors">The Nawab
+                                Legacy</button></li>
+                        <li><button onclick="navigate('contact')" class="hover:text-[#C5A059] transition-colors">Contact
+                                Us</button></li>
+                    </ul>
+                </div>
+
+                <!-- Legal/Policy -->
+                <div>
+                    <h3 class="font-serif text-lg tracking-tight text-white mb-4">Information</h3>
+                    <ul class="space-y-3 text-sm text-[#FAF6F0]/70">
+                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Shipping Policy</a></li>
+                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Return &amp; Refund</a></li>
+                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-[#C5A059] transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="font-serif text-lg tracking-tight text-white mb-4">Stay Connected</h3>
+                    <p class="text-xs text-[#FAF6F0]/70 mb-4">Subscribe for culinary inspiration and new blend launches.
+                    </p>
+                    <form class="flex" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Your email"
+                            class="bg-[#FAF6F0]/10 border border-[#C5A059]/30 rounded-l-sm px-3 py-2 text-sm text-white w-full focus:outline-none focus:border-[#C5A059]">
+                        <button type="submit"
+                            class="bg-[#C5A059] text-[#3E2723] px-4 py-2 rounded-r-sm text-sm font-medium hover:bg-white transition-colors">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#C5A059]/30 to-transparent mb-8"></div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center text-xs text-[#FAF6F0]/50 space-y-4 md:space-y-0">
+                <p>© 2025 Nawab Overseas. All rights reserved.</p>
+                <p>Designed for premium culinary experiences.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer Overlays -->
+    <div id="cart-overlay"
+        class="fixed inset-0 bg-black/50 z-[60] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm">
+    </div>
+    <div id="cart-drawer"
+        class="fixed top-0 right-0 h-full w-full max-w-md bg-[#FAF6F0] z-[70] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
+        <!-- Cart Header -->
+        <div class="flex items-center justify-between p-6 border-b border-[#C5A059]/20 bg-white">
+            <h2 class="font-serif text-2xl text-[#3E2723] tracking-tight flex items-center gap-2">
+                <iconify-icon icon="solar:bag-3-linear" class="text-[#7A2021]"></iconify-icon>
+                Your Cart
+            </h2>
+            <button id="close-cart-btn"
+                class="text-[#3E2723]/60 hover:text-[#7A2021] transition-colors p-1 rounded-full hover:bg-black/5">
+                <iconify-icon icon="solar:close-circle-linear" width="1.5rem"></iconify-icon>
+            </button>
+        </div>
+
+        <!-- Cart Items -->
+        <div id="cart-items" class="flex-grow overflow-y-auto p-6 space-y-4">
+            <!-- Empty state default -->
+            <div class="flex flex-col items-center justify-center h-full text-center opacity-50 space-y-4">
+                <iconify-icon icon="solar:cart-large-minimalistic-linear" width="4rem"
+                    class="text-[#C5A059]"></iconify-icon>
+                <p class="text-sm text-[#3E2723]">Your cart is currently empty.</p>
+                <button onclick="document.getElementById('close-cart-btn').click(); navigate('shop');"
+                    class="text-[#7A2021] text-sm font-medium border-b border-[#7A2021]">Continue Shopping</button>
+            </div>
+            <!-- JS populated items will go here -->
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="border-t border-[#C5A059]/20 p-6 bg-white space-y-4">
+            <div class="flex justify-between text-sm text-[#3E2723]/70">
+                <span>Subtotal</span>
+                <span id="cart-subtotal" class="font-medium text-[#3E2723]">₹0.00</span>
+            </div>
+            <p class="text-[0.65rem] text-[#3E2723]/50 italic text-center">Shipping and taxes calculated at checkout.
+            </p>
+            <button
+                class="w-full bg-[#7A2021] text-white py-3.5 rounded-sm text-sm font-medium hover:bg-[#5A1718] transition-colors flex justify-center items-center gap-2 shadow-md">
+                Proceed to Checkout <iconify-icon icon="solar:alt-arrow-right-linear"></iconify-icon>
+            </button>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal-overlay"
+        class="fixed inset-0 bg-black/60 z-[80] hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"
+        onclick="closeProductModal()"></div>
+
+    <div id="product-modal"
+        class="fixed inset-x-0 bottom-0 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-full sm:max-w-2xl w-full bg-[#FAF6F0] z-[90] rounded-t-2xl sm:rounded-xl shadow-2xl flex flex-col max-h-[92vh] sm:max-h-[85vh] overflow-hidden"
+        style="transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.32,0.72,0,1), opacity 0.3s ease; opacity:0;">
+
+        <!-- Modal Header -->
+        <div class="flex items-center justify-between px-6 py-4 border-b border-[#C5A059]/20 bg-white shrink-0">
+            <span id="modal-category"
+                class="text-[0.65rem] font-medium tracking-widest text-[#C5A059] uppercase"></span>
+            <button onclick="closeProductModal()"
+                class="text-[#3E2723]/50 hover:text-[#7A2021] transition-colors p-1 rounded-full hover:bg-black/5">
+                <iconify-icon icon="solar:close-circle-linear" width="1.5rem"></iconify-icon>
+            </button>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="overflow-y-auto flex-grow">
+            <!-- Image -->
+            <div class="relative bg-[#FAF6F0] overflow-hidden" style="aspect-ratio:4/3;">
+                <img id="modal-img" src="" alt=""
+                    class="w-full h-full object-cover mix-blend-multiply transition-all duration-500">
+                <button id="modal-img-alt-btn"
+                    class="absolute bottom-3 right-3 bg-white/80 backdrop-blur-sm border border-[#C5A059]/30 text-[0.65rem] font-medium text-[#3E2723] px-2 py-1 rounded-full shadow-sm hover:bg-white transition-colors"
+                    onclick="toggleModalImg()">View Alt ↔</button>
+            </div>
+
+            <!-- Details -->
+            <div class="px-6 py-6 space-y-5">
+                <!-- Name + Price -->
+                <div class="flex items-start justify-between gap-4">
+                    <h2 id="modal-name"
+                        class="font-serif text-2xl sm:text-3xl tracking-tight text-[#3E2723] leading-tight"></h2>
+                    <div class="text-right shrink-0">
+                        <p id="modal-price" class="font-sans text-2xl font-bold text-[#7A2021]"></p>
+                        <span id="modal-weight" class="text-xs text-[#3E2723]/50 font-medium"></span>
+                    </div>
+                </div>
+
+                <div class="h-px bg-[#C5A059]/20"></div>
+
+                <!-- Description -->
+                <div>
+                    <p class="text-xs font-medium tracking-widest text-[#C5A059] uppercase mb-2">About this blend</p>
+                    <p id="modal-desc" class="text-sm text-[#3E2723]/80 leading-relaxed"></p>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="grid grid-cols-3 gap-3">
+                    <div
+                        class="flex flex-col items-center text-center bg-white border border-[#C5A059]/20 rounded-md p-3 gap-1">
+                        <iconify-icon icon="solar:shield-check-linear" class="text-[#C5A059]"
+                            width="1.2rem"></iconify-icon>
+                        <span class="text-[0.6rem] text-[#3E2723]/70 font-medium leading-tight">No Preservatives</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center bg-white border border-[#C5A059]/20 rounded-md p-3 gap-1">
+                        <iconify-icon icon="solar:leaf-linear" class="text-[#C5A059]" width="1.2rem"></iconify-icon>
+                        <span class="text-[0.6rem] text-[#3E2723]/70 font-medium leading-tight">Natural Aroma</span>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center bg-white border border-[#C5A059]/20 rounded-md p-3 gap-1">
+                        <iconify-icon icon="solar:heart-pulse-linear" class="text-[#C5A059]"
+                            width="1.2rem"></iconify-icon>
+                        <span class="text-[0.6rem] text-[#3E2723]/70 font-medium leading-tight">Low Salt</span>
+                    </div>
+                </div>
+
+                <!-- Quantity -->
+                <div>
+                    <p class="text-xs font-medium tracking-widest text-[#C5A059] uppercase mb-3">Quantity</p>
+                    <div class="flex items-center gap-5">
+                        <div class="flex items-center border border-[#C5A059]/40 rounded-sm overflow-hidden">
+                            <button onclick="changeModalQty(-1)"
+                                class="w-10 h-10 flex items-center justify-center text-[#3E2723] hover:bg-[#C5A059]/10 transition-colors text-xl font-light">−</button>
+                            <span id="modal-qty" class="w-10 text-center text-sm font-semibold text-[#3E2723]">1</span>
+                            <button onclick="changeModalQty(1)"
+                                class="w-10 h-10 flex items-center justify-center text-[#3E2723] hover:bg-[#C5A059]/10 transition-colors text-xl font-light">+</button>
+                        </div>
+                        <span id="modal-total" class="text-lg font-bold text-[#7A2021]"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticky Action Bar -->
+        <div class="shrink-0 px-6 py-4 border-t border-[#C5A059]/20 bg-white flex flex-col sm:flex-row gap-3">
+            <button id="modal-add-cart"
+                class="flex-1 bg-[#7A2021] text-white py-3 rounded-sm text-sm font-medium hover:bg-[#5A1718] transition-colors flex justify-center items-center gap-2 shadow-md">
+                <iconify-icon icon="solar:cart-plus-linear"></iconify-icon> Add to Cart
+            </button>
+            <a id="modal-amazon-link" href="#" target="_blank" rel="noopener noreferrer"
+                class="flex-1 bg-[#FF9900]/10 border border-[#FF9900]/40 text-[#FF9900] py-3 rounded-sm text-sm font-medium hover:bg-[#FF9900] hover:text-white transition-colors flex justify-center items-center gap-2">
+                Buy on Amazon <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Cart Button (bottom-left) -->
+    <button id="cart-btn"
+        class="fixed bottom-6 right-6 z-40 bg-[#7A2021] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:bg-[#5A1718] transition-all duration-200"
+        aria-label="Open Cart">
+        <iconify-icon icon="solar:bag-3-linear" width="1.75rem"></iconify-icon>
+        <span id="cart-count"
+            class="absolute top-1 right-1 bg-[#D84315] text-white text-[0.6rem] font-medium w-4 h-4 rounded-full flex items-center justify-center border border-white">0</span>
+    </button>
+
+    <!-- Data & Application Logic -->
+    <script>
+        // --- Product Data ---
+        const products = [
+            { id: 1, name: "Kitchen King Masala", desc: "The universal blend for everyday Indian cooking.", weight: "50g", price: 65, amazonLink: "https://amzn.to/4jrWX0O", img: "Masala mockup/Kitchen King Masala.jpg", imgAlt: "Masala mockup/Kitchen King Masala 1.jpg", category: "Essentials" },
+            { id: 2, name: "Mumbai Pav Bhaji Masala", desc: "Street-style authentic flavor with perfect spice balance.", weight: "50g", price: 70, amazonLink: "https://amzn.to/4pz0BaJ", img: "Masala mockup/Mumbai Pav Bhaji.jpg", imgAlt: "Masala mockup/Mumbai Pav Bhaji 1.jpg", category: "Essentials" },
+            { id: 3, name: "Pindi Chhole Masala", desc: "Dark, robust, and tangy blend for traditional chhole.", weight: "50g", price: 75, amazonLink: "https://amzn.to/49vqpyt", img: "Masala mockup/Pindi Chhole Masala.jpg", imgAlt: "Masala mockup/Pindi Chhole Masala 1.jpg", category: "Dawat" },
+            { id: 4, name: "Shahi Paneer Masala", desc: "Rich, mild, and aromatic for royal paneer gravies.", weight: "50g", price: 85, amazonLink: "https://amzn.to/4pwbBpn", img: "Masala mockup/Shahi Paneer Masala.jpg", imgAlt: "Masala mockup/Shahi Paneer Masala1.jpg", category: "Dawat" },
+            { id: 5, name: "Chicken Popcorn Masala", desc: "Crispy, spicy coating mix for perfect bite-sized snacks.", weight: "50g", price: 60, amazonLink: "https://amzn.to/3LoMV46", img: "Masala mockup/Chicken Popcorn Masala.jpg", imgAlt: "Masala mockup/Chicken Popcorn Masala 1.jpg", category: "Ready" },
+            { id: 6, name: "Rajshahi Biryani Masala", desc: "Echoes the grandeur of regal feasts. Intense aroma.", weight: "50g", price: 95, amazonLink: "https://amzn.to/4qiZj52", img: "Masala mockup/Rajshahi Biryani.jpg", imgAlt: "Masala mockup/Rajshahi Biryani 1.jpg", category: "Dawat" },
+            { id: 7, name: "Green Chicken Masala", desc: "Fresh, vibrant blend with natural green herbs focus.", weight: "50g", price: 80, amazonLink: "https://amzn.to/4qaQABD", img: "Masala mockup/Green Chicken.jpg", imgAlt: "Masala mockup/Green Chicken 1.jpg", category: "Dawat" },
+            { id: 8, name: "Kadhi Gosht Masala", desc: "Carries the warmth of traditional nawabi hospitality.", weight: "50g", price: 90, amazonLink: "https://amzn.to/4qKBwdT", img: "Masala mockup/Kadhi Gosht.jpg", imgAlt: "Masala mockup/Kadhi Gosht 1.jpg", category: "Dawat" }
+        ];
+
+        // --- Render Products ---
+        function generateProductCard(product) {
+            return `
+                <div class="group bg-white rounded-md border border-[#C5A059]/20 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full relative">
+                    <!-- Amazon badge -->
+                    <div class="absolute top-2 right-2 z-10 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[0.65rem] font-medium text-[#D84315] border border-[#D84315]/20 flex items-center gap-1 shadow-sm">
+                        <iconify-icon icon="bi:amazon"></iconify-icon> Available
+                    </div>
+
+                    <!-- Clickable image + name area -->
+                    <div class="cursor-pointer" onclick="openProductModal(${product.id})">
+                        <div class="aspect-square bg-[#FAF6F0] overflow-hidden relative">
+                            <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" onmouseover="this.src='${product.imgAlt}'" onmouseout="this.src='${product.img}'">
+                        </div>
+                        <div class="px-5 pt-4 pb-1">
+                            <h3 class="font-serif text-lg tracking-tight text-[#3E2723] font-medium leading-tight">${product.name}</h3>
+                            <p class="text-xs text-[#3E2723]/60 mt-1 line-clamp-2">${product.desc}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-5 flex flex-col flex-grow relative border-t border-[#C5A059]/10 mt-2">
+                        <div class="mt-auto space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="bg-[#FAF6F0] border border-[#C5A059]/30 text-[#3E2723] text-xs px-2 py-1 rounded-sm font-medium">${product.weight}</span>
+                                <span class="font-sans text-lg font-semibold text-[#7A2021]">₹${product.price}</span>
+                            </div>
+
+                            <div class="flex flex-col gap-2">
+                                <button onclick="openProductModal(${product.id})" class="w-full bg-white border border-[#7A2021] text-[#7A2021] py-2 rounded-sm text-sm font-medium hover:bg-[#7A2021] hover:text-white transition-colors flex justify-center items-center gap-2">
+                                    <iconify-icon icon="solar:eye-linear"></iconify-icon> View Details
+                                </button>
+                                <a href="${product.amazonLink}" target="_blank" rel="noopener noreferrer" class="w-full bg-[#FF9900]/10 border border-[#FF9900]/30 text-[#FF9900] py-2 rounded-sm text-sm font-medium hover:bg-[#FF9900] hover:text-white transition-colors flex justify-center items-center gap-2">
+                                    Buy on Amazon <iconify-icon icon="solar:arrow-right-up-linear"></iconify-icon>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Populate grids
+        document.getElementById('featured-products-container').innerHTML = products.slice(0, 4).map(generateProductCard).join('');
+        document.getElementById('shop-products-container').innerHTML = products.map(generateProductCard).join('');
+
+        // --- Navigation Logic (SPA) ---
+        function navigate(pageId) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(sec => {
+                sec.classList.add('hidden');
+                sec.classList.remove('fade-in');
+            });
+            // Show target
+            const target = document.getElementById('page-' + pageId);
+            target.classList.remove('hidden');
+            // Trigger reflow for animation
+            void target.offsetWidth;
+            target.classList.add('fade-in');
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+
+            // Close mobile menu if open
+            document.getElementById('mobile-menu').classList.add('hidden');
+
+            // Update active state in desktop nav
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('text-[#7A2021]', 'after:w-full');
+                link.classList.add('text-[#3E2723]/80');
+            });
+            // Rough match to highlight
+            const activeLinks = document.querySelectorAll(`.nav-link[onclick="navigate('${pageId}')"]`);
+            activeLinks.forEach(link => {
+                link.classList.add('text-[#7A2021]', 'after:w-full');
+                link.classList.remove('text-[#3E2723]/80');
+            });
+        }
+
+        // Initialize home nav active state
+        navigate('home');
+
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // --- Cart Logic (Simplified) ---
+        let cart = [];
+        const cartBtn = document.getElementById('cart-btn');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartDrawer = document.getElementById('cart-drawer');
+        const closeCartBtn = document.getElementById('close-cart-btn');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+
+        function toggleCart() {
+            const isOpen = !cartDrawer.classList.contains('translate-x-full');
+            if (isOpen) {
+                cartDrawer.classList.add('translate-x-full');
+                cartOverlay.classList.remove('opacity-100');
+                setTimeout(() => { cartOverlay.classList.add('hidden'); }, 300);
+            } else {
+                cartOverlay.classList.remove('hidden');
+                // reflow
+                void cartOverlay.offsetWidth;
+                cartOverlay.classList.add('opacity-100');
+                cartDrawer.classList.remove('translate-x-full');
+            }
+        }
+
+        cartBtn.addEventListener('click', toggleCart);
+        closeCartBtn.addEventListener('click', toggleCart);
+        cartOverlay.addEventListener('click', toggleCart);
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.qty++;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+
+            // Visual feedback (shake cart icon slightly)
+            cartBtn.classList.add('scale-125', 'text-[#7A2021]');
+            setTimeout(() => { cartBtn.classList.remove('scale-125', 'text-[#7A2021]'); }, 200);
+
+            // Auto open cart on first add
+            if (cart.length === 1 && cart[0].qty === 1) { toggleCart(); }
+        }
+
+        function updateCartQty(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+                updateCartUI();
+            }
+        }
+
+        function updateCartUI() {
+            // Update count
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCount.innerText = totalItems;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="flex flex-col items-center justify-center h-full text-center opacity-50 space-y-4 pt-10">
+                        <iconify-icon icon="solar:cart-large-minimalistic-linear" width="4rem" class="text-[#C5A059]"></iconify-icon>
+                        <p class="text-sm text-[#3E2723]">Your cart is currently empty.</p>
+                        <button onclick="toggleCart(); navigate('shop');" class="text-[#7A2021] text-sm font-medium border-b border-[#7A2021]">Continue Shopping</button>
+                    </div>
+                `;
+                cartSubtotal.innerText = "₹0.00";
+                return;
+            }
+
+            // Render items
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="flex gap-4 border-b border-[#C5A059]/10 pb-4">
+                    <div class="w-16 h-16 bg-[#FAF6F0] rounded border border-[#C5A059]/20 flex-shrink-0 overflow-hidden">
+                        <img src="${item.img}" alt="${item.name}" class="w-full h-full object-cover mix-blend-multiply">
+                    </div>
+                    <div class="flex-grow flex flex-col justify-between">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h4 class="text-sm font-medium text-[#3E2723] leading-tight">${item.name}</h4>
+                                <span class="text-[0.65rem] text-[#3E2723]/50 uppercase tracking-wide">${item.weight}</span>
+                            </div>
+                            <button onclick="updateCartQty(${item.id}, -${item.qty})" class="text-[#3E2723]/40 hover:text-red-500 transition-colors">
+                                <iconify-icon icon="solar:trash-bin-trash-linear"></iconify-icon>
+                            </button>
+                        </div>
+                        <div class="flex justify-between items-end mt-2">
+                            <div class="flex items-center border border-[#C5A059]/30 rounded-sm">
+                                <button onclick="updateCartQty(${item.id}, -1)" class="px-2 text-xs py-1 hover:bg-[#FAF6F0] text-[#3E2723]">-</button>
+                                <span class="px-2 text-xs font-medium text-[#3E2723] w-6 text-center">${item.qty}</span>
+                                <button onclick="updateCartQty(${item.id}, 1)" class="px-2 text-xs py-1 hover:bg-[#FAF6F0] text-[#3E2723]">+</button>
+                            </div>
+                            <span class="text-sm font-medium text-[#7A2021]">₹${item.price * item.qty}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update subtotal
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            cartSubtotal.innerText = `₹${total}.00`;
+        }
+
+        // Sticky Navbar subtle shrink effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-sm', 'py-0');
+            } else {
+                header.classList.remove('shadow-sm', 'py-0');
+            }
+        });
+
+        // --- Product Modal Logic ---
+        let _modalProduct = null;
+        let _modalQty = 1;
+        let _modalShowingAlt = false;
+
+        function openProductModal(productId) {
+            _modalProduct = products.find(p => p.id === productId);
+            if (!_modalProduct) return;
+            _modalQty = 1;
+            _modalShowingAlt = false;
+
+            document.getElementById('modal-name').textContent = _modalProduct.name;
+            document.getElementById('modal-category').textContent = _modalProduct.category;
+            document.getElementById('modal-desc').textContent = _modalProduct.desc;
+            document.getElementById('modal-price').textContent = '₹' + _modalProduct.price;
+            document.getElementById('modal-weight').textContent = _modalProduct.weight;
+            document.getElementById('modal-qty').textContent = 1;
+            document.getElementById('modal-total').textContent = '₹' + _modalProduct.price;
+            document.getElementById('modal-img').src = _modalProduct.img;
+            document.getElementById('modal-img').alt = _modalProduct.name;
+            document.getElementById('modal-amazon-link').href = _modalProduct.amazonLink;
+            document.getElementById('modal-add-cart').onclick = () => {
+                for (let i = 0; i < _modalQty; i++) addToCart(_modalProduct.id);
+                closeProductModal();
+            };
+
+            const overlay = document.getElementById('product-modal-overlay');
+            const modal = document.getElementById('product-modal');
+            overlay.classList.remove('hidden');
+            requestAnimationFrame(() => {
+                overlay.style.opacity = '1';
+                modal.style.transform = 'translateY(0)';
+                modal.style.opacity = '1';
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductModal() {
+            const overlay = document.getElementById('product-modal-overlay');
+            const modal = document.getElementById('product-modal');
+            overlay.style.opacity = '0';
+            modal.style.transform = 'translateY(100%)';
+            modal.style.opacity = '0';
+            setTimeout(() => overlay.classList.add('hidden'), 350);
+            document.body.style.overflow = '';
+        }
+
+        function changeModalQty(delta) {
+            _modalQty = Math.max(1, _modalQty + delta);
+            document.getElementById('modal-qty').textContent = _modalQty;
+            document.getElementById('modal-total').textContent = '₹' + (_modalProduct.price * _modalQty);
+        }
+
+        function toggleModalImg() {
+            const img = document.getElementById('modal-img');
+            _modalShowingAlt = !_modalShowingAlt;
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = _modalShowingAlt ? _modalProduct.imgAlt : _modalProduct.img;
+                img.style.opacity = '1';
+            }, 200);
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeProductModal();
+        });
+
+    </script>
+
+    <!-- Scroll Reveal -->
+    <script>
+        (function () {
+            // Elements to animate individually
+            const revealSelectors = [
+                'section > div > h2',
+                'section > div > p',
+                'section > div > span',
+                'section > div > iconify-icon',
+                'section > div > button',
+                'article',
+                '.bg-white\\/50',
+                '.bg-white\\/60',
+                '#page-home > section',
+                '#page-about > div > div',
+                '#page-contact .grid > div',
+            ];
+
+            // Grids that get stagger treatment
+            const staggerSelectors = [
+                '#featured-products-container',
+                '#shop-products-container',
+                '.grid.grid-cols-1.md\\:grid-cols-3',
+            ];
+
+            revealSelectors.forEach(sel => {
+                document.querySelectorAll(sel).forEach(el => {
+                    if (!el.classList.contains('reveal') && !el.classList.contains('reveal-stagger')) {
+                        el.classList.add('reveal');
+                    }
+                });
+            });
+
+            staggerSelectors.forEach(sel => {
+                document.querySelectorAll(sel).forEach(el => {
+                    if (!el.classList.contains('reveal-stagger')) {
+                        el.classList.add('reveal-stagger');
+                    }
+                });
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Re-run after JS populates product grids
+            const gridObserver = new MutationObserver(() => {
+                document.querySelectorAll('#featured-products-container > *, #shop-products-container > *').forEach(el => {
+                    if (!el.classList.contains('reveal')) {
+                        el.classList.add('reveal');
+                        observer.observe(el);
+                    }
+                });
+            });
+            ['featured-products-container', 'shop-products-container'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) gridObserver.observe(el, { childList: true });
+            });
+        })();
+    </script>
+
+</body>
+
+</html>

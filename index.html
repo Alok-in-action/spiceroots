@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpiceRoots | From Roots to Plate | Premium Indian Spices</title>
     <meta name="description"
-        content="Royal culinary heritage reimagined. Premium, authentic, health-conscious spices from Nawab Overseas.">
+        content="From the heart of India's rasoi — Premium, authentic spices crafted with the wisdom of generations. Nawab Overseas.">
 
-    <!-- Fonts: Playfair Display for elegant serifs, Inter for clean body text -->
+    <!-- Fonts: Playfair Display (royal serif) + Cinzel (heritage headings) + Poppins (clean modern body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Tailwind CSS -->
@@ -21,13 +21,13 @@
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
     <style>
-        /* Custom Scrollbar */
+        /* ─── Custom Scrollbar ─── */
         ::-webkit-scrollbar {
             width: 0.5rem;
         }
 
         ::-webkit-scrollbar-track {
-            background: #FAF6F0;
+            background: #F5E9DA;
         }
 
         ::-webkit-scrollbar-thumb {
@@ -39,37 +39,137 @@
             background: #7A2021;
         }
 
-        /* Utilities */
+        /* ─── Typography ─── */
         .font-serif {
             font-family: 'Playfair Display', serif;
         }
 
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
         .font-sans {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
-        /* Subtle texture for sections */
+        /* ─── Parchment Texture (warm handmade paper) ─── */
         .bg-texture {
-            background-color: #FAF6F0;
-            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            background-color: #F5E9DA;
+            background-image:
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
         }
 
-        /* Input overrides */
+        /* ─── Heritage Diamond-Dot Background ─── */
+        .bg-paisley {
+            background-color: #F5E9DA;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect x='27.5' y='27.5' width='5' height='5' fill='%23C5A059' opacity='0.12' transform='rotate(45 30 30)'/%3E%3Crect x='8.5' y='8.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 10 10)'/%3E%3Crect x='48.5' y='8.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 50 10)'/%3E%3Crect x='8.5' y='48.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 10 50)'/%3E%3Crect x='48.5' y='48.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 50 50)'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+        }
+
+        /* ─── Mughal Floral Background ─── */
+        .bg-mughal {
+            background-color: #3E2723;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 22 L46 34 L40 40 L34 34Z' fill='none' stroke='%23C5A059' stroke-width='0.5' opacity='0.07'/%3E%3Cpath d='M40 58 L46 46 L40 40 L34 46Z' fill='none' stroke='%23C5A059' stroke-width='0.5' opacity='0.07'/%3E%3Cpath d='M22 40 L34 34 L40 40 L34 46Z' fill='none' stroke='%23C5A059' stroke-width='0.5' opacity='0.07'/%3E%3Cpath d='M58 40 L46 34 L40 40 L46 46Z' fill='none' stroke='%23C5A059' stroke-width='0.5' opacity='0.07'/%3E%3Crect x='37' y='37' width='6' height='6' fill='%23C5A059' opacity='0.05' transform='rotate(45 40 40)'/%3E%3Cpath d='M40 10 L42 18 L40 22 L38 18Z' fill='%23C5A059' opacity='0.04'/%3E%3Cpath d='M40 70 L42 62 L40 58 L38 62Z' fill='%23C5A059' opacity='0.04'/%3E%3Cpath d='M10 40 L18 42 L22 40 L18 38Z' fill='%23C5A059' opacity='0.04'/%3E%3Cpath d='M70 40 L62 42 L58 40 L62 38Z' fill='%23C5A059' opacity='0.04'/%3E%3C/svg%3E");
+            background-size: 80px 80px;
+        }
+
+        /* White section with subtle Indian block-print diamonds */
+        .bg-blockprint {
+            background-color: #FFFFFF;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Crect x='27.5' y='27.5' width='5' height='5' fill='%23C5A059' opacity='0.12' transform='rotate(45 30 30)'/%3E%3Crect x='8.5' y='8.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 10 10)'/%3E%3Crect x='48.5' y='8.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 50 10)'/%3E%3Crect x='8.5' y='48.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 10 50)'/%3E%3Crect x='48.5' y='48.5' width='3' height='3' fill='%23C5A059' opacity='0.08' transform='rotate(45 50 50)'/%3E%3C/svg%3E");
+            background-size: 60px 60px;
+        }
+
+        /* ─── Heritage Border Frame ─── */
+        .heritage-card {
+            position: relative;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            border-radius: 1rem;
+        }
+
+        .heritage-card::before {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 1px solid rgba(197, 160, 89, 0.12);
+            pointer-events: none;
+            border-radius: inherit;
+        }
+
+        /* ─── Indian Border (gold double line) ─── */
+        .indian-border-top {
+            border-top: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #C5A059, #7A2021, #C5A059, transparent) 1;
+        }
+
+        .indian-border-bottom {
+            border-bottom: 2px solid;
+            border-image: linear-gradient(90deg, transparent, #C5A059, #7A2021, #C5A059, transparent) 1;
+        }
+
+        /* ─── Gold Shimmer Headline ─── */
+        .gold-shimmer {
+            background: linear-gradient(120deg, #C5A059 0%, #e8c97a 30%, #7A2021 50%, #e8c97a 70%, #C5A059 100%);
+            background-size: 200% auto;
+            background-position: 200% center;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                background-position: 0% center;
+            }
+        }
+
+        /* ─── Section Heading Accent (decorative) ─── */
+        .heritage-label {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.28em;
+            text-transform: uppercase;
+            color: #C5A059;
+        }
+
+        /* ─── Decorative Divider ─── */
+        .mandala-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #C5A059;
+            opacity: 0.6;
+        }
+
+        .mandala-divider::before,
+        .mandala-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #C5A059);
+        }
+
+        .mandala-divider::after {
+            background: linear-gradient(90deg, #C5A059, transparent);
+        }
+
+        /* ─── Input overrides ─── */
         input[type="number"]::-webkit-inner-spin-button,
         input[type="number"]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
 
-        /* Fade animation for page transitions */
+        /* ─── Fade animation for page transitions ─── */
         .fade-in {
-            animation: fadeIn 0.4s ease-in-out forwards;
+            animation: fadeIn 0.5s ease-in-out forwards;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(0.5rem);
+                transform: translateY(0.75rem);
             }
 
             to {
@@ -78,12 +178,12 @@
             }
         }
 
-        /* Scroll-reveal animation */
+        /* ─── Scroll-reveal animation ─── */
         .reveal {
             opacity: 0;
             transform: translateY(2rem);
-            transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .reveal.revealed {
@@ -91,12 +191,12 @@
             transform: translateY(0);
         }
 
-        /* Stagger delays for children */
+        /* ─── Stagger delays for children ─── */
         .reveal-stagger>* {
             opacity: 0;
             transform: translateY(1.5rem);
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: opacity 0.65s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .reveal-stagger.revealed>*:nth-child(1) {
@@ -135,8 +235,30 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ─── Parallax on hero image ─── */
+        #hero-parallax {
+            will-change: transform;
+            transition: transform 0.1s linear;
+        }
+
+        /* ─── Letter spacing for heritage feel ─── */
+        .tracking-heritage {
+            letter-spacing: 0.06em;
+        }
+
+        /* ─── Subtle card hover lift ─── */
+        .lift-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lift-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(122, 32, 33, 0.1);
+        }
     </style>
 </head>
+
 
 <body
     class="font-sans text-[#3E2723] bg-[#FAF6F0] antialiased selection:bg-[#C5A059]/30 selection:text-[#7A2021] flex flex-col min-h-[100vh]">
@@ -208,82 +330,188 @@
     <main class="flex-grow pt-[4.5rem]">
 
         <!-- ================= HOME PAGE ================= -->
-        <div id="page-home" class="page-section bg-texture">
+        <div id="page-home" class="page-section bg-paisley">
             <!-- Hero Section -->
-            <section class="relative h-[80vh] min-h-[40rem] flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-black/65 z-10"></div>
-                <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&amp;w=2070&amp;auto=format&amp;fit=crop"
-                    alt="Indian Spices" class="absolute inset-0 w-full h-full object-cover object-center">
+            <section class="relative h-[90vh] min-h-[44rem] flex items-center justify-center overflow-hidden">
+                <!-- Darker warm overlay for depth -->
+                <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80 z-10"></div>
+                <!-- Parallax image -->
+                <img id="hero-parallax"
+                    src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop"
+                    alt="Indian Spices" class="absolute inset-0 w-full h-full object-cover object-center scale-110">
+
+                <!-- Decorative corner flourishes (top-left, top-right) -->
+                <svg class="absolute top-4 left-4 w-16 h-16 text-[#C5A059]/25 z-20 pointer-events-none"
+                    viewBox="0 0 60 60" fill="none">
+                    <path d="M2 2 Q2 30 30 30" stroke="currentColor" stroke-width="1" />
+                    <path d="M2 2 Q30 2 30 30" stroke="currentColor" stroke-width="1" />
+                    <circle cx="2" cy="2" r="2" fill="currentColor" />
+                    <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.5" />
+                </svg>
+                <svg class="absolute top-4 right-4 w-16 h-16 text-[#C5A059]/25 z-20 pointer-events-none"
+                    viewBox="0 0 60 60" fill="none" style="transform: scaleX(-1)">
+                    <path d="M2 2 Q2 30 30 30" stroke="currentColor" stroke-width="1" />
+                    <path d="M2 2 Q30 2 30 30" stroke="currentColor" stroke-width="1" />
+                    <circle cx="2" cy="2" r="2" fill="currentColor" />
+                    <circle cx="30" cy="30" r="1.5" fill="currentColor" opacity="0.5" />
+                </svg>
 
                 <div class="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
-                    <span
-                        class="text-[#C5A059] font-medium tracking-widest text-xs uppercase mb-4 block drop-shadow-md">Nawab
-                        Overseas Presents</span>
-                    <h2
-                        class="font-serif text-5xl sm:text-6xl md:text-7xl tracking-tighter text-[#FAF6F0] mb-6 drop-shadow-lg leading-tight">
-                        Royal Heritage<br><span class="italic text-[#C5A059]">Reimagined</span>
-                    </h2>
+                    <span class="heritage-label text-[#C5A059]/90 mb-4 block drop-shadow-md">✦ Nawab Overseas Presents
+                        ✦</span>
+                    <h1
+                        class="font-serif text-5xl sm:text-6xl md:text-7xl tracking-heritage text-[#FAF6F0] mb-3 drop-shadow-lg leading-tight">
+                        From the Heart of<br>
+                        <span class="italic gold-shimmer">India's Rasoi</span>
+                    </h1>
+                    <!-- Mandala-style decorative line -->
+                    <div class="flex items-center gap-4 my-5 w-64 opacity-60">
+                        <div class="flex-1 h-[1px] bg-gradient-to-r from-transparent to-[#C5A059]"></div>
+                        <span class="text-[#C5A059] text-lg">✦</span>
+                        <div class="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#C5A059]"></div>
+                    </div>
                     <p
-                        class="text-lg sm:text-xl text-[#FAF6F0]/90 mb-10 font-medium tracking-wide drop-shadow-md max-w-2xl">
-                        From Roots to Plate. Bringing century-old generational wisdom to modern kitchens without
-                        compromise.
+                        class="text-base sm:text-lg text-[#FAF6F0]/85 mb-10 tracking-wide drop-shadow-md max-w-2xl leading-relaxed">
+                        Crafted with the Wisdom of Generations.<br class="hidden sm:block">
+                        <span class="italic text-[#C5A059]/90">Khushboo jo yaadon ko jagaye.</span>
                     </p>
                     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
                         <button onclick="navigate('shop')"
-                            class="w-full sm:w-auto bg-[#7A2021] text-[#FAF6F0] px-8 py-3.5 rounded-sm font-medium text-sm transition-all duration-300 hover:bg-[#5A1718] hover:shadow-lg border border-[#7A2021]">
-                            Explore Products
+                            class="w-full sm:w-auto bg-[#7A2021] text-[#FAF6F0] px-10 py-4 rounded-sm font-medium text-sm transition-all duration-300 hover:bg-[#5A1718] hover:shadow-2xl border border-[#7A2021] tracking-widest uppercase">
+                            Explore Collection
                         </button>
                         <button onclick="navigate('about')"
-                            class="w-full sm:w-auto bg-transparent text-[#FAF6F0] px-8 py-3.5 rounded-sm font-medium text-sm transition-all duration-300 hover:bg-[#FAF6F0]/10 border border-[#C5A059] backdrop-blur-sm">
-                            Know Our Legacy
+                            class="w-full sm:w-auto bg-transparent text-[#FAF6F0] px-10 py-4 rounded-sm font-medium text-sm transition-all duration-300 hover:bg-[#FAF6F0]/10 border border-[#C5A059] backdrop-blur-sm tracking-widest uppercase">
+                            Our Legacy
                         </button>
                     </div>
                 </div>
+                <!-- Bottom decorative bar -->
+                <div class="absolute bottom-0 left-0 right-0 h-1 z-20 indian-border-top"></div>
             </section>
 
             <!-- Brand Story Snapshot -->
-            <section class="py-20 lg:py-28 px-4 relative">
+            <section class="py-20 lg:py-28 px-4 relative bg-texture">
                 <div
                     class="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-16 bg-gradient-to-b from-[#C5A059] to-transparent">
                 </div>
                 <div class="max-w-3xl mx-auto text-center">
-                    <iconify-icon icon="solar:crown-star-linear" class="text-[#C5A059] mb-6" width="2.5rem"
-                        height="2.5rem" stroke-width="1.5"></iconify-icon>
-                    <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#7A2021] mb-6">A Century of Trust
+                    <!-- Decorative heritage diamond icon -->
+                    <svg class="w-10 h-10 mx-auto mb-4 text-[#C5A059] opacity-70" viewBox="0 0 60 60" fill="none">
+                        <!-- Outer diamond -->
+                        <path d="M30 4 L56 30 L30 56 L4 30Z" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                        <!-- Inner diamond -->
+                        <path d="M30 16 L44 30 L30 44 L16 30Z" stroke="currentColor" stroke-width="1" opacity="0.7" />
+                        <!-- Centre jewel -->
+                        <path d="M30 24 L36 30 L30 36 L24 30Z" fill="currentColor" opacity="0.8" />
+                        <!-- Petal tips pointing to corners -->
+                        <path d="M30 4 L33 14 L30 16 L27 14Z" fill="currentColor" opacity="0.5" />
+                        <path d="M30 56 L33 46 L30 44 L27 46Z" fill="currentColor" opacity="0.5" />
+                        <path d="M4 30 L14 33 L16 30 L14 27Z" fill="currentColor" opacity="0.5" />
+                        <path d="M56 30 L46 33 L44 30 L46 27Z" fill="currentColor" opacity="0.5" />
+                    </svg>
+                    <p class="heritage-label mb-3">A Hundred Years of Rasoi Wisdom</p>
+                    <h2 class="font-serif text-3xl lg:text-4xl tracking-heritage text-[#7A2021] mb-8">A Century of Trust
                     </h2>
-                    <p class="text-[#3E2723]/80 leading-relaxed text-base lg:text-lg text-justify">
+
+                    <!-- Decorative divider -->
+                    <div class="mandala-divider mb-8">
+                        <span class="text-xs text-[#C5A059]">✦</span>
+                    </div>
+
+                    <p class="text-[#3E2723]/80 leading-relaxed text-base lg:text-lg text-justify mb-8">
                         From the renowned kirana establishments of Berchha, Madhya Pradesh, Nawab Brothers established a
                         legacy defined by uncompromising purity and profound expertise in spices. Nawab Overseas, its
                         sister concern, now carries this century-old generational wisdom forward through SpiceRoots —
-                        presenting India's finest spices to discerning kitchens in India and, soon, across the world. We
-                        do not simply trade in spices; we curate them with precision, guided by decades of experience
-                        and an unwavering commitment to quality.
+                        presenting India's finest spices to discerning kitchens in India and, soon, across the world.
                     </p>
+
+                    <!-- Heritage highlight cards -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+
+                        <!-- Card 1: 100+ Years -->
+                        <div
+                            class="heritage-card bg-[#F5E9DA]/60 border border-[#C5A059]/25 p-6 flex flex-col items-center text-center group hover:bg-[#FAF6F0] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rotate-45 bg-[#7A2021]/10 border border-[#C5A059]/40 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-xl -rotate-45">🪔</span>
+                            </div>
+                            <p class="font-cinzel text-2xl text-[#7A2021] tracking-wider mb-1">100+</p>
+                            <p class="heritage-label text-[#C5A059] mb-3">Years of Legacy</p>
+                            <div
+                                class="w-8 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mb-3">
+                            </div>
+                            <p class="text-xs text-[#3E2723]/65 leading-relaxed">Of spice mastery passed down through
+                                generations</p>
+                        </div>
+
+                        <!-- Card 2: Zero Fillers -->
+                        <div
+                            class="heritage-card bg-[#F5E9DA]/60 border border-[#C5A059]/25 p-6 flex flex-col items-center text-center group hover:bg-[#FAF6F0] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rotate-45 bg-[#7A2021]/10 border border-[#C5A059]/40 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-xl -rotate-45">🌿</span>
+                            </div>
+                            <p class="font-cinzel text-lg text-[#7A2021] tracking-wider mb-1">Zero Fillers</p>
+                            <p class="heritage-label text-[#C5A059] mb-3">Pure by Principle</p>
+                            <div
+                                class="w-8 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mb-3">
+                            </div>
+                            <p class="text-xs text-[#3E2723]/65 leading-relaxed">No artificial colours, no
+                                preservatives, no shortcuts</p>
+                        </div>
+
+                        <!-- Card 3: Stone Ground -->
+                        <div
+                            class="heritage-card bg-[#F5E9DA]/60 border border-[#C5A059]/25 p-6 flex flex-col items-center text-center group hover:bg-[#FAF6F0] transition-all duration-300">
+                            <div
+                                class="w-12 h-12 rotate-45 bg-[#7A2021]/10 border border-[#C5A059]/40 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <span class="text-xl -rotate-45">🏺</span>
+                            </div>
+                            <p class="font-cinzel text-lg text-[#7A2021] tracking-wider mb-1">Stone Ground</p>
+                            <p class="heritage-label text-[#C5A059] mb-3">Sil-Batta Method</p>
+                            <div
+                                class="w-8 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mb-3">
+                            </div>
+                            <p class="text-xs text-[#3E2723]/65 leading-relaxed">Traditional methods for maximum
+                                volatile oils &amp; aroma</p>
+                        </div>
+
+                    </div>
+
                     <button onclick="navigate('about')"
-                        class="mt-8 text-sm font-medium text-[#7A2021] border-b border-[#7A2021]/30 hover:border-[#7A2021] transition-colors pb-1">Read
-                        the full story</button>
+                        class="text-sm font-medium text-[#7A2021] border-b border-[#7A2021]/30 hover:border-[#7A2021] transition-colors pb-1 tracking-wider uppercase">
+                        Read the full story →
+                    </button>
                 </div>
             </section>
 
             <!-- Core Principles -->
-            <section class="py-20 bg-[#3E2723] text-[#FAF6F0] relative overflow-hidden">
-                <div
-                    class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23C5A059\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]">
-                </div>
+            <section class="py-20 bg-mughal text-[#FAF6F0] relative overflow-hidden">
                 <div class="max-w-[80rem] mx-auto px-4 relative z-10">
                     <div class="text-center mb-16">
-                        <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#FAF6F0]">Our Principles</h2>
-                        <div class="h-[1px] w-24 bg-[#C5A059] mx-auto mt-6"></div>
+                        <p class="heritage-label text-[#C5A059]/80 mb-3">The SpiceRoots Promise</p>
+                        <h2 class="font-serif text-3xl lg:text-4xl tracking-heritage text-[#FAF6F0]">Our Principles</h2>
+                        <div class="flex items-center gap-3 justify-center mt-6">
+                            <div class="h-[1px] w-12 bg-[#C5A059]/50"></div>
+                            <svg class="w-5 h-5 text-[#C5A059]" viewBox="0 0 20 20" fill="currentColor">
+                                <!-- Heritage diamond divider -->
+                                <path d="M10 2 L18 10 L10 18 L2 10Z" fill="none" stroke="currentColor" stroke-width="1"
+                                    opacity="0.7" />
+                                <path d="M10 6 L14 10 L10 14 L6 10Z" fill="currentColor" opacity="0.9" />
+                            </svg>
+                            <div class="h-[1px] w-12 bg-[#C5A059]/50"></div>
+                        </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
                         <!-- Principle 1 -->
                         <div
-                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-md hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center">
+                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-2xl hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center heritage-card">
                             <div
-                                class="w-16 h-16 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <iconify-icon icon="solar:shield-check-linear" class="text-[#C5A059]" width="2rem"
-                                    height="2rem" stroke-width="1.5"></iconify-icon>
+                                class="w-16 h-16 rotate-45 bg-[#C5A059]/10 border border-[#C5A059]/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <iconify-icon icon="solar:shield-check-linear" class="text-[#C5A059] -rotate-45"
+                                    width="2rem" height="2rem" stroke-width="1.5"></iconify-icon>
                             </div>
                             <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Purity Without Compromise
                             </h3>
@@ -294,11 +522,11 @@
                         </div>
                         <!-- Principle 2 -->
                         <div
-                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-md hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center">
+                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-2xl hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center heritage-card">
                             <div
-                                class="w-16 h-16 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <iconify-icon icon="solar:heart-pulse-linear" class="text-[#C5A059]" width="2rem"
-                                    height="2rem" stroke-width="1.5"></iconify-icon>
+                                class="w-16 h-16 rotate-45 bg-[#C5A059]/10 border border-[#C5A059]/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <iconify-icon icon="solar:heart-pulse-linear" class="text-[#C5A059] -rotate-45"
+                                    width="2rem" height="2rem" stroke-width="1.5"></iconify-icon>
                             </div>
                             <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Wellness-Driven</h3>
                             <p class="text-sm text-[#FAF6F0]/70 leading-relaxed">
@@ -308,11 +536,11 @@
                         </div>
                         <!-- Principle 3 -->
                         <div
-                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-md hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center">
+                            class="group bg-[#FAF6F0]/5 border border-[#C5A059]/20 p-8 rounded-2xl hover:bg-[#FAF6F0]/10 transition-all duration-300 flex flex-col items-center text-center heritage-card">
                             <div
-                                class="w-16 h-16 rounded-full bg-[#C5A059]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                                <iconify-icon icon="solar:leaf-linear" class="text-[#C5A059]" width="2rem" height="2rem"
-                                    stroke-width="1.5"></iconify-icon>
+                                class="w-16 h-16 rotate-45 bg-[#C5A059]/10 border border-[#C5A059]/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <iconify-icon icon="solar:leaf-linear" class="text-[#C5A059] -rotate-45" width="2rem"
+                                    height="2rem" stroke-width="1.5"></iconify-icon>
                             </div>
                             <h3 class="font-serif text-xl tracking-tight text-[#C5A059] mb-4">Authentic Aroma</h3>
                             <p class="text-sm text-[#FAF6F0]/70 leading-relaxed">
@@ -325,18 +553,19 @@
             </section>
 
             <!-- Featured Products -->
-            <section class="py-20 lg:py-28 px-4 bg-[#FAF6F0]">
+            <section class="py-20 lg:py-28 px-4 bg-paisley">
                 <div class="max-w-[80rem] mx-auto">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                    <!-- Section header with decorative Indian border -->
+                    <div
+                        class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 pb-6 indian-border-bottom">
                         <div>
-                            <span
-                                class="text-[#C5A059] font-medium tracking-widest text-xs uppercase block mb-2">Dawat-E-Khaas</span>
-                            <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#7A2021]">Signature Blends
-                            </h2>
+                            <p class="heritage-label mb-2">Dawat-E-Khaas</p>
+                            <h2 class="font-serif text-3xl lg:text-4xl tracking-heritage text-[#7A2021]">Signature
+                                Blends</h2>
                         </div>
                         <button onclick="navigate('shop')"
-                            class="text-sm font-medium text-[#3E2723] flex items-center gap-2 hover:text-[#7A2021] transition-colors group">
-                            View All Collection
+                            class="text-sm font-medium text-[#3E2723] flex items-center gap-2 hover:text-[#7A2021] transition-colors group tracking-wider uppercase">
+                            View Full Dawat
                             <iconify-icon icon="solar:arrow-right-linear"
                                 class="group-hover:translate-x-1 transition-transform"
                                 stroke-width="1.5"></iconify-icon>
@@ -351,34 +580,36 @@
             </section>
 
             <!-- Global Vision -->
-            <section class="py-20 border-t border-[#C5A059]/20 bg-texture">
+            <section class="py-20 indian-border-top bg-texture">
                 <div class="max-w-4xl mx-auto text-center px-4">
-                    <iconify-icon icon="solar:earth-linear" class="text-[#C5A059] mb-6" width="2.5rem" height="2.5rem"
+                    <iconify-icon icon="solar:earth-linear" class="text-[#C5A059] mb-3" width="2.5rem" height="2.5rem"
                         stroke-width="1.5"></iconify-icon>
-                    <h2 class="font-serif text-2xl lg:text-3xl tracking-tight text-[#3E2723] mb-6">From Soil to Global
-                        Tables</h2>
+                    <p class="heritage-label mb-3">Where Tradition Meets the World</p>
+                    <h2 class="font-serif text-2xl lg:text-3xl tracking-heritage text-[#3E2723] mb-6">From Indian Rasoi
+                        to Global Tables</h2>
+                    <div class="mandala-divider mb-6"><span class="text-sm">✦</span></div>
                     <p class="text-[#3E2723]/80 leading-relaxed text-base text-justify">
-                        Nawab Overseas was built on a simple belief: "If generations trusted our family for purity and
-                        knowledge, the world deserves the same." With a modern outlook, we aim to take India's authentic
-                        flavors to international kitchens — without dilution, without shortcuts, and without compromise.
+                        Nawab Overseas was built on a simple belief — <em>"Agar hamare parivaar par sadiyaan bharosa
+                            kiya hai, toh duniya bhi kar sakti hai."</em> With a modern outlook, we aim to take India's
+                        authentic flavors to international kitchens — without dilution, without shortcuts, and without
+                        compromise.
                     </p>
                 </div>
             </section>
 
             <!-- Testimonials Section -->
-            <section class="py-24 bg-white relative overflow-hidden">
+            <section class="py-24 bg-blockprint relative overflow-hidden">
                 <div class="max-w-[80rem] mx-auto px-4 relative z-10">
                     <div class="text-center mb-16">
-                        <span class="text-[#C5A059] font-medium tracking-widest text-xs uppercase block mb-2">Voices of
-                            Satifaction</span>
-                        <h2 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#7A2021]">What Our Customers Say
-                        </h2>
-                        <div class="h-[1px] w-24 bg-[#C5A059] mx-auto mt-6"></div>
+                        <p class="heritage-label mb-3">✦ Voices of Satisfaction ✦</p>
+                        <h2 class="font-serif text-3xl lg:text-4xl tracking-heritage text-[#7A2021]">What Our Customers
+                            Say</h2>
+                        <div class="mandala-divider mt-6 max-w-xs mx-auto"><span class="text-sm">✦</span></div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Testimonial 1 -->
-                        <div class="bg-[#FAF6F0]/30 p-8 rounded-lg border border-[#C5A059]/10 relative">
+                        <div class="bg-[#FAF6F0]/30 p-8 rounded-2xl border border-[#C5A059]/10 relative">
                             <iconify-icon icon="bi:quote" class="text-[#C5A059]/30 absolute top-4 right-6"
                                 width="3rem"></iconify-icon>
                             <div class="flex gap-1 mb-4">
@@ -393,7 +624,7 @@
                                 kitchen every time I cook."</p>
                             <div class="flex items-center gap-3 border-t border-[#C5A059]/10 pt-4">
                                 <div
-                                    class="w-10 h-10 rounded-full bg-[#7A2021]/10 flex items-center justify-center font-serif text-[#7A2021] font-bold">
+                                    class="w-10 h-10 bg-[#7A2021]/10 border border-[#C5A059]/20 flex items-center justify-center font-serif text-[#7A2021] font-bold">
                                     A</div>
                                 <div>
                                     <p class="text-sm font-bold text-[#3E2723]">Aditi Sharma</p>
@@ -404,7 +635,7 @@
                         </div>
 
                         <!-- Testimonial 2 -->
-                        <div class="bg-[#FAF6F0]/30 p-8 rounded-lg border border-[#C5A059]/10 relative">
+                        <div class="bg-[#FAF6F0]/30 p-8 rounded-2xl border border-[#C5A059]/10 relative">
                             <iconify-icon icon="bi:quote" class="text-[#C5A059]/30 absolute top-4 right-6"
                                 width="3rem"></iconify-icon>
                             <div class="flex gap-1 mb-4">
@@ -419,7 +650,7 @@
                                 doesn't use fillers or colors."</p>
                             <div class="flex items-center gap-3 border-t border-[#C5A059]/10 pt-4">
                                 <div
-                                    class="w-10 h-10 rounded-full bg-[#7A2021]/10 flex items-center justify-center font-serif text-[#7A2021] font-bold">
+                                    class="w-10 h-10 bg-[#7A2021]/10 border border-[#C5A059]/20 flex items-center justify-center font-serif text-[#7A2021] font-bold">
                                     V</div>
                                 <div>
                                     <p class="text-sm font-bold text-[#3E2723]">Vikram Malhotra</p>
@@ -430,7 +661,7 @@
                         </div>
 
                         <!-- Testimonial 3 -->
-                        <div class="bg-[#FAF6F0]/30 p-8 rounded-lg border border-[#C5A059]/10 relative">
+                        <div class="bg-[#FAF6F0]/30 p-8 rounded-2xl border border-[#C5A059]/10 relative">
                             <iconify-icon icon="bi:quote" class="text-[#C5A059]/30 absolute top-4 right-6"
                                 width="3rem"></iconify-icon>
                             <div class="flex gap-1 mb-4">
@@ -445,7 +676,7 @@
                                 of spice in my curries."</p>
                             <div class="flex items-center gap-3 border-t border-[#C5A059]/10 pt-4">
                                 <div
-                                    class="w-10 h-10 rounded-full bg-[#7A2021]/10 flex items-center justify-center font-serif text-[#7A2021] font-bold">
+                                    class="w-10 h-10 bg-[#7A2021]/10 border border-[#C5A059]/20 flex items-center justify-center font-serif text-[#7A2021] font-bold">
                                     A</div>
                                 <div>
                                     <p class="text-sm font-bold text-[#3E2723]">Dr. Anjali Iyer</p>
@@ -545,74 +776,117 @@
                     <p class="text-center text-[#3E2723]/80 mb-12">Under Nawab Overseas, SpiceRoots was created to carry
                         this legacy beyond borders.</p>
 
-                    <div class="space-y-12">
-                        <div class="bg-white/50 border border-[#C5A059]/20 p-8 rounded-md shadow-sm">
-                            <h3 class="font-serif text-xl tracking-tight text-[#3E2723] mb-4 flex items-center gap-3">
-                                <span
-                                    class="bg-[#C5A059]/10 text-[#7A2021] w-8 h-8 rounded-full flex items-center justify-center text-sm">1</span>
-                                Purity Without Compromise
-                            </h3>
-                            <p class="text-[#3E2723]/80 mb-4">All SpiceRoots masalas are:</p>
-                            <ul class="space-y-2 text-[#3E2723]/80 text-sm ml-11">
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Free from
-                                    preservatives</li>
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Free from artificial
-                                    food colors</li>
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Free from harmful
-                                    essences or synthetic chemicals</li>
-                            </ul>
-                            <p class="text-[#7A2021] font-medium text-sm mt-4 ml-11 italic">We believe flavor should
-                                come from nature — not laboratories.</p>
+                    <div class="space-y-8">
+
+                        <!-- Card 1: Purity -->
+                        <div class="heritage-card bg-[#F5E9DA]/50 border border-[#C5A059]/25 overflow-hidden">
+                            <!-- Gold top accent bar -->
+                            <div class="h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent"></div>
+                            <div class="p-8">
+                                <h3
+                                    class="font-cinzel text-base tracking-widest text-[#7A2021] mb-5 flex items-center gap-4">
+                                    <span
+                                        class="w-8 h-8 rotate-45 bg-[#7A2021]/10 border border-[#C5A059]/40 flex items-center justify-center flex-shrink-0">
+                                        <span class="-rotate-45 font-cinzel text-xs text-[#7A2021]">I</span>
+                                    </span>
+                                    Purity Without Compromise
+                                </h3>
+                                <p class="text-[#3E2723]/70 mb-5 text-sm">All SpiceRoots masalas are:</p>
+                                <ul class="space-y-3 text-[#3E2723]/75 text-sm pl-2">
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Free from preservatives
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Free from artificial food colors
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Free from harmful essences or synthetic chemicals
+                                    </li>
+                                </ul>
+                                <div class="mt-6 pt-5 border-t border-[#C5A059]/15">
+                                    <p class="text-[#7A2021] text-sm italic font-medium">
+                                        "We believe flavor should come from nature — not laboratories."
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="bg-white/50 border border-[#C5A059]/20 p-8 rounded-md shadow-sm">
-                            <h3 class="font-serif text-xl tracking-tight text-[#3E2723] mb-4 flex items-center gap-3">
-                                <span
-                                    class="bg-[#C5A059]/10 text-[#7A2021] w-8 h-8 rounded-full flex items-center justify-center text-sm">2</span>
-                                Health-Conscious Formulation
-                            </h3>
-                            <p class="text-[#3E2723]/80 mb-4">Unlike many commercial blends, our masalas contain minimal
-                                or no common salt. This allows:</p>
-                            <ul class="space-y-2 text-[#3E2723]/80 text-sm ml-11">
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Better control over
-                                    sodium intake</li>
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Greater flexibility
-                                    for home cooks and chefs</li>
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Healthier everyday
-                                    consumption</li>
-                            </ul>
-                            <p class="text-[#7A2021] font-medium text-sm mt-4 ml-11 italic">Our products are crafted for
-                                families who value both taste and wellbeing.</p>
+                        <!-- Card 2: Health -->
+                        <div class="heritage-card bg-[#F5E9DA]/50 border border-[#C5A059]/25 overflow-hidden">
+                            <div class="h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent"></div>
+                            <div class="p-8">
+                                <h3
+                                    class="font-cinzel text-base tracking-widest text-[#7A2021] mb-5 flex items-center gap-4">
+                                    <span
+                                        class="w-8 h-8 rotate-45 bg-[#7A2021]/10 border border-[#C5A059]/40 flex items-center justify-center flex-shrink-0">
+                                        <span class="-rotate-45 font-cinzel text-xs text-[#7A2021]">II</span>
+                                    </span>
+                                    Health-Conscious Formulation
+                                </h3>
+                                <p class="text-[#3E2723]/70 mb-5 text-sm">Unlike many commercial blends, our masalas
+                                    contain minimal or no common salt. This allows:</p>
+                                <ul class="space-y-3 text-[#3E2723]/75 text-sm pl-2">
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Better control over sodium intake
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Greater flexibility for home cooks and chefs
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Healthier everyday consumption
+                                    </li>
+                                </ul>
+                                <div class="mt-6 pt-5 border-t border-[#C5A059]/15">
+                                    <p class="text-[#7A2021] text-sm italic font-medium">
+                                        "Our products are crafted for families who value both taste and wellbeing."
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="bg-white/50 border border-[#C5A059]/20 p-8 rounded-md shadow-sm">
-                            <h3 class="font-serif text-xl tracking-tight text-[#3E2723] mb-4 flex items-center gap-3">
-                                <span
-                                    class="bg-[#C5A059]/10 text-[#7A2021] w-8 h-8 rounded-full flex items-center justify-center text-sm">3</span>
-                                Authentic Aroma &amp; Natural Strength
-                            </h3>
-                            <p class="text-[#3E2723]/80 mb-4">Even our "common" masalas are elevated in quality. Because
-                                we prioritize:</p>
-                            <ul class="space-y-2 text-[#3E2723]/80 text-sm ml-11">
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> High volatile oil
-                                    content in spices</li>
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Natural ingredients
-                                    over fillers</li>
-                                <li class="flex items-start gap-2"><iconify-icon icon="solar:check-circle-linear"
-                                        class="text-[#C5A059] mt-0.5 min-w-[1rem]"></iconify-icon> Fresh grinding and
-                                    careful blending</li>
-                            </ul>
-                            <p class="text-[#7A2021] font-medium text-sm mt-4 ml-11 italic">The result is deeper aroma,
-                                richer flavor release, and a more authentic culinary experience.</p>
+                        <!-- Card 3: Aroma -->
+                        <div class="heritage-card bg-[#F5E9DA]/50 border border-[#C5A059]/25 overflow-hidden">
+                            <div class="h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent"></div>
+                            <div class="p-8">
+                                <h3
+                                    class="font-cinzel text-base tracking-widest text-[#7A2021] mb-5 flex items-center gap-4">
+                                    <span
+                                        class="w-8 h-8 rotate-45 bg-[#7A2021]/10 border border-[#C5A059]/40 flex items-center justify-center flex-shrink-0">
+                                        <span class="-rotate-45 font-cinzel text-xs text-[#7A2021]">III</span>
+                                    </span>
+                                    Authentic Aroma &amp; Natural Strength
+                                </h3>
+                                <p class="text-[#3E2723]/70 mb-5 text-sm">Even our "common" masalas are elevated in
+                                    quality. Because we prioritize:</p>
+                                <ul class="space-y-3 text-[#3E2723]/75 text-sm pl-2">
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        High volatile oil content in spices
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Natural ingredients over fillers
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <span class="text-[#C5A059] mt-0.5 leading-none">✦</span>
+                                        Fresh grinding and careful blending
+                                    </li>
+                                </ul>
+                                <div class="mt-6 pt-5 border-t border-[#C5A059]/15">
+                                    <p class="text-[#7A2021] text-sm italic font-medium">
+                                        "The result is deeper aroma, richer flavor release, and a more authentic
+                                        culinary experience."
+                                    </p>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -643,6 +917,24 @@
                             <li class="border-l-2 border-[#C5A059] pl-4 py-1">
                                 <strong class="text-[#3E2723] block mb-1 font-medium">Kadhi Gosht Masala</strong>
                                 carries the warmth of nawabi hospitality.
+                            </li>
+                            <li class="border-l-2 border-[#C5A059] pl-4 py-1">
+                                <strong class="text-[#3E2723] block mb-1 font-medium">Shahi Garam Masala</strong>
+                                embodies the depth and dignity of royal Indian kitchens, where every spice speaks in
+                                harmony.
+                            </li>
+                            <li class="border-l-2 border-[#C5A059] pl-4 py-1">
+                                <strong class="text-[#3E2723] block mb-1 font-medium">Kitchen King Masala</strong>
+                                celebrates everyday mastery — the crown jewel of versatile home-style cooking.
+                            </li>
+                            <li class="border-l-2 border-[#C5A059] pl-4 py-1">
+                                <strong class="text-[#3E2723] block mb-1 font-medium">Pindi Chhole Masala</strong>
+                                captures the bold spirit and robust flavors of Punjab's traditional dhabas.
+                            </li>
+                            <li class="border-l-2 border-[#C5A059] pl-4 py-1">
+                                <strong class="text-[#3E2723] block mb-1 font-medium">Mumbai Pav Bhaji Masala</strong>
+                                recreates the vibrant energy and irresistible zest of India's bustling street-food
+                                capital.
                             </li>
                         </ul>
                         <p class="text-[#7A2021] font-medium mt-6 italic">These are not just spice mixes — they are
@@ -1033,16 +1325,22 @@
     </main>
 
     <!-- Global Footer -->
-    <footer class="bg-[#3E2723] text-[#FAF6F0] pt-16 pb-8 border-t-4 border-[#7A2021]">
-        <div class="max-w-[80rem] mx-auto px-4">
+    <footer class="bg-mughal text-[#FAF6F0] pt-16 pb-8 relative overflow-hidden border-t-4 border-[#C5A059]/40">
+
+
+        <div class="max-w-[80rem] mx-auto px-4 relative z-10">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
                 <!-- Brand -->
                 <div class="lg:col-span-1">
-                    <h2 class="font-serif text-2xl tracking-tighter text-[#C5A059] uppercase mb-4">SpiceRoots</h2>
-                    <p class="text-sm text-[#FAF6F0]/70 leading-relaxed mb-6">
-                        Premium, pure, and authentic Indian spices. Carrying a 100-year generational legacy to global
-                        tables.
+                    <p class="heritage-label text-[#C5A059]/60 mb-2">✦ Est. 100+ Years ✦</p>
+                    <h2 class="font-cinzel text-2xl tracking-wider text-[#C5A059] mb-1">SpiceRoots</h2>
+                    <p class="text-[0.65rem] text-[#C5A059]/50 italic mb-4">by Nawab Overseas</p>
+                    <p class="text-sm text-[#FAF6F0]/60 leading-relaxed mb-2 italic">
+                        "Khushboo jo yaadon ko jagaye"
+                    </p>
+                    <p class="text-xs text-[#FAF6F0]/40 leading-relaxed mb-6">
+                        Carrying a century of generational legacy to global tables.
                     </p>
                     <div class="flex space-x-4 text-[#C5A059]">
                         <a href="#" class="hover:text-white transition-colors"><iconify-icon icon="bi:instagram"
@@ -1056,7 +1354,7 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="font-serif text-lg tracking-tight text-white mb-4">Explore</h3>
+                    <h3 class="heritage-label text-[#C5A059] mb-4">Explore</h3>
                     <ul class="space-y-3 text-sm text-[#FAF6F0]/70">
                         <li><button onclick="navigate('home')"
                                 class="hover:text-[#C5A059] transition-colors">Home</button></li>
@@ -1071,24 +1369,44 @@
 
                 <!-- Legal/Policy -->
                 <div>
-                    <h3 class="font-serif text-lg tracking-tight text-white mb-4">Information</h3>
+                    <h3 class="heritage-label text-[#C5A059] mb-4">Information</h3>
                     <ul class="space-y-3 text-sm text-[#FAF6F0]/70">
-                        <li><button onclick="navigate('shipping')"
-                                class="hover:text-[#C5A059] transition-colors">Shipping Policy</button></li>
-                        <li><button onclick="navigate('returns')" class="hover:text-[#C5A059] transition-colors">Return
-                                & Refund</button></li>
-                        <li><button onclick="navigate('privacy')" class="hover:text-[#C5A059] transition-colors">Privacy
+                        <li class="flex items-center gap-2"><span class="text-[#C5A059]/50 text-xs">✦</span><button
+                                onclick="navigate('shipping')" class="hover:text-[#C5A059] transition-colors">Shipping
                                 Policy</button></li>
-                        <li><button onclick="navigate('terms')" class="hover:text-[#C5A059] transition-colors">Terms of
+                        <li class="flex items-center gap-2"><span class="text-[#C5A059]/50 text-xs">✦</span><button
+                                onclick="navigate('returns')" class="hover:text-[#C5A059] transition-colors">Return &
+                                Refund</button></li>
+                        <li class="flex items-center gap-2"><span class="text-[#C5A059]/50 text-xs">✦</span><button
+                                onclick="navigate('privacy')" class="hover:text-[#C5A059] transition-colors">Privacy
+                                Policy</button></li>
+                        <li class="flex items-center gap-2"><span class="text-[#C5A059]/50 text-xs">✦</span><button
+                                onclick="navigate('terms')" class="hover:text-[#C5A059] transition-colors">Terms of
                                 Service</button></li>
                     </ul>
                 </div>
 
                 <!-- Newsletter -->
                 <div>
-                    <h3 class="font-serif text-lg tracking-tight text-white mb-4">Stay Connected</h3>
-                    <p class="text-xs text-[#FAF6F0]/70 mb-4">Subscribe for culinary inspiration and new blend launches.
-                    </p>
+                    <h3 class="heritage-label text-[#C5A059] mb-4">Stay Connected</h3>
+                    <p class="text-xs text-[#FAF6F0]/50 mb-4 italic">Subscribe for culinary inspiration and new blend
+                        launches.</p>
+                    <!-- ============================================================
+                    BACKEND INTEGRATION — NEWSLETTER
+                    ============================================================
+                    TODO: On form submit, send the email to your email marketing service:
+                      e.g. Mailchimp, Brevo (Sendinblue), or a custom /api/subscribe endpoint.
+
+                    Replace the onsubmit with:
+                      onsubmit="handleNewsletterSignup(event)"
+
+                    async function handleNewsletterSignup(e) {
+                        e.preventDefault();
+                        const email = e.target.querySelector('input[type=email]').value;
+                        await fetch('/api/subscribe', { method: 'POST', body: JSON.stringify({ email }) });
+                        // Show success toast
+                    }
+                    ============================================================ -->
                     <form class="flex" onsubmit="event.preventDefault();">
                         <input type="email" placeholder="Your email"
                             class="bg-[#FAF6F0]/10 border border-[#C5A059]/30 rounded-l-sm px-3 py-2 text-sm text-white w-full focus:outline-none focus:border-[#C5A059]">
@@ -1101,12 +1419,20 @@
 
             </div>
 
-            <div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#C5A059]/30 to-transparent mb-8"></div>
+            <!-- Mandala Divider -->
+            <div class="flex items-center gap-3 mb-8 opacity-30">
+                <div class="flex-1 h-[1px] bg-gradient-to-r from-transparent to-[#C5A059]"></div>
+                <svg class="w-4 h-4 text-[#C5A059]" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 2 L18 10 L10 18 L2 10Z" fill="none" stroke="currentColor" stroke-width="1"
+                        opacity="0.8" />
+                    <path d="M10 7 L13 10 L10 13 L7 10Z" fill="currentColor" opacity="0.9" />
+                </svg>
+                <div class="flex-1 h-[1px] bg-gradient-to-l from-transparent to-[#C5A059]"></div>
+            </div>
 
             <div
-                class="flex flex-col md:flex-row justify-between items-center text-xs text-[#FAF6F0]/50 space-y-4 md:space-y-0">
-                <p>© 2025 Nawab Overseas. All rights reserved.</p>
-                <p>Designed for premium culinary experiences.</p>
+                class="flex flex-col md:flex-row justify-between items-center text-xs text-[#FAF6F0]/40 space-y-4 md:space-y-0">
+                <p>© 2026 Nawab Overseas. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -1302,23 +1628,35 @@
     <!-- Data & Application Logic -->
     <script>
         // --- Product Data ---
+        // ============================================================
+        // BACKEND INTEGRATION — PRODUCTS
+        // ============================================================
+        // TODO: Replace this static array with a live API call:
+        //   const res = await fetch('/api/products');
+        //   const products = await res.json();
+        //
+        // Each product object should return these fields from the API:
+        //   { id, name, desc, weight, price, category, img, imgAlt, amazonLink, stock }
+        //
+        // Add a `stock` field so cards can show "Out of Stock" and disable the ADD button.
+        // ============================================================
         const products = [
-            { id: 1, name: "Kitchen King Masala", desc: "The universal blend for everyday Indian cooking.", weight: "50g", price: 65, amazonLink: "https://amzn.to/4jrWX0O", img: "Masala mockup/Kitchen King Masala.jpg", imgAlt: "Masala mockup/Kitchen King Masala 1.jpg", category: "Essentials" },
-            { id: 2, name: "Mumbai Pav Bhaji Masala", desc: "Street-style authentic flavor with perfect spice balance.", weight: "50g", price: 70, amazonLink: "https://amzn.to/4pz0BaJ", img: "Masala mockup/Mumbai Pav Bhaji 1.jpg", imgAlt: "Masala mockup/Mumbai Pav Bhaji.jpg", category: "Essentials" },
-            { id: 3, name: "Pindi Chhole Masala", desc: "Dark, robust, and tangy blend for traditional chhole.", weight: "50g", price: 75, amazonLink: "https://amzn.to/49vqpyt", img: "Masala mockup/Pindi Chhole Masala.jpg", imgAlt: "Masala mockup/Pindi Chhole Masala 1.jpg", category: "Dawat" },
-            { id: 4, name: "Shahi Paneer Masala", desc: "Rich, mild, and aromatic for royal paneer gravies.", weight: "50g", price: 85, amazonLink: "https://amzn.to/4pwbBpn", img: "Masala mockup/Shahi Paneer Masala.jpg", imgAlt: "Masala mockup/Shahi Paneer Masala1.jpg", category: "Dawat" },
-            { id: 5, name: "Chicken Popcorn Masala", desc: "Crispy, spicy coating mix for perfect bite-sized snacks.", weight: "50g", price: 60, amazonLink: "https://amzn.to/3LoMV46", img: "Masala mockup/Chicken Popcorn Masala 1.jpg", imgAlt: "Masala mockup/Chicken Popcorn Masala.jpg", category: "Ready" },
-            { id: 6, name: "Rajshahi Biryani Masala", desc: "Echoes the grandeur of regal feasts. Intense aroma.", weight: "50g", price: 95, amazonLink: "https://amzn.to/4qiZj52", img: "Masala mockup/Rajshahi Biryani.jpg", imgAlt: "Masala mockup/Rajshahi Biryani 1.jpg", category: "Dawat" },
-            { id: 7, name: "Green Chicken Masala", desc: "Fresh, vibrant blend with natural green herbs focus.", weight: "50g", price: 80, amazonLink: "https://amzn.to/4qaQABD", img: "Masala mockup/Green Chicken.jpg", imgAlt: "Masala mockup/Green Chicken 1.jpg", category: "Dawat" },
-            { id: 8, name: "Kadhi Gosht Masala", desc: "Carries the warmth of traditional nawabi hospitality.", weight: "50g", price: 90, amazonLink: "https://amzn.to/4qKBwdT", img: "Masala mockup/Kadhi Gosht 1.jpg", imgAlt: "Masala mockup/Kadhi Gosht.jpg", category: "Dawat" }
+            { id: 1, name: "Kitchen King Masala", desc: "All-purpose blend for vegetables, paneer, dal & gravies. Restaurant-style results at home.", weight: "50g", price: 59, amazonLink: "https://amzn.to/4jrWX0O", img: "Masala mockup/Kitchen King Masala.jpg", imgAlt: "Masala mockup/Kitchen King Masala 1.jpg", category: "Essentials" },
+            { id: 2, name: "Mumbai Pav Bhaji Masala", desc: "Authentic Mumbai street-style spicy-buttery flavor for perfect tawa bhaji.", weight: "50g", price: 58, amazonLink: "https://amzn.to/4pz0BaJ", img: "Masala mockup/Mumbai Pav Bhaji 1.jpg", imgAlt: "Masala mockup/Mumbai Pav Bhaji.jpg", category: "Essentials" },
+            { id: 3, name: "Pindi Chhole Masala", desc: "Punjabi dhaba-style dark, bold & tangy blend for authentic pindi chhole.", weight: "50g", price: 58, amazonLink: "https://amzn.to/49vqpyt", img: "Masala mockup/Pindi Chhole Masala.jpg", imgAlt: "Masala mockup/Pindi Chhole Masala 1.jpg", category: "Dawat" },
+            { id: 4, name: "Shahi Paneer Masala", desc: "Mughlai-style rich & creamy blend for royal paneer gravies and korma.", weight: "50g", price: 58, amazonLink: "https://amzn.to/4pwbBpn", img: "Masala mockup/Shahi Paneer Masala.jpg", imgAlt: "Masala mockup/Shahi Paneer Masala1.jpg", category: "Dawat" },
+            { id: 5, name: "Chicken Popcorn Masala", desc: "Crispy restaurant-style seasoning for popcorn chicken, nuggets & starters.", weight: "50g", price: 60, amazonLink: "https://amzn.to/3LoMV46", img: "Masala mockup/Chicken Popcorn Masala 1.jpg", imgAlt: "Masala mockup/Chicken Popcorn Masala.jpg", category: "Ready" },
+            { id: 6, name: "Rajshahi Biryani Masala", desc: "Traditional aromatic blend for chicken, mutton & veg dum biryani.", weight: "50g", price: 86, amazonLink: "https://amzn.to/4qiZj52", img: "Masala mockup/Rajshahi Biryani.jpg", imgAlt: "Masala mockup/Rajshahi Biryani 1.jpg", category: "Dawat" },
+            { id: 7, name: "Green Chicken Masala", desc: "Hariyali-style fresh herb & spice blend for green chicken curry & kebabs.", weight: "50g", price: 60, amazonLink: "https://amzn.to/4qaQABD", img: "Masala mockup/Green Chicken.jpg", imgAlt: "Masala mockup/Green Chicken 1.jpg", category: "Dawat" },
+            { id: 8, name: "Kadhi Gosht Masala", desc: "Traditional yogurt-based mutton & chicken curry masala for North Indian recipes.", weight: "50g", price: 60, amazonLink: "https://amzn.to/4qKBwdT", img: "Masala mockup/Kadhi Gosht 1.jpg", imgAlt: "Masala mockup/Kadhi Gosht.jpg", category: "Dawat" }
         ];
 
         // --- Render Products ---
         function generateProductCard(product) {
             return `
-                <div class="group bg-white rounded-md border border-[#C5A059]/20 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full relative">
+                <div class="group bg-white rounded-2xl border border-[#C5A059]/20 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full relative">
                     <!-- Amazon badge -->
-                    <div class="absolute top-2 right-2 z-10 bg-white/90 backdrop-blur-sm px-2 py-1 rounded text-[0.65rem] font-medium text-[#D84315] border border-[#D84315]/20 flex items-center gap-1 shadow-sm uppercase tracking-tighter">
+                    <div class="absolute top-2 right-2 z-10 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-[0.65rem] font-medium text-[#D84315] border border-[#D84315]/20 flex items-center gap-1 shadow-sm uppercase tracking-tighter">
                         <iconify-icon icon="bi:amazon"></iconify-icon> Prime
                     </div>
 
@@ -1341,11 +1679,11 @@
                             </div>
 
                             <div class="flex gap-2">
-                                <button onclick="addToCart(${product.id})" class="flex-[2] bg-[#7A2021] text-white py-2 rounded-sm text-xs font-bold hover:bg-[#5A1718] transition-colors flex justify-center items-center gap-1.5 shadow-sm">
+                                <button onclick="addToCart(${product.id})" class="flex-1 bg-[#7A2021] text-white py-2 rounded-xl text-xs font-bold hover:bg-[#5A1718] transition-colors flex justify-center items-center gap-1.5 shadow-sm">
                                     <iconify-icon icon="solar:cart-plus-bold" width="1rem"></iconify-icon> ADD
                                 </button>
-                                <a href="${product.amazonLink}" target="_blank" rel="noopener noreferrer" class="flex-1 bg-white border border-[#FF9900]/40 text-[#FF9900] py-2 rounded-sm text-xs font-bold hover:bg-[#FF9900] hover:text-white transition-colors flex justify-center items-center gap-1.5">
-                                    <iconify-icon icon="ri:amazon-line" width="1rem"></iconify-icon> BUY
+                                <a href="${product.amazonLink}" target="_blank" rel="noopener noreferrer" class="flex-[2] bg-white border border-[#FF9900]/40 text-[#FF9900] py-2 rounded-xl text-xs font-bold hover:bg-[#FF9900] hover:text-white transition-colors flex justify-center items-center gap-1.5">
+                                    <iconify-icon icon="ri:amazon-line" width="1rem"></iconify-icon> Buy on Amazon
                                 </a>
                             </div>
                         </div>
@@ -1354,11 +1692,20 @@
             `;
         }
 
-        // Populate grids
-        document.getElementById('featured-products-container').innerHTML = products.slice(0, 4).map(generateProductCard).join('');
+        // --- Render Products ---
+        // generateProductCard: Builds the HTML string for a single product card.
+        // Called by both the home page featured grid and the full shop grid.
+        // Home page shows first 8 products; shop page shows all.
+        // Change the slice number to control how many appear on the Home featured grid.
+        document.getElementById('featured-products-container').innerHTML = products.slice(0, 8).map(generateProductCard).join('');
         document.getElementById('shop-products-container').innerHTML = products.map(generateProductCard).join('');
 
         // --- Navigation Logic (SPA) ---
+        // This site is a Single-Page Application (SPA).
+        // All pages (home, shop, about, contact, checkout) are pre-rendered in the DOM.
+        // navigate() hides the current page and shows the requested one with a fade-in.
+        // TODO (Backend): Replace with real routing (e.g. React Router, Next.js, or
+        //   server-side rendered pages) when migrating to a full-stack framework.
         function navigate(pageId) {
             // Hide all sections
             document.querySelectorAll('.page-section').forEach(sec => {
@@ -1397,6 +1744,8 @@
             });
         }
 
+        // updateCheckoutSummary: Renders the order summary panel on the checkout page.
+        // Called every time the user navigates to checkout so it reflects the current cart.
         function updateCheckoutSummary() {
             const container = document.getElementById('checkout-items');
             const subtotalEl = document.getElementById('checkout-subtotal');
@@ -1424,6 +1773,13 @@
             totalEl.innerText = `₹${total}.00`;
         }
 
+        // processOrder: Handles the full checkout flow.
+        // Step 1 — Validates all delivery fields.
+        // Step 2 — Generates a unique Order ID (SR-XXXXXX).
+        // Step 3 — Builds a UPI deep-link so the user's payment app opens with pre-filled details.
+        // Step 4 — Builds a WhatsApp message with full order details for manual confirmation.
+        // TODO (Backend): Replace Steps 3 & 4 with a Razorpay/Cashfree payment gateway and
+        //   a POST /api/orders call. See the backend integration comment above.
         function processOrder() {
             const name = document.getElementById('checkout-name').value;
             const phone = document.getElementById('checkout-phone').value;
@@ -1495,16 +1851,18 @@
             }, 800);
         }
 
-        // Initialize home nav active state
+        // Initialize the app — show the Home page on first load.
         navigate('home');
 
-        // Mobile Menu Toggle
+        // Mobile Menu Toggle — shows/hides the hamburger nav on small screens.
         document.getElementById('mobile-menu-btn').addEventListener('click', () => {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         });
 
-        // --- Cart Logic (Simplified) ---
+        // --- Cart State ---
+        // `cart` is a plain JS array of objects: { id, name, weight, price, qty, img }
+        // All cart mutations (add, update, remove) must call updateCartUI() to re-render.
         let cart = [];
         const cartBtn = document.getElementById('cart-btn');
         const cartOverlay = document.getElementById('cart-overlay');
@@ -1514,6 +1872,7 @@
         const cartCount = document.getElementById('cart-count');
         const cartSubtotal = document.getElementById('cart-subtotal');
 
+        // toggleCart: Opens or closes the cart side-drawer with a slide animation.
         function toggleCart() {
             const isOpen = !cartDrawer.classList.contains('translate-x-full');
             if (isOpen) {
@@ -1533,6 +1892,19 @@
         closeCartBtn.addEventListener('click', toggleCart);
         cartOverlay.addEventListener('click', toggleCart);
 
+        // ============================================================
+        // BACKEND INTEGRATION — CART
+        // ============================================================
+        // TODO: When a user is logged in, persist cart to the backend on every change:
+        //   await fetch('/api/cart', { method: 'POST', body: JSON.stringify(cart) });
+        //
+        // On page load, restore cart from backend for logged-in users:
+        //   const savedCart = await fetch('/api/cart').then(r => r.json());
+        //   cart = savedCart.items || [];
+        //
+        // For guest users, localStorage can be used as a fallback:
+        //   localStorage.setItem('spiceroots_cart', JSON.stringify(cart));
+        // ============================================================
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             const existingItem = cart.find(item => item.id === productId);
@@ -1552,6 +1924,8 @@
             if (cart.length === 1 && cart[0].qty === 1) { toggleCart(); }
         }
 
+        // updateCartQty: Increases or decreases the quantity of a cart item by `delta`.
+        // If quantity drops to 0 or below, the item is removed from the cart entirely.
         function updateCartQty(productId, delta) {
             const item = cart.find(i => i.id === productId);
             if (item) {
@@ -1563,6 +1937,26 @@
             }
         }
 
+        // ============================================================
+        // BACKEND INTEGRATION — CHECKOUT / ORDER PLACEMENT
+        // ============================================================
+        // TODO: On checkout form submission, POST the order to your backend:
+        //
+        //   const orderPayload = {
+        //     customer: { name, phone, address, city, pincode, orderType },
+        //     items: cart.map(i => ({ id: i.id, name: i.name, qty: i.qty, price: i.price })),
+        //     subtotal: totalAmount,
+        //     paymentMode: 'UPI' | 'COD' | 'ONLINE'
+        //   };
+        //   await fetch('/api/orders', { method: 'POST', body: JSON.stringify(orderPayload) });
+        //
+        // PAYMENT GATEWAY: Integrate Razorpay or Cashfree here.
+        //   Replace the current WhatsApp redirect with a Razorpay order initiation:
+        //   const rzp = new Razorpay({ key: 'YOUR_KEY', amount: subtotal * 100, ... });
+        //   rzp.open();
+        //
+        // After successful payment, confirm the order and redirect to a Thank You page.
+        // ============================================================
         function updateCartUI() {
             // Update count
             const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
@@ -1628,6 +2022,20 @@
         let _modalQty = 1;
         let _modalShowingAlt = false;
 
+        // ============================================================
+        // BACKEND INTEGRATION — PRODUCT DETAIL / REVIEWS
+        // ============================================================
+        // TODO: When opening the modal, optionally fetch live product data
+        //   (price updates, stock status, ratings) from the backend:
+        //   const liveData = await fetch(`/api/products/${productId}`).then(r => r.json());
+        //   Merge liveData into the modal display.
+        //
+        // Reviews: Fetch and render product reviews below the description:
+        //   const reviews = await fetch(`/api/products/${productId}/reviews`).then(r => r.json());
+        //
+        // Analytics: Fire a product_viewed event here for tracking:
+        //   analytics.track('product_viewed', { id: productId, name: product.name });
+        // ============================================================
         function openProductModal(productId) {
             _modalProduct = products.find(p => p.id === productId);
             if (!_modalProduct) return;
@@ -1663,6 +2071,8 @@
             document.body.style.overflow = 'hidden';
         }
 
+        // closeProductModal: Reverses the open animation and hides the modal overlay.
+        // On desktop: scales down. On mobile (< 640px): slides down off-screen.
         function closeProductModal() {
             const overlay = document.getElementById('product-modal-overlay');
             const modal = document.getElementById('product-modal');
@@ -1675,17 +2085,24 @@
             document.body.style.overflow = '';
         }
 
+        // changeModalQty: Updates the quantity selector inside the product modal.
+        // Enforces a minimum of 1. Also recalculates and displays the line total.
         function changeModalQty(delta) {
             _modalQty = Math.max(1, _modalQty + delta);
             document.getElementById('modal-qty').textContent = _modalQty;
             document.getElementById('modal-total').textContent = '₹' + (_modalProduct.price * _modalQty);
         }
 
+        // _updateCarouselDots: Highlights the active dot in the product image carousel.
+        // idx 0 = primary image, idx 1 = alternate image.
         function _updateCarouselDots(idx) {
             document.getElementById('modal-dot-0').className = `w-2 h-2 rounded-full transition-all duration-200 ${idx === 0 ? 'bg-[#7A2021] w-3' : 'bg-white/60'}`;
             document.getElementById('modal-dot-1').className = `w-2 h-2 rounded-full transition-all duration-200 ${idx === 1 ? 'bg-[#7A2021] w-3' : 'bg-white/60'}`;
         }
 
+        // modalCarouselGo: Switches between the two product images (primary / alternate).
+        // `direction` is +1 or -1 for next/prev. `targetIdx` can jump to a specific image.
+        // Applies a short opacity fade for a smooth transition effect.
         function modalCarouselGo(direction, targetIdx) {
             const img = document.getElementById('modal-img');
             const images = [_modalProduct.img, _modalProduct.imgAlt];
@@ -1706,7 +2123,8 @@
             }, 180);
         }
 
-        // Touch swipe for carousel
+        // Touch swipe support for the product image carousel on mobile devices.
+        // Swipes > 50px left/right trigger the carousel to advance.
         (function () {
             let touchStartX = 0;
             const carousel = document.getElementById('modal-img-carousel');
@@ -1721,6 +2139,21 @@
         document.addEventListener('keydown', e => {
             if (e.key === 'Escape') closeProductModal();
         });
+
+        // Hero parallax on scroll
+        (function () {
+            const heroImg = document.getElementById('hero-parallax');
+            if (!heroImg) return;
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                const heroSection = heroImg.closest('section');
+                if (!heroSection) return;
+                // Only apply within hero area
+                if (scrollY < heroSection.offsetHeight) {
+                    heroImg.style.transform = `translateY(${scrollY * 0.3}px) scale(1.1)`;
+                }
+            }, { passive: true });
+        })();
 
     </script>
 

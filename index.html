@@ -357,7 +357,8 @@
                 </svg>
 
                 <div class="relative z-20 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
-                    <span class="heritage-label text-[#C5A059]/90 mb-4 block drop-shadow-md">✦ Nawab Overseas Presents
+                    <span class="heritage-label text-[#C5A059]/90 mb-4 block drop-shadow-md font-bold">✦ Nawab Overseas
+                        Presents
                         ✦</span>
                     <h1 class="font-serif tracking-heritage text-[#FAF6F0] mb-3 drop-shadow-lg leading-tight">
                         <span class="text-4xl sm:text-5xl md:text-6xl block">From the Heart</span>
@@ -412,6 +413,7 @@
                     </svg>
                     <p class="heritage-label mb-3">A Hundred Years of Rasoi Wisdom</p>
                     <h2 class="font-serif text-3xl lg:text-4xl tracking-heritage text-[#7A2021] mb-8">A Century of Trust
+                        –
                     </h2>
 
                     <!-- Decorative divider -->
@@ -423,7 +425,7 @@
                         From the renowned kirana establishments of Berchha, Madhya Pradesh, Nawab Brothers established a
                         legacy defined by uncompromising purity and profound expertise in spices. Nawab Overseas, its
                         sister concern, now carries this century-old generational wisdom forward through SpiceRoots —
-                        presenting India's finest spices to discerning kitchens in India and, soon, across the world.
+                        presenting India's finest spices to discerning kitchens in India and soon across the world.
                     </p>
 
                     <!-- Heritage highlight cards -->
@@ -441,7 +443,7 @@
                             <div
                                 class="w-8 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent mb-3">
                             </div>
-                            <p class="text-xs text-[#3E2723]/65 leading-relaxed">Of spice mastery passed down through
+                            <p class="text-xs text-[#3E2723]/65 leading-relaxed">spice mastery passed down through
                                 generations</p>
                         </div>
 
@@ -475,6 +477,7 @@
                             </div>
                             <p class="text-xs text-[#3E2723]/65 leading-relaxed">Traditional methods for maximum
                                 volatile oils &amp; aroma</p>
+                            <p class="text-[0.6rem] text-[#3E2723]/45 italic mt-2">*For some masalas only.</p>
                         </div>
 
                     </div>
@@ -555,26 +558,48 @@
             <!-- Featured Products -->
             <section class="py-20 lg:py-28 px-4 bg-paisley">
                 <div class="max-w-[80rem] mx-auto">
-                    <!-- Section header with decorative Indian border -->
+                    <!-- Section header -->
                     <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6 pb-6 indian-border-bottom">
+                        class="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6 pb-6 indian-border-bottom">
                         <div>
-                            <p class="heritage-label mb-2">Dawat-E-Khaas</p>
+                            <p class="heritage-label mb-2">Our Collection</p>
                             <h2 class="font-serif text-3xl lg:text-4xl tracking-heritage text-[#7A2021]">Signature
                                 Blends</h2>
                         </div>
                         <button onclick="navigate('shop')"
                             class="text-sm font-medium text-[#3E2723] flex items-center gap-2 hover:text-[#7A2021] transition-colors group tracking-wider uppercase">
-                            View Full Dawat
+                            View Full Collection
                             <iconify-icon icon="solar:arrow-right-linear"
                                 class="group-hover:translate-x-1 transition-transform"
                                 stroke-width="1.5"></iconify-icon>
                         </button>
                     </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
-                        id="featured-products-container">
-                        <!-- Populated by JS -->
+                    <!-- Kitchen Essentials sub-section -->
+                    <div class="mb-14">
+                        <div class="flex items-center gap-4 mb-6">
+                            <span
+                                class="font-cinzel text-xs tracking-[0.25em] uppercase text-[#7A2021] font-semibold">🍳
+                                Kitchen Essentials</span>
+                            <div class="flex-1 h-[1px] bg-gradient-to-r from-[#C5A059]/40 to-transparent"></div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+                            id="home-essentials-container">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Dawat-E-Khaas sub-section -->
+                    <div>
+                        <div class="flex items-center gap-4 mb-6">
+                            <span class="font-cinzel text-xs tracking-[0.25em] uppercase text-[#7A2021] font-semibold">✦
+                                Dawat-E-Khaas</span>
+                            <div class="flex-1 h-[1px] bg-gradient-to-r from-[#C5A059]/40 to-transparent"></div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+                            id="home-dawat-container">
+                            <!-- Populated by JS -->
+                        </div>
                     </div>
                 </div>
             </section>
@@ -589,8 +614,8 @@
                         to Global Tables</h2>
                     <div class="mandala-divider mb-6"><span class="text-sm">✦</span></div>
                     <p class="text-[#3E2723]/80 leading-relaxed text-base text-justify">
-                        Nawab Overseas was built on a simple belief — <em>"Agar hamare parivaar par sadiyaan bharosa
-                            kiya hai, toh duniya bhi kar sakti hai."</em> With a modern outlook, we aim to take India's
+                        Nawab Overseas was built on a simple belief — <em>"If generations have trusted us, the rest of
+                            the world can too."</em> With a modern outlook, we aim to take India's
                         authentic flavors to international kitchens — without dilution, without shortcuts, and without
                         compromise.
                     </p>
@@ -707,23 +732,46 @@
             <!-- Filters & Grid -->
             <div class="max-w-[80rem] mx-auto px-4 py-12">
 
-                <!-- Category Filters (Visual only for layout) -->
-                <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <button
-                        class="px-5 py-2 text-sm font-medium rounded-full bg-[#7A2021] text-white border border-[#7A2021] shadow-sm transition-all">All
-                        Products</button>
-                    <button
-                        class="px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all">Kitchen
-                        Essentials</button>
-                    <button
-                        class="px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all">Dawat-E-Khaas</button>
-                    <button
-                        class="px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all">Ready-to-Cook</button>
+                <!-- Sticky Category Filter Nav -->
+                <div
+                    class="sticky top-[4.5rem] z-30 bg-[#FAF6F0]/95 backdrop-blur-md py-4 mb-10 border-b border-[#C5A059]/15">
+                    <div class="flex flex-wrap justify-center gap-3" id="shop-filter-bar">
+                        <button data-filter="all"
+                            class="shop-filter-btn active-filter px-5 py-2 text-sm font-medium rounded-full bg-[#7A2021] text-white border border-[#7A2021] shadow-sm transition-all duration-200">All
+                            Products</button>
+                        <button data-filter="Essentials"
+                            class="shop-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all duration-200">🍳
+                            Kitchen Essentials</button>
+                        <button data-filter="Dawat"
+                            class="shop-filter-btn px-5 py-2 text-sm font-medium rounded-full bg-transparent text-[#3E2723] border border-[#C5A059]/40 hover:border-[#7A2021] hover:text-[#7A2021] transition-all duration-200">✦
+                            Dawat-E-Khaas</button>
+                    </div>
                 </div>
 
-                <!-- Product Grid -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8" id="shop-products-container">
-                    <!-- Populated by JS -->
+                <!-- Kitchen Essentials section -->
+                <div id="shop-section-essentials" class="shop-category-section mb-14">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="font-cinzel text-xs tracking-[0.25em] uppercase text-[#7A2021] font-semibold">🍳
+                            Kitchen Essentials</span>
+                        <div class="flex-1 h-[1px] bg-gradient-to-r from-[#C5A059]/40 to-transparent"></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+                        id="shop-essentials-container">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Dawat-E-Khaas section -->
+                <div id="shop-section-dawat" class="shop-category-section">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="font-cinzel text-xs tracking-[0.25em] uppercase text-[#7A2021] font-semibold">✦
+                            Dawat-E-Khaas</span>
+                        <div class="flex-1 h-[1px] bg-gradient-to-r from-[#C5A059]/40 to-transparent"></div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
+                        id="shop-dawat-container">
+                        <!-- Populated by JS -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -1642,9 +1690,9 @@
         const products = [
             { id: 1, name: "Kitchen King Masala", desc: "All-purpose blend for vegetables, paneer, dal & gravies. Restaurant-style results at home.", weight: "50g", price: 59, amazonLink: "https://amzn.to/4jrWX0O", img: "Masala mockup/Kitchen King Masala.jpg", imgAlt: "Masala mockup/Kitchen King Masala 1.jpg", category: "Essentials" },
             { id: 2, name: "Mumbai Pav Bhaji Masala", desc: "Authentic Mumbai street-style spicy-buttery flavor for perfect tawa bhaji.", weight: "50g", price: 58, amazonLink: "https://amzn.to/4pz0BaJ", img: "Masala mockup/Mumbai Pav Bhaji 1.jpg", imgAlt: "Masala mockup/Mumbai Pav Bhaji.jpg", category: "Essentials" },
-            { id: 3, name: "Pindi Chhole Masala", desc: "Punjabi dhaba-style dark, bold & tangy blend for authentic pindi chhole.", weight: "50g", price: 58, amazonLink: "https://amzn.to/49vqpyt", img: "Masala mockup/Pindi Chhole Masala.jpg", imgAlt: "Masala mockup/Pindi Chhole Masala 1.jpg", category: "Dawat" },
-            { id: 4, name: "Shahi Paneer Masala", desc: "Mughlai-style rich & creamy blend for royal paneer gravies and korma.", weight: "50g", price: 58, amazonLink: "https://amzn.to/4pwbBpn", img: "Masala mockup/Shahi Paneer Masala.jpg", imgAlt: "Masala mockup/Shahi Paneer Masala1.jpg", category: "Dawat" },
-            { id: 5, name: "Chicken Popcorn Masala", desc: "Crispy restaurant-style seasoning for popcorn chicken, nuggets & starters.", weight: "50g", price: 60, amazonLink: "https://amzn.to/3LoMV46", img: "Masala mockup/Chicken Popcorn Masala 1.jpg", imgAlt: "Masala mockup/Chicken Popcorn Masala.jpg", category: "Ready" },
+            { id: 3, name: "Pindi Chhole Masala", desc: "Punjabi dhaba-style dark, bold & tangy blend for authentic pindi chhole.", weight: "50g", price: 58, amazonLink: "https://amzn.to/49vqpyt", img: "Masala mockup/Pindi Chhole Masala.jpg", imgAlt: "Masala mockup/Pindi Chhole Masala 1.jpg", category: "Essentials" },
+            { id: 4, name: "Shahi Paneer Masala", desc: "Mughlai-style rich & creamy blend for royal paneer gravies and korma.", weight: "50g", price: 58, amazonLink: "https://amzn.to/4pwbBpn", img: "Masala mockup/Shahi Paneer Masala.jpg", imgAlt: "Masala mockup/Shahi Paneer Masala1.jpg", category: "Essentials" },
+            { id: 5, name: "Chicken Popcorn Masala", desc: "Crispy restaurant-style seasoning for popcorn chicken, nuggets & starters.", weight: "50g", price: 60, amazonLink: "https://amzn.to/3LoMV46", img: "Masala mockup/Chicken Popcorn Masala 1.jpg", imgAlt: "Masala mockup/Chicken Popcorn Masala.jpg", category: "Dawat" },
             { id: 6, name: "Rajshahi Biryani Masala", desc: "Traditional aromatic blend for chicken, mutton & veg dum biryani.", weight: "50g", price: 86, amazonLink: "https://amzn.to/4qiZj52", img: "Masala mockup/Rajshahi Biryani.jpg", imgAlt: "Masala mockup/Rajshahi Biryani 1.jpg", category: "Dawat" },
             { id: 7, name: "Green Chicken Masala", desc: "Hariyali-style fresh herb & spice blend for green chicken curry & kebabs.", weight: "50g", price: 60, amazonLink: "https://amzn.to/4qaQABD", img: "Masala mockup/Green Chicken.jpg", imgAlt: "Masala mockup/Green Chicken 1.jpg", category: "Dawat" },
             { id: 8, name: "Kadhi Gosht Masala", desc: "Traditional yogurt-based mutton & chicken curry masala for North Indian recipes.", weight: "50g", price: 60, amazonLink: "https://amzn.to/4qKBwdT", img: "Masala mockup/Kadhi Gosht 1.jpg", imgAlt: "Masala mockup/Kadhi Gosht.jpg", category: "Dawat" }
@@ -1691,13 +1739,41 @@
             `;
         }
 
-        // --- Render Products ---
-        // generateProductCard: Builds the HTML string for a single product card.
-        // Called by both the home page featured grid and the full shop grid.
-        // Home page shows first 8 products; shop page shows all.
-        // Change the slice number to control how many appear on the Home featured grid.
-        document.getElementById('featured-products-container').innerHTML = products.slice(0, 8).map(generateProductCard).join('');
-        document.getElementById('shop-products-container').innerHTML = products.map(generateProductCard).join('');
+        // --- Render Products (Category-Separated) ---
+        const essentials = products.filter(p => p.category === 'Essentials');
+        const dawat = products.filter(p => p.category === 'Dawat');
+
+        // Home page – two separate category grids
+        document.getElementById('home-essentials-container').innerHTML = essentials.map(generateProductCard).join('');
+        document.getElementById('home-dawat-container').innerHTML = dawat.map(generateProductCard).join('');
+
+        // Shop page – two separate category grids
+        document.getElementById('shop-essentials-container').innerHTML = essentials.map(generateProductCard).join('');
+        document.getElementById('shop-dawat-container').innerHTML = dawat.map(generateProductCard).join('');
+
+        // --- Shop Filter Bar Logic ---
+        const filterBtns = document.querySelectorAll('.shop-filter-btn');
+        const categorySections = document.querySelectorAll('.shop-category-section');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const chosen = btn.dataset.filter;
+
+                // Update button styles
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-[#7A2021]', 'text-white', 'border-[#7A2021]', 'active-filter');
+                    b.classList.add('bg-transparent', 'text-[#3E2723]', 'border-[#C5A059]/40');
+                });
+                btn.classList.add('bg-[#7A2021]', 'text-white', 'border-[#7A2021]', 'active-filter');
+                btn.classList.remove('bg-transparent', 'text-[#3E2723]', 'border-[#C5A059]/40');
+
+                // Show/hide sections
+                document.getElementById('shop-section-essentials').style.display =
+                    (chosen === 'all' || chosen === 'Essentials') ? '' : 'none';
+                document.getElementById('shop-section-dawat').style.display =
+                    (chosen === 'all' || chosen === 'Dawat') ? '' : 'none';
+            });
+        });
 
         // --- Navigation Logic (SPA) ---
         // This site is a Single-Page Application (SPA).

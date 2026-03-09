@@ -1937,27 +1937,50 @@
             btn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon> Opening Payment App...';
 
             setTimeout(() => {
-                // For mobile devices, the UPI deep-link opens the payment app directly.
-                // For desktop, we can show a QR code for the user to scan.
-                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                // Show QR code in a beautiful overlay for both mobile and desktop
+                const qrOverlay = document.createElement('div');
+                qrOverlay.id = "upi-qr-overlay";
+                qrOverlay.className = "fixed inset-0 bg-black/90 z-[100] flex flex-col items-center justify-center p-4 text-white text-center backdrop-blur-md transition-opacity duration-300";
+                qrOverlay.style.opacity = "0";
 
-                if (isMobile) {
-                    window.location.href = upiUri;
-                } else {
-                    // Show QR code in a simple overlay/modal if on desktop
-                    const qrOverlay = document.createElement('div');
-                    qrOverlay.className = "fixed inset-0 bg-black/80 z-[100] flex flex-col items-center justify-center p-6 text-white text-center";
-                    qrOverlay.innerHTML = `
-                        <div class="bg-white p-8 rounded-2xl text-[#3E2723] max-w-xs w-full shadow-2xl space-y-4">
-                            <h3 class="font-serif text-xl font-bold">Scan to Pay</h3>
-                            <p class="text-xs text-[#3E2723]/60">Scan this QR code with any UPI app (GPay, PhonePe, Paytm, etc.)</p>
-                            <img src="${qrUri}" alt="UPI QR Code" class="w-full h-auto mx-auto border-4 border-[#F5E9DA] rounded-lg">
-                            <p class="text-sm font-bold text-[#7A2021]">Total: ₹${totalAmount}.00</p>
-                            <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-[#7A2021] text-white py-3 rounded-lg text-sm font-medium">I've Scanned & Paid</button>
+                qrOverlay.innerHTML = `
+                    <div class="bg-white p-6 sm:p-8 rounded-3xl text-[#3E2723] max-w-xs sm:max-w-sm w-full shadow-2xl space-y-5 transform transition-transform duration-300 scale-95">
+                        <div class="flex justify-between items-center border-b border-[#F5E9DA] pb-3">
+                            <h3 class="font-serif text-lg sm:text-xl font-bold">Complete Payment</h3>
+                            <button onclick="document.getElementById('upi-qr-overlay').remove()" class="text-[#3E2723]/40 hover:text-[#7A2021]">
+                                <iconify-icon icon="solar:close-circle-linear" width="1.5rem"></iconify-icon>
+                            </button>
                         </div>
-                    `;
-                    document.body.appendChild(qrOverlay);
-                }
+                        
+                        <div class="bg-[#FAF6F0] p-4 rounded-2xl border-2 border-dashed border-[#C5A059]/30">
+                            <img src="${qrUri}" alt="UPI QR Code" class="w-full h-auto mx-auto mix-blend-multiply rounded-lg mb-2">
+                            <p class="text-[0.65rem] text-[#3E2723]/60 leading-tight">Supported by all UPI apps</p>
+                        </div>
+
+                        <div class="space-y-1">
+                            <p class="text-xs text-[#3E2723]/50 uppercase tracking-widest font-bold">Total Amount</p>
+                            <p class="text-2xl font-bold text-[#7A2021]">₹${totalAmount}.00</p>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="${upiUri}" class="block w-full bg-[#7A2021] text-white py-4 rounded-xl text-sm font-bold shadow-lg mb-3 flex items-center justify-center gap-2 active:scale-95 transition-transform">
+                                <iconify-icon icon="solar:phone-linear" width="1.2rem"></iconify-icon> Pay via Mobile App
+                            </a>
+                            <button onclick="document.getElementById('upi-qr-overlay').remove()" class="w-full bg-white border border-[#7A2021]/20 text-[#7A2021] py-3 rounded-xl text-sm font-medium hover:bg-[#7A2021]/5 transition-colors">
+                                I've Paid (Screenshot Saved)
+                            </button>
+                        </div>
+                        
+                        <p class="text-[0.6rem] text-[#3E2723]/40 italic">Wait here after paying, then click the WhatsApp button on the main screen to confirm.</p>
+                    </div>
+                `;
+                document.body.appendChild(qrOverlay);
+
+                // Trigger animation
+                requestAnimationFrame(() => {
+                    qrOverlay.style.opacity = "1";
+                    qrOverlay.querySelector('div').style.transform = "scale(1)";
+                });
 
                 // Step 2: Show WhatsApp Confirmation Button
                 setTimeout(() => {

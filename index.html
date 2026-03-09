@@ -1038,7 +1038,7 @@
                         </div>
 
                         <div id="checkout-form-container"
-                            class="bg-white rounded-2xl border border-[#C5A059]/20 shadow-xl overflow-hidden">
+                            class="relative z-10 bg-white rounded-2xl border border-[#C5A059]/20 shadow-xl">
                             <div class="bg-[#FAF6F0]/50 p-6 border-b border-[#C5A059]/10">
                                 <h2 class="font-serif text-xl text-[#3E2723] flex items-center gap-2">
                                     <iconify-icon icon="solar:delivery-linear" class="text-[#C5A059]"></iconify-icon>
@@ -1088,14 +1088,9 @@
                                             class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
                                             Email Address <span class="text-red-500">*</span>
                                         </label>
-                                        <div class="relative group">
-                                            <input type="email" id="checkout-email" required
-                                                placeholder="yourname@example.com"
-                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
-                                            <div
-                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
-                                            </div>
-                                        </div>
+                                        <input type="email" id="checkout-email" required
+                                            placeholder="yourname@example.com"
+                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/20 rounded-xl px-4 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-inner">
                                     </div>
                                 </div>
 
@@ -1137,14 +1132,9 @@
                                             class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
                                             Pincode <span class="text-red-500">*</span>
                                         </label>
-                                        <div class="relative group">
-                                            <input type="text" id="checkout-pincode" required maxlength="6"
-                                                placeholder="000 000"
-                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
-                                            <div
-                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
-                                            </div>
-                                        </div>
+                                        <input type="text" id="checkout-pincode" required maxlength="10"
+                                            placeholder="Enter Pincode"
+                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/20 rounded-xl px-4 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-inner">
                                     </div>
                                 </div>
                             </div>

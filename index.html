@@ -1197,37 +1197,37 @@
 
                     <!-- Contact Form -->
                     <div class="bg-white p-8 lg:p-12 rounded-md border border-[#C5A059]/20 shadow-lg">
-                        <form class="space-y-6">
+                        <form class="space-y-6" onsubmit="handleContactSubmit(event)">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div class="space-y-1">
                                     <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Your
                                         Name</label>
-                                    <input type="text"
+                                    <input type="text" name="name" required
                                         class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors"
                                         placeholder="John Doe">
                                 </div>
                                 <div class="space-y-1">
                                     <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Email
                                         Address</label>
-                                    <input type="email"
+                                    <input type="email" name="email" required
                                         class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors"
                                         placeholder="john@example.com">
                                 </div>
                             </div>
                             <div class="space-y-1">
                                 <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Subject</label>
-                                <input type="text"
+                                <input type="text" name="subject" required
                                     class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors"
                                     placeholder="Inquiry about bulk orders">
                             </div>
                             <div class="space-y-1">
                                 <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Your
                                     Message</label>
-                                <textarea rows="5"
+                                <textarea name="message" rows="5" required
                                     class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors resize-none"
                                     placeholder="Tell us how we can help..."></textarea>
                             </div>
-                            <button
+                            <button type="submit"
                                 class="w-full bg-[#7A2021] text-white py-4 rounded-sm font-medium text-sm hover:bg-[#5A1718] transition-colors shadow-md">Send
                                 Message</button>
                         </form>
@@ -1850,14 +1850,14 @@
 
         // processOrder: Handles the full checkout flow.
         // Step 1 — Validates all delivery fields.
-        // Step 2 — Generates a unique Order ID (SR-XXXXXX).
-        // Step 3 — Builds a UPI deep-link so the user's payment app opens with pre-filled details.
-        // Step 4 — Builds a WhatsApp message with full order details for manual confirmation.
-        // TODO (Backend): Replace Steps 3 & 4 with a Razorpay/Cashfree payment gateway and
-        //   a POST /api/orders call. See the backend integration comment above.
-        function processOrder() {
+        // Step 2 — Sends order details to Formspree (Email).
+        // Step 3 — Generates a unique Order ID (SR-XXXXXX).
+        // Step 4 — Builds a UPI deep-link so the user's payment app opens with pre-filled details.
+        // Step 5 — Builds a WhatsApp message with full order details for manual confirmation.
+        async function processOrder() {
             const name = document.getElementById('checkout-name').value;
             const phone = document.getElementById('checkout-phone').value;
+            const email = document.getElementById('checkout-email').value;
             const address = document.getElementById('checkout-address').value;
             const city = document.getElementById('checkout-city').value;
             const pincode = document.getElementById('checkout-pincode').value;
@@ -1871,18 +1871,57 @@
             const orderId = "SR-" + Date.now().toString().slice(-6);
             const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
 
+            // --- Step 2: Send to Formspree (Email) ---
+            const btn = document.getElementById('pay-btn');
+            const originalBtnHtml = btn.innerHTML;
+            btn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon> Processing Order...';
+            btn.disabled = true;
+
+            const itemsList = cart.map(item => `• ${item.name} (${item.weight}) x${item.qty} - ₹${item.price * item.qty}`).join('\n');
+            const orderData = {
+                order_id: orderId,
+                customer_name: name,
+                customer_phone: phone,
+                customer_email: email || 'Not provided',
+                delivery_address: `${address}, ${city} - ${pincode}`,
+                items: itemsList,
+                total_amount: `₹${totalAmount}.00`
+            };
+
+            try {
+                const response = await fetch("https://formspree.io/f/myknklbv", {
+                    method: "POST",
+                    body: JSON.stringify(orderData),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    console.log("Order sent to email successfully.");
+                } else {
+                    console.error("Failed to send order email.");
+                }
+            } catch (error) {
+                console.error("Error sending order to Formspree:", error);
+            }
+
+            // --- Step 3: Build UPI & WhatsApp ---
             // Build a concise UPI note (approx 50 chars limit)
             const itemSummary = cart.map(i => i.name.split(' ')[0]).join(', ');
             let upiNote = `${orderId}: ${itemCount} items (${itemSummary})`;
             if (upiNote.length > 50) upiNote = upiNote.substring(0, 47) + "...";
 
             // Build UPI URI
-            const upiId = "9926691191@upi";
-            const payeeName = "Nawab Overseas (SpiceRoots)";
+            const upiId = "upi-shujauddinnawab-1@okaxis";
+            const payeeName = "Shujauddin Nawab (SpiceRoots)";
             const upiUri = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${totalAmount}&cu=INR&tn=${encodeURIComponent(upiNote)}`;
 
+            // Build Dynamic QR Code (using a public chart API)
+            const qrUri = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiUri)}`;
+
             // Build WhatsApp Message
-            const itemsList = cart.map(item => `• ${item.name} (${item.weight}) x${item.qty} - ₹${item.price * item.qty}`).join('\n');
             const waMessage = `*New Order: ${orderId}*\n\n` +
                 `*Items:*\n${itemsList}\n\n` +
                 `*Total Amount:* ₹${totalAmount}.00\n\n` +
@@ -1895,12 +1934,30 @@
             const waUri = `https://wa.me/919926691191?text=${encodeURIComponent(waMessage)}`;
 
             // Step 1: Open Payment App
-            const btn = document.getElementById('pay-btn');
             btn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon> Opening Payment App...';
-            btn.disabled = true;
 
             setTimeout(() => {
-                window.location.href = upiUri;
+                // For mobile devices, the UPI deep-link opens the payment app directly.
+                // For desktop, we can show a QR code for the user to scan.
+                const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+                if (isMobile) {
+                    window.location.href = upiUri;
+                } else {
+                    // Show QR code in a simple overlay/modal if on desktop
+                    const qrOverlay = document.createElement('div');
+                    qrOverlay.className = "fixed inset-0 bg-black/80 z-[100] flex flex-col items-center justify-center p-6 text-white text-center";
+                    qrOverlay.innerHTML = `
+                        <div class="bg-white p-8 rounded-2xl text-[#3E2723] max-w-xs w-full shadow-2xl space-y-4">
+                            <h3 class="font-serif text-xl font-bold">Scan to Pay</h3>
+                            <p class="text-xs text-[#3E2723]/60">Scan this QR code with any UPI app (GPay, PhonePe, Paytm, etc.)</p>
+                            <img src="${qrUri}" alt="UPI QR Code" class="w-full h-auto mx-auto border-4 border-[#F5E9DA] rounded-lg">
+                            <p class="text-sm font-bold text-[#7A2021]">Total: ₹${totalAmount}.00</p>
+                            <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-[#7A2021] text-white py-3 rounded-lg text-sm font-medium">I've Scanned & Paid</button>
+                        </div>
+                    `;
+                    document.body.appendChild(qrOverlay);
+                }
 
                 // Step 2: Show WhatsApp Confirmation Button
                 setTimeout(() => {
@@ -1916,7 +1973,7 @@
                         navigate('home');
                         // Reset button for next order
                         setTimeout(() => {
-                            btn.innerHTML = 'Complete Order & Pay <iconify-icon icon="solar:card-send-linear"></iconify-icon>';
+                            btn.innerHTML = originalBtnHtml;
                             btn.classList.remove('bg-green-600', 'hover:bg-green-700');
                             btn.classList.add('bg-[#7A2021]', 'hover:bg-[#5A1718]');
                             btn.onclick = processOrder;
@@ -2196,6 +2253,44 @@
                 img.style.opacity = '1';
                 _updateCarouselDots(next);
             }, 180);
+        }
+
+        // Contact Form Submission Handler
+        async function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button');
+            const originalText = btn.innerText;
+
+            btn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon> Sending...';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                const response = await fetch("https://formspree.io/f/myknklbv", {
+                    method: "POST",
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    alert("Thank you! Your message has been sent successfully.");
+                    form.reset();
+                } else {
+                    alert("Oops! There was a problem sending your message. Please try again later.");
+                }
+            } catch (error) {
+                console.error("Error submitting contact form:", error);
+                alert("Oops! There was a problem sending your message. Please try again later.");
+            } finally {
+                btn.innerText = originalText;
+                btn.disabled = false;
+            }
         }
 
         // Touch swipe support for the product image carousel on mobile devices.

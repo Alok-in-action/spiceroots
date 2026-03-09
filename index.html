@@ -1021,93 +1021,182 @@
         </div>
 
         <!-- ================= CHECKOUT PAGE ================= -->
-        <div id="page-checkout" class="page-section hidden bg-texture">
+        <div id="page-checkout" class="page-section hidden bg-texture min-h-screen pb-20">
             <div class="max-w-[80rem] mx-auto px-4 py-16 lg:py-24">
-                <div class="flex flex-col lg:flex-row gap-12">
+                <div class="flex flex-col lg:flex-row gap-12 items-start">
                     <!-- Left: Delivery Form -->
-                    <div class="flex-grow space-y-8">
+                    <div class="flex-grow space-y-8 w-full">
                         <div>
                             <button onclick="navigate('shop')"
                                 class="text-[#7A2021] text-sm font-medium flex items-center gap-2 mb-6 hover:translate-x-[-4px] transition-transform">
                                 <iconify-icon icon="solar:arrow-left-linear"></iconify-icon> Back to Shop
                             </button>
-                            <h1 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#3E2723] mb-2">Checkout</h1>
-                            <p class="text-[#3E2723]/60 text-sm">Please provide your delivery details below.</p>
+                            <h1 class="font-serif text-3xl lg:text-4xl tracking-tight text-[#3E2723] mb-2">Checkout
+                                Details</h1>
+                            <p class="text-[#3E2723]/60 text-sm">Please provide your heritage delivery information
+                                below.</p>
                         </div>
 
-                        <div id="checkout-form"
-                            class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white p-8 rounded-md border border-[#C5A059]/20 shadow-sm">
-                            <div class="space-y-1 md:col-span-2">
-                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Full
-                                    Name</label>
-                                <input type="text" id="checkout-name" required placeholder="John Doe"
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
+                        <div id="checkout-form-container"
+                            class="bg-white rounded-2xl border border-[#C5A059]/20 shadow-xl overflow-hidden">
+                            <div class="bg-[#FAF6F0]/50 p-6 border-b border-[#C5A059]/10">
+                                <h2 class="font-serif text-xl text-[#3E2723] flex items-center gap-2">
+                                    <iconify-icon icon="solar:delivery-linear" class="text-[#C5A059]"></iconify-icon>
+                                    Delivery Information
+                                </h2>
                             </div>
-                            <div class="space-y-1">
-                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Phone
-                                    Number</label>
-                                <input type="tel" id="checkout-phone" required placeholder="+91 00000 00000"
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Email
-                                    (Optional)</label>
-                                <input type="email" id="checkout-email" placeholder="john@example.com"
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
-                            </div>
-                            <div class="space-y-1 md:col-span-2">
-                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Delivery
-                                    Address</label>
-                                <textarea id="checkout-address" required rows="3"
-                                    placeholder="House No, Street, Landmark..."
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors resize-none"></textarea>
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">City</label>
-                                <input type="text" id="checkout-city" required placeholder="Ujjain"
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
-                            </div>
-                            <div class="space-y-1">
-                                <label class="text-xs font-bold text-[#C5A059] uppercase tracking-wider">Pincode</label>
-                                <input type="text" id="checkout-pincode" required placeholder="456010"
-                                    class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-sm px-4 py-3 text-sm focus:border-[#7A2021] outline-none transition-colors">
+
+                            <div class="p-8 space-y-8">
+                                <!-- Section 1: Personal Details -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="space-y-2 md:col-span-2">
+                                        <label
+                                            class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
+                                            Full Name <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative group">
+                                            <input type="text" id="checkout-name" required
+                                                placeholder="Enter your full name"
+                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
+                                            <div
+                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
+                                            Phone Number <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative group flex items-center">
+                                            <span
+                                                class="text-[#3E2723]/40 font-bold pr-3 border-r border-[#C5A059]/20 mr-3">+91</span>
+                                            <input type="tel" id="checkout-phone" required maxlength="10"
+                                                placeholder="00000 00000"
+                                                class="w-full bg-transparent border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
+                                            <div
+                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
+                                            </div>
+                                        </div>
+                                        <p class="text-[0.65rem] text-[#3E2723]/40 mt-1 italic">We'll use this for
+                                            WhatsApp confirmation.</p>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
+                                            Email Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative group">
+                                            <input type="email" id="checkout-email" required
+                                                placeholder="yourname@example.com"
+                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
+                                            <div
+                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="h-px bg-[#C5A059]/10"></div>
+
+                                <!-- Section 2: Address Details -->
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="space-y-2 md:col-span-2">
+                                        <label
+                                            class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
+                                            Delivery Address <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative group">
+                                            <textarea id="checkout-address" required rows="2"
+                                                placeholder="Flat/House No, Street, Apartment, Landmark..."
+                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 resize-none"></textarea>
+                                            <div
+                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
+                                            City <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative group">
+                                            <input type="text" id="checkout-city" required placeholder="e.g. Ujjain"
+                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
+                                            <div
+                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-2">
+                                        <label
+                                            class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
+                                            Pincode <span class="text-red-500">*</span>
+                                        </label>
+                                        <div class="relative group">
+                                            <input type="text" id="checkout-pincode" required maxlength="6"
+                                                placeholder="000 000"
+                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
+                                            <div
+                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- Right: Order Summary -->
-                    <div class="w-full lg:w-[24rem]">
+                    <div class="w-full lg:w-[28rem] lg:sticky lg:top-24">
                         <div
-                            class="bg-white border border-[#C5A059]/20 rounded-md shadow-sm overflow-hidden sticky top-24">
-                            <div class="p-6 border-b border-[#C5A059]/10 bg-[#FAF6F0]/30">
-                                <h3 class="font-serif text-xl text-[#3E2723]">Order Summary</h3>
+                            class="bg-[#3E2723] text-white rounded-2xl shadow-2xl overflow-hidden border border-[#C5A059]/30">
+                            <div class="p-8 border-b border-white/10 flex items-center justify-between bg-[#7A2021]/20">
+                                <h3 class="font-serif text-2xl">Order Summary</h3>
+                                <iconify-icon icon="solar:cart-large-minimalistic-linear" width="1.8rem"></iconify-icon>
                             </div>
+
                             <div id="checkout-items"
-                                class="p-6 space-y-4 max-h-[16rem] overflow-y-auto border-b border-[#C5A059]/10">
+                                class="p-8 space-y-6 max-h-[16rem] overflow-y-auto custom-scrollbar-light">
                                 <!-- JS Populated -->
                             </div>
-                            <div class="p-6 space-y-4">
-                                <div class="flex justify-between text-sm text-[#3E2723]/70">
-                                    <span>Subtotal</span>
-                                    <span id="checkout-subtotal">₹0.00</span>
+
+                            <div class="p-8 bg-white/5 space-y-4">
+                                <div class="flex justify-between text-sm text-white/60">
+                                    <span>Subtotal Items</span>
+                                    <span id="checkout-subtotal" class="font-medium text-white">₹0.00</span>
                                 </div>
-                                <div class="flex justify-between text-sm text-[#3E2723]/70">
-                                    <span>Shipping</span>
-                                    <span class="text-green-600 font-medium">calculated at payment</span>
+                                <div class="flex justify-between text-sm text-white/60">
+                                    <span>Shipping & Handling</span>
+                                    <span class="text-[#C5A059] font-medium italic">Calculated at payment</span>
                                 </div>
-                                <div class="h-px bg-[#C5A059]/10"></div>
-                                <div class="flex justify-between text-lg font-bold text-[#7A2021]">
-                                    <span>Total</span>
-                                    <span id="checkout-total">₹0.00</span>
+                                <div class="h-px bg-white/10 my-4"></div>
+                                <div class="flex justify-between items-end">
+                                    <div class="space-y-1">
+                                        <p class="text-[0.65rem] text-white/40 uppercase tracking-[0.1em]">Total Payable
+                                        </p>
+                                        <p id="checkout-total" class="text-3xl font-serif text-[#C5A059]">₹0.00</p>
+                                    </div>
+                                    <iconify-icon icon="logos:upi" width="3rem"></iconify-icon>
                                 </div>
+                            </div>
+
+                            <div class="p-8">
                                 <button id="pay-btn" onclick="processOrder()"
-                                    class="w-full bg-[#7A2021] text-white py-4 rounded-sm font-medium hover:bg-[#5A1718] transition-all shadow-lg flex items-center justify-center gap-2">
-                                    Complete Order & Pay <iconify-icon icon="solar:card-send-linear"></iconify-icon>
+                                    class="w-full bg-[#C5A059] text-[#3E2723] py-5 rounded-xl font-bold text-base hover:bg-[#D4B478] hover:scale-[1.02] active:scale-95 transition-all shadow-xl flex items-center justify-center gap-3">
+                                    Complete Order & Pay <iconify-icon icon="solar:card-send-bold"
+                                        width="1.5rem"></iconify-icon>
                                 </button>
-                                <p class="text-[0.65rem] text-[#3E2723]/40 text-center leading-relaxed">
-                                    By clicking "Complete Order", you will be redirected to choose a payment method (UPI
-                                    supported).
-                                </p>
+                                <div class="mt-6 flex items-start gap-4 text-[0.7rem] text-white/40 leading-relaxed">
+                                    <iconify-icon icon="solar:shield-check-linear" width="1.2rem"
+                                        class="shrink-0 text-green-500"></iconify-icon>
+                                    <p>Your transaction is secure. Orders are processed immediately and confirmed via
+                                        Email & WhatsApp.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1862,8 +1951,13 @@
             const city = document.getElementById('checkout-city').value;
             const pincode = document.getElementById('checkout-pincode').value;
 
-            if (!name || !phone || !address || !city || !pincode) {
-                alert("Please fill in all delivery details.");
+            if (!name || !phone || !email || !address || !city || !pincode) {
+                alert("Please fill in all mandatory delivery details.");
+                return;
+            }
+
+            if (phone.length < 10) {
+                alert("Please enter a valid 10-digit phone number.");
                 return;
             }
 

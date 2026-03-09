@@ -1048,20 +1048,15 @@
 
                             <div class="p-8 space-y-8">
                                 <!-- Section 1: Personal Details -->
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div class="space-y-2 md:col-span-2">
                                         <label
                                             class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
                                             Full Name <span class="text-red-500">*</span>
                                         </label>
-                                        <div class="relative group">
-                                            <input type="text" id="checkout-name" required
-                                                placeholder="Enter your full name"
-                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
-                                            <div
-                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
-                                            </div>
-                                        </div>
+                                        <input type="text" id="checkout-name" required
+                                            placeholder="Enter your full name"
+                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-xl px-5 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-sm relative z-20">
                                     </div>
 
                                     <div class="space-y-2">
@@ -1069,18 +1064,16 @@
                                             class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
                                             Phone Number <span class="text-red-500">*</span>
                                         </label>
-                                        <div class="relative group flex items-center">
+                                        <div
+                                            class="relative flex items-center bg-[#FAF6F0] border border-[#C5A059]/30 rounded-xl px-5 py-4 shadow-sm focus-within:border-[#7A2021] focus-within:ring-1 focus-within:ring-[#7A2021] transition-all relative z-20">
                                             <span
-                                                class="text-[#3E2723]/40 font-bold pr-3 border-r border-[#C5A059]/20 mr-3">+91</span>
+                                                class="text-[#3E2723]/60 font-bold pr-3 border-r border-[#C5A059]/20 mr-3 text-sm">+91</span>
                                             <input type="tel" id="checkout-phone" required maxlength="10"
-                                                placeholder="00000 00000"
-                                                class="w-full bg-transparent border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
-                                            <div
-                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
-                                            </div>
+                                                placeholder="0000000000"
+                                                class="w-full bg-transparent border-none p-0 text-base text-[#3E2723] outline-none placeholder:text-[#3E2723]/20">
                                         </div>
-                                        <p class="text-[0.65rem] text-[#3E2723]/40 mt-1 italic">We'll use this for
-                                            WhatsApp confirmation.</p>
+                                        <p class="text-[0.6rem] text-[#3E2723]/40 mt-1 italic">Used for WhatsApp order
+                                            confirmation.</p>
                                     </div>
 
                                     <div class="space-y-2">
@@ -1090,27 +1083,22 @@
                                         </label>
                                         <input type="email" id="checkout-email" required
                                             placeholder="yourname@example.com"
-                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/20 rounded-xl px-4 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-inner">
+                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-xl px-5 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-sm relative z-20">
                                     </div>
                                 </div>
 
                                 <div class="h-px bg-[#C5A059]/10"></div>
 
                                 <!-- Section 2: Address Details -->
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div class="space-y-2 md:col-span-2">
                                         <label
                                             class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
                                             Delivery Address <span class="text-red-500">*</span>
                                         </label>
-                                        <div class="relative group">
-                                            <textarea id="checkout-address" required rows="2"
-                                                placeholder="Flat/House No, Street, Apartment, Landmark..."
-                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 resize-none"></textarea>
-                                            <div
-                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
-                                            </div>
-                                        </div>
+                                        <textarea id="checkout-address" required rows="3"
+                                            placeholder="Flat/House No, Street, Apartment, Landmark..."
+                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-xl px-5 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-sm resize-none relative z-20"></textarea>
                                     </div>
 
                                     <div class="space-y-2">
@@ -1118,13 +1106,8 @@
                                             class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
                                             City <span class="text-red-500">*</span>
                                         </label>
-                                        <div class="relative group">
-                                            <input type="text" id="checkout-city" required placeholder="e.g. Ujjain"
-                                                class="w-full bg-[#FAF6F0] border-b-2 border-[#C5A059]/20 px-0 py-4 text-base text-[#3E2723] focus:border-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20">
-                                            <div
-                                                class="absolute bottom-0 left-0 w-0 h-[2px] bg-[#7A2021] transition-all group-focus-within:w-full">
-                                            </div>
-                                        </div>
+                                        <input type="text" id="checkout-city" required placeholder="e.g. Ujjain"
+                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-xl px-5 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-sm relative z-20">
                                     </div>
 
                                     <div class="space-y-2">
@@ -1132,9 +1115,9 @@
                                             class="text-[0.7rem] font-black text-[#C5A059] uppercase tracking-[0.2em] flex items-center gap-1">
                                             Pincode <span class="text-red-500">*</span>
                                         </label>
-                                        <input type="text" id="checkout-pincode" required maxlength="10"
+                                        <input type="text" id="checkout-pincode" required maxlength="6"
                                             placeholder="Enter Pincode"
-                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/20 rounded-xl px-4 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-inner">
+                                            class="w-full bg-[#FAF6F0] border border-[#C5A059]/30 rounded-xl px-5 py-4 text-base text-[#3E2723] focus:border-[#7A2021] focus:ring-1 focus:ring-[#7A2021] outline-none transition-all placeholder:text-[#3E2723]/20 shadow-sm relative z-20">
                                     </div>
                                 </div>
                             </div>

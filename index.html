@@ -1912,10 +1912,8 @@
 
         // processOrder: Handles the full checkout flow.
         // Step 1 — Validates all delivery fields.
-        // Step 2 — Sends order details to Formspree (Email).
-        // Step 3 — Generates a unique Order ID (SR-XXXXXX).
-        // Step 4 — Builds a UPI deep-link so the user's payment app opens with pre-filled details.
-        // Step 5 — Builds a WhatsApp message with full order details for manual confirmation.
+        // Step 2 — Shows a beautiful Payment Overlay with your static QR Code.
+        // Step 3 — User clicks "Confirm & Send" which notifies Email & WhatsApp simultaneously.
         async function processOrder() {
             const name = document.getElementById('checkout-name').value;
             const phone = document.getElementById('checkout-phone').value;
@@ -1936,57 +1934,10 @@
 
             const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
             const orderId = "SR-" + Date.now().toString().slice(-6);
-            const itemCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            const itemsList = cart.map(item => `• ${item.name} (${item.weight}) x${item.qty} - ₹${item.price * item.qty}`).join('\n');
 
-            // --- Step 2: Send to Formspree (Email) ---
             const btn = document.getElementById('pay-btn');
             const originalBtnHtml = btn.innerHTML;
-            btn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon> Processing Order...';
-            btn.disabled = true;
-
-            const itemsList = cart.map(item => `• ${item.name} (${item.weight}) x${item.qty} - ₹${item.price * item.qty}`).join('\n');
-            const orderData = {
-                order_id: orderId,
-                customer_name: name,
-                customer_phone: phone,
-                customer_email: email || 'Not provided',
-                delivery_address: `${address}, ${city} - ${pincode}`,
-                items: itemsList,
-                total_amount: `₹${totalAmount}.00`
-            };
-
-            try {
-                const response = await fetch("https://formspree.io/f/myknklbv", {
-                    method: "POST",
-                    body: JSON.stringify(orderData),
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    console.log("Order sent to email successfully.");
-                } else {
-                    console.error("Failed to send order email.");
-                }
-            } catch (error) {
-                console.error("Error sending order to Formspree:", error);
-            }
-
-            // --- Step 3: Build UPI & WhatsApp ---
-            // Build a concise UPI note (approx 50 chars limit)
-            const itemSummary = cart.map(i => i.name.split(' ')[0]).join(', ');
-            let upiNote = `${orderId}: ${itemCount} items (${itemSummary})`;
-            if (upiNote.length > 50) upiNote = upiNote.substring(0, 47) + "...";
-
-            // Build UPI URI
-            const upiId = "upi-shujauddinnawab-1@okaxis";
-            const payeeName = "Shujauddin Nawab (SpiceRoots)";
-            const upiUri = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${totalAmount}&cu=INR&tn=${encodeURIComponent(upiNote)}`;
-
-            // Build Dynamic QR Code (using a public chart API)
-            const qrUri = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiUri)}`;
 
             // Build WhatsApp Message
             const waMessage = `*New Order: ${orderId}*\n\n` +
@@ -1996,81 +1947,106 @@
                 `Name: ${name}\n` +
                 `Phone: ${phone}\n` +
                 `Address: ${address}, ${city} - ${pincode}\n\n` +
-                `_I have just initiated the payment via UPI. Please confirm my order._`;
+                `_I have made the payment via QR scan. Please process my order._`;
 
             const waUri = `https://wa.me/919926691191?text=${encodeURIComponent(waMessage)}`;
 
-            // Step 1: Open Payment App
-            btn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop"></iconify-icon> Opening Payment App...';
+            // Show beautiful Payment Overlay with Static QR
+            const qrOverlay = document.createElement('div');
+            qrOverlay.id = "upi-qr-overlay";
+            qrOverlay.className = "fixed inset-0 bg-black/95 z-[100] flex flex-col items-center justify-center p-4 text-white text-center backdrop-blur-xl transition-all duration-500 overflow-y-auto";
+            qrOverlay.style.opacity = "0";
 
-            setTimeout(() => {
-                // Show QR code in a beautiful overlay for both mobile and desktop
-                const qrOverlay = document.createElement('div');
-                qrOverlay.id = "upi-qr-overlay";
-                qrOverlay.className = "fixed inset-0 bg-black/90 z-[100] flex flex-col items-center justify-center p-4 text-white text-center backdrop-blur-md transition-opacity duration-300";
-                qrOverlay.style.opacity = "0";
+            qrOverlay.innerHTML = `
+                <div class="bg-white p-8 rounded-[2.5rem] text-[#3E2723] max-w-sm w-full shadow-[0_0_50px_rgba(197,160,89,0.3)] space-y-6 transform transition-all duration-500 scale-90 relative">
+                    <!-- Close Button -->
+                    <button onclick="document.getElementById('upi-qr-overlay').remove()" class="absolute -top-4 -right-4 bg-white text-[#7A2021] w-10 h-10 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+                        <iconify-icon icon="solar:close-circle-bold" width="2rem"></iconify-icon>
+                    </button>
 
-                qrOverlay.innerHTML = `
-                    <div class="bg-white p-6 sm:p-8 rounded-3xl text-[#3E2723] max-w-xs sm:max-w-sm w-full shadow-2xl space-y-5 transform transition-transform duration-300 scale-95">
-                        <div class="flex justify-between items-center border-b border-[#F5E9DA] pb-3">
-                            <h3 class="font-serif text-lg sm:text-xl font-bold">Complete Payment</h3>
-                            <button onclick="document.getElementById('upi-qr-overlay').remove()" class="text-[#3E2723]/40 hover:text-[#7A2021]">
-                                <iconify-icon icon="solar:close-circle-linear" width="1.5rem"></iconify-icon>
-                            </button>
-                        </div>
-                        
-                        <div class="bg-[#FAF6F0] p-4 rounded-2xl border-2 border-dashed border-[#C5A059]/30">
-                            <img src="${qrUri}" alt="UPI QR Code" class="w-full h-auto mx-auto mix-blend-multiply rounded-lg mb-2">
-                            <p class="text-[0.65rem] text-[#3E2723]/60 leading-tight">Supported by all UPI apps</p>
-                        </div>
-
-                        <div class="space-y-1">
-                            <p class="text-xs text-[#3E2723]/50 uppercase tracking-widest font-bold">Total Amount</p>
-                            <p class="text-2xl font-bold text-[#7A2021]">₹${totalAmount}.00</p>
-                        </div>
-
-                        <div class="pt-2">
-                            <a href="${upiUri}" class="block w-full bg-[#7A2021] text-white py-4 rounded-xl text-sm font-bold shadow-lg mb-3 flex items-center justify-center gap-2 active:scale-95 transition-transform">
-                                <iconify-icon icon="solar:phone-linear" width="1.2rem"></iconify-icon> Pay via Mobile App
-                            </a>
-                            <button onclick="document.getElementById('upi-qr-overlay').remove()" class="w-full bg-white border border-[#7A2021]/20 text-[#7A2021] py-3 rounded-xl text-sm font-medium hover:bg-[#7A2021]/5 transition-colors">
-                                I've Paid (Screenshot Saved)
-                            </button>
-                        </div>
-                        
-                        <p class="text-[0.6rem] text-[#3E2723]/40 italic">Wait here after paying, then click the WhatsApp button on the main screen to confirm.</p>
+                    <div class="space-y-1">
+                        <span class="heritage-label block">Step 2 of 2</span>
+                        <h3 class="font-serif text-2xl font-bold text-[#3E2723]">Scan & Pay</h3>
                     </div>
-                `;
-                document.body.appendChild(qrOverlay);
+                    
+                    <div class="relative group">
+                        <div class="absolute inset-0 bg-[#C5A059]/10 rounded-3xl blur-xl group-hover:bg-[#C5A059]/20 transition-all"></div>
+                        <div class="relative bg-[#FAF6F0] p-6 rounded-3xl border-2 border-dashed border-[#C5A059]/30">
+                            <!-- User's static QR Code -->
+                            <img src="qr%20code.jpg" alt="UPI QR Code" class="w-full h-auto mx-auto rounded-xl shadow-inner mb-4">
+                            <div class="flex items-center justify-center gap-2 text-[#3E2723]/60 font-medium text-xs">
+                                <iconify-icon icon="solar:camera-linear"></iconify-icon>
+                                <span>Scan this from any UPI App</span>
+                            </div>
+                        </div>
+                    </div>
 
-                // Trigger animation
-                requestAnimationFrame(() => {
-                    qrOverlay.style.opacity = "1";
-                    qrOverlay.querySelector('div').style.transform = "scale(1)";
-                });
+                    <div class="bg-[#FAF6F0]/50 p-4 rounded-2xl border border-[#C5A059]/10">
+                        <p class="text-[0.65rem] text-[#3E2723]/50 uppercase font-black tracking-widest mb-1">Total Payable</p>
+                        <p class="text-3xl font-serif font-black text-[#7A2021]">₹${totalAmount}.00</p>
+                    </div>
 
-                // Step 2: Show WhatsApp Confirmation Button
-                setTimeout(() => {
-                    btn.innerHTML = 'Step 2: Confirm on WhatsApp <iconify-icon icon="logos:whatsapp-icon"></iconify-icon>';
-                    btn.classList.add('bg-green-600', 'hover:bg-green-700');
-                    btn.classList.remove('bg-[#7A2021]', 'hover:bg-[#5A1718]');
-                    btn.disabled = false;
-                    btn.onclick = () => {
-                        window.open(waUri, '_blank');
-                        alert("Thank you! Your order details have been sent. We will contact you shortly.");
-                        cart = [];
-                        updateCartUI();
-                        navigate('home');
-                        // Reset button for next order
-                        setTimeout(() => {
-                            btn.innerHTML = originalBtnHtml;
-                            btn.classList.remove('bg-green-600', 'hover:bg-green-700');
-                            btn.classList.add('bg-[#7A2021]', 'hover:bg-[#5A1718]');
-                            btn.onclick = processOrder;
-                        }, 1000);
-                    };
-                }, 1500);
-            }, 800);
+                    <div class="pt-2">
+                        <button id="final-confirm-btn" class="w-full bg-[#7A2021] text-white py-5 rounded-2xl text-sm font-black shadow-xl flex items-center justify-center gap-3 hover:bg-[#5A1718] active:scale-95 transition-all group overflow-hidden relative">
+                           <span class="relative z-10 flex items-center gap-2">
+                               Confirm Payment & Send Order
+                               <iconify-icon icon="solar:send-bold" class="group-hover:translate-x-1 transition-transform"></iconify-icon>
+                           </span>
+                        </button>
+                    </div>
+                    
+                    <p class="text-[0.6rem] text-[#3E2723]/40 italic leading-relaxed px-4">
+                        Clicking above will notify us on <b>WhatsApp & Email</b> instantly.
+                    </p>
+                </div>
+            `;
+
+            document.body.appendChild(qrOverlay);
+
+            // Animate In
+            requestAnimationFrame(() => {
+                qrOverlay.style.opacity = "1";
+                qrOverlay.querySelector('div').style.transform = "scale(1)";
+            });
+
+            // Handle Final Confirmation
+            const confirmBtn = qrOverlay.querySelector('#final-confirm-btn');
+            confirmBtn.onclick = async () => {
+                const originalContent = confirmBtn.innerHTML;
+                confirmBtn.innerHTML = '<iconify-icon icon="line-md:loading-twotone-loop" width="1.5rem"></iconify-icon> Submitting Order...';
+                confirmBtn.disabled = true;
+
+                // 1. Send to Formspree
+                const orderData = {
+                    order_id: orderId,
+                    customer_name: name,
+                    customer_phone: phone,
+                    customer_email: email,
+                    delivery_address: `${address}, ${city} - ${pincode}`,
+                    items: itemsList,
+                    total_amount: `₹${totalAmount}.00`,
+                    payment_status: "Scan Payment Initiated"
+                };
+
+                try {
+                    await fetch("https://formspree.io/f/myknklbv", {
+                        method: "POST",
+                        body: JSON.stringify(orderData),
+                        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
+                    });
+                } catch (e) { console.error("Email failed:", e); }
+
+                // 2. Open WhatsApp
+                window.open(waUri, '_blank');
+
+                // 3. Cleanup & Success
+                qrOverlay.remove();
+                alert("Order confirmed! Your details have been sent via Email and WhatsApp.");
+
+                cart = [];
+                updateCartUI();
+                navigate('home');
+            };
         }
 
         // Initialize the app — show the Home page on first load.
